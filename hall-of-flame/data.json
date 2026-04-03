@@ -1,500 +1,964 @@
 {
-  "updated": "2026-04-03",
-  "week": 1,
-  "course": "BIOL 2: The Crucible",
-  "quarter": "Spring 2026",
-  "total_students": 49,
-  "sessions_completed": 3,
+  "metadata": {
+    "updated": "2026-04-03 09:43",
+    "week": 1,
+    "course": "BIOL 2 — The Crucible",
+    "quarter": "Spring 2026",
+    "total_students": 49,
+    "sessions_completed": 1
+  },
   "students": [
     {
-      "name": "Omar B.",
-      "streak": 3,
-      "peak_streak": 3,
-      "total_xp": 53,
-      "xp_per_answer": 3,
-      "tier": "Spark",
-      "sessions": 3,
-      "shield": true
-    },
-    {
-      "name": "Sonya A.",
-      "streak": 3,
-      "peak_streak": 3,
-      "total_xp": 54,
-      "xp_per_answer": 3,
-      "tier": "Spark",
-      "sessions": 3,
-      "shield": true
-    },
-    {
-      "name": "Valeria A.",
-      "streak": 3,
-      "peak_streak": 3,
-      "total_xp": 36,
-      "xp_per_answer": 3,
-      "tier": "Spark",
-      "sessions": 3,
-      "shield": true
-    },
-    {
-      "name": "Charles B.",
+      "display_name": "Katie C.",
       "streak": 1,
-      "peak_streak": 1,
       "total_xp": 3,
-      "xp_per_answer": 1,
       "tier": "Spark",
-      "sessions": 1,
-      "shield": true
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 1
     },
     {
-      "name": "Katherine B.",
+      "display_name": "Janet G.",
       "streak": 1,
-      "peak_streak": 1,
-      "total_xp": 2,
-      "xp_per_answer": 1,
+      "total_xp": 3,
       "tier": "Spark",
-      "sessions": 1,
-      "shield": true
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 2
     },
     {
-      "name": "Aaryaa D.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Natasha G.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 3
     },
     {
-      "name": "Alondra R.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Ashley H.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 4
     },
     {
-      "name": "Anikha P.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Delaney K.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 5
     },
     {
-      "name": "Ashley H.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Omar M.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 6
     },
     {
-      "name": "Ashlyn W.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Jason M.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 7
     },
     {
-      "name": "Ashlyne O.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Tobias O.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 8
     },
     {
-      "name": "Asiya G.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Gina P.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 9
     },
     {
-      "name": "Brian T.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Anikha P.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 10
     },
     {
-      "name": "Caroline F.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Ashlyn W.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 11
     },
     {
-      "name": "Caroline W.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Caroline W.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 12
     },
     {
-      "name": "Delaney K.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Hayden L.",
+      "streak": 1,
+      "total_xp": 3,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 3,
+          "total": 3,
+          "streak": 1,
+          "xp": 3,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 13
     },
     {
-      "name": "Elika D.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Sonya A.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 14
     },
     {
-      "name": "Gina P.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Valeria A.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 15
     },
     {
-      "name": "Grace M.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Katherine B.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 16
     },
     {
-      "name": "Hanna R.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Kemora B.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 17
     },
     {
-      "name": "Hayden L.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Rachana C.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 18
     },
     {
-      "name": "Izabella O.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Kashvika C.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 19
     },
     {
-      "name": "Janet G.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Elika D.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 20
     },
     {
-      "name": "Jason M.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Aaryaa D.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 21
     },
     {
-      "name": "Justin S.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Caroline F.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 22
     },
     {
-      "name": "Kashvika C.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Leslie G.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 23
     },
     {
-      "name": "Katie C.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Morgan H.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 24
     },
     {
-      "name": "Kemora B.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Theresa H.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 25
     },
     {
-      "name": "Kyle J.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Kyle J.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 26
     },
     {
-      "name": "Leslie G.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Yijia L.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 27
     },
     {
-      "name": "Lucy T.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Grace M.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 28
     },
     {
-      "name": "Marco B.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Reinhardt M.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 29
     },
     {
-      "name": "Mihika G.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Nhan N.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 30
     },
     {
-      "name": "Morgan H.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Tiffany N.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 31
     },
     {
-      "name": "Natasha G.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Izabella O.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 32
     },
     {
-      "name": "Nhan N.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Zaizhu P.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 33
     },
     {
-      "name": "Omar M.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Hanna R.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 34
     },
     {
-      "name": "Rachana C.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Tanisha S.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 35
     },
     {
-      "name": "Reagan R.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Justin S.",
+      "streak": 1,
+      "total_xp": 2,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 2,
+          "total": 3,
+          "streak": 1,
+          "xp": 2,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 36
     },
     {
-      "name": "Reinhardt M.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Charles B.",
+      "streak": 1,
+      "total_xp": 1,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 1,
+          "total": 3,
+          "streak": 1,
+          "xp": 1,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 37
     },
     {
-      "name": "Rishikesh S.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Ashlyne O.",
+      "streak": 1,
+      "total_xp": 1,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 1,
+          "total": 3,
+          "streak": 1,
+          "xp": 1,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 38
     },
     {
-      "name": "Spyridon S.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Alondra R.",
+      "streak": 1,
+      "total_xp": 1,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 1,
+          "total": 3,
+          "streak": 1,
+          "xp": 1,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 39
     },
     {
-      "name": "Tanisha S.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Rishikesh S.",
+      "streak": 1,
+      "total_xp": 1,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 1,
+          "total": 3,
+          "streak": 1,
+          "xp": 1,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 40
     },
     {
-      "name": "Theresa H.",
-      "streak": 0,
-      "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "display_name": "Lucy T.",
+      "streak": 1,
+      "total_xp": 1,
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 1,
+          "total": 3,
+          "streak": 1,
+          "xp": 1,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 41
     },
     {
-      "name": "Tiffany N.",
-      "streak": 0,
-      "peak_streak": 0,
+      "display_name": "Mihika G.",
+      "streak": 1,
       "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "tier": "Spark",
+      "xp_cap": 1,
+      "sessions_attended": 1,
+      "history": [
+        {
+          "session": 1,
+          "date": "2026-04-01",
+          "correct": 0,
+          "total": 3,
+          "streak": 1,
+          "xp": 0,
+          "jackpot": false,
+          "badge": "Spark"
+        }
+      ],
+      "rank": 42
     },
     {
-      "name": "Tobias O.",
+      "display_name": "Omar B.",
       "streak": 0,
-      "peak_streak": 0,
       "total_xp": 0,
-      "xp_per_answer": 0,
       "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "xp_cap": 0,
+      "sessions_attended": 0,
+      "history": [],
+      "rank": 43
     },
     {
-      "name": "Xuanzhi Z.",
+      "display_name": "Marco B.",
       "streak": 0,
-      "peak_streak": 0,
       "total_xp": 0,
-      "xp_per_answer": 0,
       "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "xp_cap": 0,
+      "sessions_attended": 0,
+      "history": [],
+      "rank": 44
     },
     {
-      "name": "Yijia L.",
+      "display_name": "Reagan R.",
       "streak": 0,
-      "peak_streak": 0,
       "total_xp": 0,
-      "xp_per_answer": 0,
       "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "xp_cap": 0,
+      "sessions_attended": 0,
+      "history": [],
+      "rank": 45
     },
     {
-      "name": "Zaizhu P.",
+      "display_name": "Spyridon S.",
       "streak": 0,
-      "peak_streak": 0,
       "total_xp": 0,
-      "xp_per_answer": 0,
       "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
+      "xp_cap": 0,
+      "sessions_attended": 0,
+      "history": [],
+      "rank": 46
+    },
+    {
+      "display_name": "Brian T.",
+      "streak": 0,
+      "total_xp": 0,
+      "tier": "Kindling",
+      "xp_cap": 0,
+      "sessions_attended": 0,
+      "history": [],
+      "rank": 47
+    },
+    {
+      "display_name": "Xuanzhi Z.",
+      "streak": 0,
+      "total_xp": 0,
+      "tier": "Kindling",
+      "xp_cap": 0,
+      "sessions_attended": 0,
+      "history": [],
+      "rank": 48
+    },
+    {
+      "display_name": "Asiya G.",
+      "streak": 0,
+      "total_xp": 0,
+      "tier": "Kindling",
+      "xp_cap": 0,
+      "sessions_attended": 0,
+      "history": [],
+      "rank": 49
     }
   ]
 }
