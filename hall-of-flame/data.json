@@ -1,0 +1,500 @@
+{
+  "updated": "2026-04-03",
+  "week": 1,
+  "course": "BIOL 2: The Crucible",
+  "quarter": "Spring 2026",
+  "total_students": 49,
+  "sessions_completed": 3,
+  "students": [
+    {
+      "name": "Omar B.",
+      "streak": 3,
+      "peak_streak": 3,
+      "total_xp": 53,
+      "xp_per_answer": 3,
+      "tier": "Spark",
+      "sessions": 3,
+      "shield": true
+    },
+    {
+      "name": "Sonya A.",
+      "streak": 3,
+      "peak_streak": 3,
+      "total_xp": 54,
+      "xp_per_answer": 3,
+      "tier": "Spark",
+      "sessions": 3,
+      "shield": true
+    },
+    {
+      "name": "Valeria A.",
+      "streak": 3,
+      "peak_streak": 3,
+      "total_xp": 36,
+      "xp_per_answer": 3,
+      "tier": "Spark",
+      "sessions": 3,
+      "shield": true
+    },
+    {
+      "name": "Charles B.",
+      "streak": 1,
+      "peak_streak": 1,
+      "total_xp": 3,
+      "xp_per_answer": 1,
+      "tier": "Spark",
+      "sessions": 1,
+      "shield": true
+    },
+    {
+      "name": "Katherine B.",
+      "streak": 1,
+      "peak_streak": 1,
+      "total_xp": 2,
+      "xp_per_answer": 1,
+      "tier": "Spark",
+      "sessions": 1,
+      "shield": true
+    },
+    {
+      "name": "Aaryaa D.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Alondra R.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Anikha P.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Ashley H.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Ashlyn W.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Ashlyne O.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Asiya G.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Brian T.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Caroline F.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Caroline W.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Delaney K.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Elika D.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Gina P.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Grace M.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Hanna R.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Hayden L.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Izabella O.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Janet G.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Jason M.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Justin S.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Kashvika C.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Katie C.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Kemora B.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Kyle J.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Leslie G.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Lucy T.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Marco B.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Mihika G.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Morgan H.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Natasha G.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Nhan N.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Omar M.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Rachana C.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Reagan R.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Reinhardt M.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Rishikesh S.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Spyridon S.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Tanisha S.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Theresa H.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Tiffany N.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Tobias O.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Xuanzhi Z.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Yijia L.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    },
+    {
+      "name": "Zaizhu P.",
+      "streak": 0,
+      "peak_streak": 0,
+      "total_xp": 0,
+      "xp_per_answer": 0,
+      "tier": "Kindling",
+      "sessions": 0,
+      "shield": true
+    }
+  ]
+}
