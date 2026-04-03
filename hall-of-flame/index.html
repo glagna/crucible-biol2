@@ -619,8 +619,25 @@ function renderTable(data) {
   const tbody = document.getElementById('jackpotBody');
   tbody.innerHTML = '';
 
+  // Build dense ranks: students with same sort keys share the same rank
+  const ranks = [];
   students.forEach((s, i) => {
-    const rank = i + 1;
+    if (i === 0) { ranks.push(1); }
+    else {
+      const prev = students[i - 1];
+      let tied = false;
+      switch (currentSort) {
+        case 'streak': tied = s.streak === prev.streak && s.total_xp === prev.total_xp; break;
+        case 'xp':     tied = s.total_xp === prev.total_xp; break;
+        case 'peak':   tied = s.peak_streak === prev.peak_streak; break;
+        default:       tied = false; // name sort: no ties
+      }
+      ranks.push(tied ? ranks[i - 1] : i + 1);
+    }
+  });
+
+  students.forEach((s, i) => {
+    const rank = ranks[i];
     const tier = getTier(s.streak);
     const xpa = Math.min(s.streak, XP_CAP);
     const pct = maxStreak > 0 ? Math.round((s.streak / maxStreak) * 100) : 0;
