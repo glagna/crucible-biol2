@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hall of Flame — BIOL 2: The Crucible</title>
+<style>
+  /* ── Reset & Base ───────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0400;
+    color: #e8d5c4;
+    min-height: 100vh;
+  }
+
+  /* ── Animated background ────────────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(255,69,0,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(255,107,53,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(245,158,11,0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 20px 16px 60px; position: relative; z-index: 1; }
+
+  /* ── Hero ────────────────────────────────────────────────── */
+  .hero {
+    text-align: center;
+    padding: 40px 24px 28px;
+    background: linear-gradient(135deg, #1a0a00 0%, #2d1108 50%, #1a0a00 100%);
+    border-radius: 16px 16px 0 0;
+    border: 1px solid #3d2a18;
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 10%; right: 10%; height: 2px;
+    background: linear-gradient(90deg, transparent, #ff6b35, transparent);
+  }
+  .hero-badge {
+    font-size: 0.82em;
+    color: #d4a853;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 2.4em;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ff6b35, #ff4500, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+  .hero-sub { font-size: 1em; color: #c8a882; }
+  .hero-meta { font-size: 0.78em; color: #8b7355; margin-top: 12px; }
+  .hero-meta span { margin: 0 6px; }
+
+  /* ── Stats bar ──────────────────────────────────────────── */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 16px 20px;
+    background: #2d1b0e;
+    border: 1px solid #3d2a18;
+    border-top: none;
+  }
+  .stat { text-align: center; }
+  .stat-value { font-size: 1.6em; font-weight: 700; color: #ff6b35; }
+  .stat-label { font-size: 0.7em; color: #8b7355; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ── Tier legend ────────────────────────────────────────── */
+  .tier-legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 16px;
+    background: #1a0a00;
+    border: 1px solid #3d2a18;
+    border-top: none;
+  }
+  .tier-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 600;
+  }
+  .tier-chip.phoenix  { background: #4a0020; color: #ff1493; }
+  .tier-chip.inferno  { background: #3d0c02; color: #ff4500; }
+  .tier-chip.blaze    { background: #4a1a08; color: #ff6b35; }
+  .tier-chip.ember    { background: #5c2a10; color: #f59e0b; }
+  .tier-chip.spark    { background: #3b2610; color: #d4a853; }
+  .tier-chip.kindling { background: #2a2015; color: #8b7355; }
+
+  /* ── Section headers ────────────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 16px 20px;
+    background: #2d1b0e;
+    border: 1px solid #3d2a18;
+    border-top: 2px solid #5c2a10;
+    margin-top: 24px;
+  }
+  .section-header h2 { font-size: 1.2em; font-weight: 700; color: #ff6b35; }
+  .section-header .sub { font-size: 0.8em; color: #8b7355; }
+  .section-header.forge h2 { color: #60a5fa; }
+
+  /* ── Leaderboard table ──────────────────────────────────── */
+  .leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #3d2a18;
+    border-top: none;
+  }
+  .leaderboard th {
+    padding: 10px 12px;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: #d4a853;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: #1a0a00;
+    border-bottom: 2px solid #5c2a10;
+    text-align: center;
+  }
+  .leaderboard th.left { text-align: left; }
+  .leaderboard td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #3d2a18;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .leaderboard tr:hover td { background: rgba(255,107,53,0.06); }
+  .leaderboard tr.glow td:first-child { border-left: 4px solid var(--glow-color); }
+
+  .rank { font-size: 1.1em; }
+  .name { text-align: left !important; font-weight: 600; color: #f5e6d3; font-size: 0.93em; }
+
+  /* Streak badge */
+  .streak-badge {
+    display: inline-block;
+    padding: 3px 14px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.05em;
+    min-width: 40px;
+  }
+
+  /* XP display */
+  .xp-val { font-weight: 700; font-size: 0.95em; }
+  .xp-max { color: #f59e0b; }
+  .xp-mid { color: #d4a853; }
+  .xp-low { color: #8b7355; }
+
+  /* Progress bar */
+  .bar-track {
+    width: 100%;
+    height: 14px;
+    background: #1a0a00;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 7px;
+    transition: width 0.8s ease-out;
+  }
+
+  /* Shield */
+  .shield { font-size: 0.95em; }
+
+  /* ── Forge section ──────────────────────────────────────── */
+  .forge-table th { color: #60a5fa; }
+  .forge-table th, .forge-table td { border-color: #1a2a44; }
+  .forge-table td { border-bottom-color: #1a2a44; }
+  .forge-table tr:hover td { background: rgba(96,165,250,0.06); }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  .rules {
+    padding: 28px;
+    background: linear-gradient(135deg, #1a0a00, #2d1108);
+    border: 1px solid #3d2a18;
+    border-top: 2px solid #5c2a10;
+    border-radius: 0 0 16px 16px;
+  }
+  .rules h3 { text-align: center; color: #d4a853; margin-bottom: 16px; font-size: 1em; }
+  .rules ul { list-style: none; max-width: 640px; margin: 0 auto; }
+  .rules li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    color: #c8a882;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  .rules li::before {
+    content: '🔥';
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+  }
+  .rules .updated {
+    text-align: center;
+    font-size: 0.72em;
+    color: #5c4a38;
+    margin-top: 16px;
+  }
+
+  /* ── Sort controls ──────────────────────────────────────── */
+  .sort-controls {
+    display: flex;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #1a0a00;
+    border: 1px solid #3d2a18;
+    border-top: none;
+  }
+  .sort-btn {
+    background: #2d1b0e;
+    border: 1px solid #3d2a18;
+    color: #8b7355;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.75em;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .sort-btn:hover, .sort-btn.active { background: #5c2a10; color: #ff6b35; border-color: #ff6b35; }
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .hero-title { font-size: 1.8em; }
+    .stats-bar { gap: 16px; }
+    .leaderboard th, .leaderboard td { padding: 8px 6px; font-size: 0.85em; }
+    .bar-track { display: none; }
+  }
+
+  /* ── Animations ─────────────────────────────────────────── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .leaderboard tbody tr {
+    animation: fadeInUp 0.3s ease-out both;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="app">
+  <div class="hero">
+    <div class="hero-badge">🎰 The Crucible</div>
+    <div class="hero-title">Hall of Flame</div>
+    <div class="hero-sub">Who can keep the fire burning? Your streak is your legacy.</div>
+    <div class="hero-meta">
+      <span>🛡️ = Shield active (1 per Level)</span> •
+      <span>💨 = Shield spent</span> •
+      <span>Miss w/o shield = streak halved</span>
+    </div>
+  </div>
+
+  <!-- Stats populated by JS -->
+  <div class="stats-bar" id="statsBar"></div>
+
+  <!-- Tier legend -->
+  <div class="tier-legend">
+    <span class="tier-chip phoenix">🦅 Phoenix 20+</span>
+    <span class="tier-chip inferno">🔥🔥🔥 Inferno 13+</span>
+    <span class="tier-chip blaze">🔥🔥 Blaze 8+</span>
+    <span class="tier-chip ember">🔥 Ember 4+</span>
+    <span class="tier-chip spark">✨ Spark 1+</span>
+    <span class="tier-chip kindling">🪵 Kindling 0</span>
+  </div>
+
+  <!-- Jackpot Bell section -->
+  <div class="section-header">
+    <h2>🎰 Jackpot Bell Streaks</h2>
+    <span class="sub">Consecutive MWF completions</span>
+  </div>
+
+  <div class="sort-controls">
+    <button class="sort-btn active" onclick="sortBy('streak')">Streak ↓</button>
+    <button class="sort-btn" onclick="sortBy('xp')">Total XP ↓</button>
+    <button class="sort-btn" onclick="sortBy('name')">Name A-Z</button>
+    <button class="sort-btn" onclick="sortBy('peak')">Peak ↓</button>
+  </div>
+
+  <table class="leaderboard" id="jackpotTable">
+    <thead>
+      <tr>
+        <th style="width:40px">#</th>
+        <th class="left">Student</th>
+        <th style="width:55px">Streak</th>
+        <th style="width:40px">Tier</th>
+        <th style="width:55px">XP/Ans</th>
+        <th style="width:35px"></th>
+        <th style="width:120px">Progress</th>
+        <th style="width:60px">Total XP</th>
+      </tr>
+    </thead>
+    <tbody id="jackpotBody"></tbody>
+  </table>
+
+  <!-- Forge Lab section -->
+  <div class="section-header forge">
+    <h2>⚒️ Forge Lab Streaks</h2>
+    <span class="sub">Coming soon — Friday lab completions</span>
+  </div>
+
+  <!-- Rules footer -->
+  <div class="rules">
+    <h3>🔥 How Streaks Work</h3>
+    <ul>
+      <li>Show up and complete the Jackpot Bell to start your streak at <strong>1</strong>. Each consecutive class adds 1.</li>
+      <li>Your streak IS your XP multiplier. Streak of 3 = <strong>3 XP per correct answer</strong>. Caps at <strong style="color:#f59e0b;">5 XP/answer (15 XP/class)</strong>.</li>
+      <li>Your 🛡️ <strong>shield</strong> absorbs one miss. Streak and XP stay intact. You get <strong>one shield per Level</strong> (3 across the quarter).</li>
+      <li>Shield spent 💨 and you miss again? Your streak <strong style="color:#ff6b35;">drops by half</strong> (rounded down). A streak of 10 becomes 5. Painful, but you are still in the game.</li>
+      <li>Badge tiers (Kindling → Phoenix) have <strong>no cap</strong>. The XP tops at 5, but the streak number keeps climbing. That is your legacy.</li>
+    </ul>
+    <div class="updated" id="updatedDate"></div>
+  </div>
+</div>
+
+<script>
+// ── Tier config ──────────────────────────────────────────────
+const TIERS = [
+  { min: 20, name: 'Phoenix',  emoji: '🦅',     color: '#ff1493', bg: '#4a0020' },
+  { min: 13, name: 'Inferno',  emoji: '🔥🔥🔥', color: '#ff4500', bg: '#3d0c02' },
+  { min:  8, name: 'Blaze',    emoji: '🔥🔥',   color: '#ff6b35', bg: '#4a1a08' },
+  { min:  4, name: 'Ember',    emoji: '🔥',     color: '#f59e0b', bg: '#5c2a10' },
+  { min:  1, name: 'Spark',    emoji: '✨',     color: '#d4a853', bg: '#3b2610' },
+  { min:  0, name: 'Kindling', emoji: '🪵',     color: '#8b7355', bg: '#2a2015' },
+];
+
+function getTier(streak) {
+  return TIERS.find(t => streak >= t.min) || TIERS[TIERS.length - 1];
+}
+
+function barColor(streak) {
+  if (streak >= 20) return '#ff1493';
+  if (streak >= 13) return '#ff4500';
+  if (streak >= 8) return '#ff6b35';
+  if (streak >= 4) return '#f59e0b';
+  if (streak >= 1) return '#d4a853';
+  return '#555';
+}
+
+const XP_CAP = 5;
+const MEDALS = ['🥇', '🥈', '🥉'];
+
+let currentData = null;
+let currentSort = 'streak';
+
+// ── Render ───────────────────────────────────────────────────
+function renderStats(data) {
+  const active = data.students.filter(s => s.streak > 0).length;
+  const topStreak = data.students.length > 0 ? Math.max(...data.students.map(s => s.streak)) : 0;
+  const avgStreak = data.students.length > 0
+    ? (data.students.reduce((sum, s) => sum + s.streak, 0) / data.students.length).toFixed(1)
+    : '0';
+  const totalXP = data.students.reduce((sum, s) => sum + s.total_xp, 0);
+
+  document.getElementById('statsBar').innerHTML = `
+    <div class="stat"><div class="stat-value">${data.sessions_completed}</div><div class="stat-label">Sessions</div></div>
+    <div class="stat"><div class="stat-value">${active}/${data.total_students}</div><div class="stat-label">Active Streaks</div></div>
+    <div class="stat"><div class="stat-value">${topStreak}</div><div class="stat-label">Top Streak</div></div>
+    <div class="stat"><div class="stat-value">${totalXP.toLocaleString()}</div><div class="stat-label">Total XP</div></div>
+  `;
+}
+
+function renderTable(data) {
+  const students = [...data.students];
+  const maxStreak = students.length > 0 ? Math.max(...students.map(s => s.streak), 1) : 1;
+
+  // Sort
+  switch (currentSort) {
+    case 'streak': students.sort((a, b) => b.streak - a.streak || a.name.localeCompare(b.name)); break;
+    case 'xp': students.sort((a, b) => b.total_xp - a.total_xp || a.name.localeCompare(b.name)); break;
+    case 'name': students.sort((a, b) => a.name.localeCompare(b.name)); break;
+    case 'peak': students.sort((a, b) => b.peak_streak - a.peak_streak || a.name.localeCompare(b.name)); break;
+  }
+
+  const tbody = document.getElementById('jackpotBody');
+  tbody.innerHTML = '';
+
+  students.forEach((s, i) => {
+    const rank = i + 1;
+    const tier = getTier(s.streak);
+    const xpa = Math.min(s.streak, XP_CAP);
+    const pct = maxStreak > 0 ? Math.round((s.streak / maxStreak) * 100) : 0;
+    const shield = s.shield ? '🛡️' : '💨';
+    const rankDisplay = rank <= 3 ? MEDALS[rank - 1] : rank;
+    const glow = s.streak >= 8 ? `style="--glow-color:${tier.color}"` : '';
+
+    // XP styling
+    let xpClass = 'xp-low';
+    let xpText = xpa > 0 ? xpa : '—';
+    if (xpa >= XP_CAP) { xpClass = 'xp-max'; xpText = xpa + ' ★'; }
+    else if (xpa >= 3) { xpClass = 'xp-mid'; }
+
+    const tr = document.createElement('tr');
+    if (s.streak >= 8) tr.classList.add('glow');
+    tr.setAttribute('style', `animation-delay: ${i * 0.03}s`);
+    if (glow) tr.style.setProperty('--glow-color', tier.color);
+
+    tr.innerHTML = `
+      <td class="rank">${rankDisplay}</td>
+      <td class="name">${s.name}</td>
+      <td><span class="streak-badge" style="background:${tier.color};color:${s.streak >= 1 && tier.name !== 'Spark' ? '#fff' : '#1a0a00'}">${s.streak}</span></td>
+      <td>${tier.emoji}</td>
+      <td><span class="xp-val ${xpClass}">${xpText}</span></td>
+      <td class="shield">${shield}</td>
+      <td><div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${barColor(s.streak)}"></div></div></td>
+      <td style="color:#8b7355;font-size:0.85em;">${s.total_xp}</td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+}
+
+function sortBy(key) {
+  currentSort = key;
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  if (currentData) renderTable(currentData);
+}
+
+// ── Load data ────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const resp = await fetch('data.json?' + Date.now());
+    const data = await resp.json();
+    currentData = data;
+
+    // Update week label
+    if (data.week) {
+      document.querySelector('.hero-badge').textContent = `🎰 The Crucible • Week ${data.week}`;
+    }
+
+    document.getElementById('updatedDate').textContent = `Updated ${data.updated}`;
+
+    renderStats(data);
+    renderTable(data);
+  } catch (e) {
+    console.error('Failed to load data.json:', e);
+    document.getElementById('jackpotBody').innerHTML =
+      '<tr><td colspan="8" style="padding:40px;text-align:center;color:#8b7355;">No data yet. Run generate_site_data.py to populate.</td></tr>';
+  }
+}
+
+loadData();
+</script>
+
+</body>
+</html>
