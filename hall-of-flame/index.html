@@ -391,7 +391,7 @@ function renderTable(data) {
 
   // Sort
   switch (currentSort) {
-    case 'streak': students.sort((a, b) => b.streak - a.streak || a.name.localeCompare(b.name)); break;
+    case 'streak': students.sort((a, b) => b.streak - a.streak || b.total_xp - a.total_xp || a.name.localeCompare(b.name)); break;
     case 'xp': students.sort((a, b) => b.total_xp - a.total_xp || a.name.localeCompare(b.name)); break;
     case 'name': students.sort((a, b) => a.name.localeCompare(b.name)); break;
     case 'peak': students.sort((a, b) => b.peak_streak - a.peak_streak || a.name.localeCompare(b.name)); break;
