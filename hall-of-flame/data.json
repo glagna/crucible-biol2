@@ -1,964 +1,351 @@
 {
-  "metadata": {
-    "updated": "2026-04-03 09:43",
-    "week": 1,
-    "course": "BIOL 2 — The Crucible",
-    "quarter": "Spring 2026",
-    "total_students": 49,
-    "sessions_completed": 1
-  },
+  "updated": "2026-04-03 09:43",
+  "week": 1,
+  "sessions_completed": 1,
+  "total_students": 49,
   "students": [
     {
-      "display_name": "Katie C.",
+      "name": "Katie C.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 1
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Janet G.",
+      "name": "Janet G.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 2
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Natasha G.",
+      "name": "Natasha G.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 3
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Ashley H.",
+      "name": "Ashley H.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 4
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Delaney K.",
+      "name": "Delaney K.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 5
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Omar M.",
+      "name": "Omar M.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 6
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Jason M.",
+      "name": "Jason M.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 7
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Tobias O.",
+      "name": "Tobias O.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 8
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Gina P.",
+      "name": "Gina P.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 9
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Anikha P.",
+      "name": "Anikha P.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 10
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Ashlyn W.",
+      "name": "Ashlyn W.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 11
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Caroline W.",
+      "name": "Caroline W.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 12
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Hayden L.",
+      "name": "Hayden L.",
       "streak": 1,
       "total_xp": 3,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 3,
-          "total": 3,
-          "streak": 1,
-          "xp": 3,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 13
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Sonya A.",
+      "name": "Sonya A.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 14
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Valeria A.",
+      "name": "Valeria A.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 15
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Katherine B.",
+      "name": "Katherine B.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 16
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Kemora B.",
+      "name": "Kemora B.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 17
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Rachana C.",
+      "name": "Rachana C.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 18
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Kashvika C.",
+      "name": "Kashvika C.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 19
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Elika D.",
+      "name": "Elika D.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 20
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Aaryaa D.",
+      "name": "Aaryaa D.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 21
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Caroline F.",
+      "name": "Caroline F.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 22
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Leslie G.",
+      "name": "Leslie G.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 23
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Morgan H.",
+      "name": "Morgan H.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 24
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Theresa H.",
+      "name": "Theresa H.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 25
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Kyle J.",
+      "name": "Kyle J.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 26
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Yijia L.",
+      "name": "Yijia L.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 27
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Grace M.",
+      "name": "Grace M.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 28
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Reinhardt M.",
+      "name": "Reinhardt M.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 29
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Nhan N.",
+      "name": "Nhan N.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 30
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Tiffany N.",
+      "name": "Tiffany N.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 31
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Izabella O.",
+      "name": "Izabella O.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 32
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Zaizhu P.",
+      "name": "Zaizhu P.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 33
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Hanna R.",
+      "name": "Hanna R.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 34
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Tanisha S.",
+      "name": "Tanisha S.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 35
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Justin S.",
+      "name": "Justin S.",
       "streak": 1,
       "total_xp": 2,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 2,
-          "total": 3,
-          "streak": 1,
-          "xp": 2,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 36
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Charles B.",
+      "name": "Charles B.",
       "streak": 1,
       "total_xp": 1,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 1,
-          "total": 3,
-          "streak": 1,
-          "xp": 1,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 37
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Ashlyne O.",
+      "name": "Ashlyne O.",
       "streak": 1,
       "total_xp": 1,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 1,
-          "total": 3,
-          "streak": 1,
-          "xp": 1,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 38
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Alondra R.",
+      "name": "Alondra R.",
       "streak": 1,
       "total_xp": 1,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 1,
-          "total": 3,
-          "streak": 1,
-          "xp": 1,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 39
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Rishikesh S.",
+      "name": "Rishikesh S.",
       "streak": 1,
       "total_xp": 1,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 1,
-          "total": 3,
-          "streak": 1,
-          "xp": 1,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 40
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Lucy T.",
+      "name": "Lucy T.",
       "streak": 1,
       "total_xp": 1,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 1,
-          "total": 3,
-          "streak": 1,
-          "xp": 1,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 41
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Mihika G.",
+      "name": "Mihika G.",
       "streak": 1,
       "total_xp": 0,
-      "tier": "Spark",
-      "xp_cap": 1,
-      "sessions_attended": 1,
-      "history": [
-        {
-          "session": 1,
-          "date": "2026-04-01",
-          "correct": 0,
-          "total": 3,
-          "streak": 1,
-          "xp": 0,
-          "jackpot": false,
-          "badge": "Spark"
-        }
-      ],
-      "rank": 42
+      "peak_streak": 1,
+      "shield": true
     },
     {
-      "display_name": "Omar B.",
+      "name": "Omar B.",
       "streak": 0,
       "total_xp": 0,
-      "tier": "Kindling",
-      "xp_cap": 0,
-      "sessions_attended": 0,
-      "history": [],
-      "rank": 43
+      "peak_streak": 0,
+      "shield": true
     },
     {
-      "display_name": "Marco B.",
+      "name": "Marco B.",
       "streak": 0,
       "total_xp": 0,
-      "tier": "Kindling",
-      "xp_cap": 0,
-      "sessions_attended": 0,
-      "history": [],
-      "rank": 44
+      "peak_streak": 0,
+      "shield": true
     },
     {
-      "display_name": "Reagan R.",
+      "name": "Reagan R.",
       "streak": 0,
       "total_xp": 0,
-      "tier": "Kindling",
-      "xp_cap": 0,
-      "sessions_attended": 0,
-      "history": [],
-      "rank": 45
+      "peak_streak": 0,
+      "shield": true
     },
     {
-      "display_name": "Spyridon S.",
+      "name": "Spyridon S.",
       "streak": 0,
       "total_xp": 0,
-      "tier": "Kindling",
-      "xp_cap": 0,
-      "sessions_attended": 0,
-      "history": [],
-      "rank": 46
+      "peak_streak": 0,
+      "shield": true
     },
     {
-      "display_name": "Brian T.",
+      "name": "Brian T.",
       "streak": 0,
       "total_xp": 0,
-      "tier": "Kindling",
-      "xp_cap": 0,
-      "sessions_attended": 0,
-      "history": [],
-      "rank": 47
+      "peak_streak": 0,
+      "shield": true
     },
     {
-      "display_name": "Xuanzhi Z.",
+      "name": "Xuanzhi Z.",
       "streak": 0,
       "total_xp": 0,
-      "tier": "Kindling",
-      "xp_cap": 0,
-      "sessions_attended": 0,
-      "history": [],
-      "rank": 48
+      "peak_streak": 0,
+      "shield": true
     },
     {
-      "display_name": "Asiya G.",
+      "name": "Asiya G.",
       "streak": 0,
       "total_xp": 0,
-      "tier": "Kindling",
-      "xp_cap": 0,
-      "sessions_attended": 0,
-      "history": [],
-      "rank": 49
+      "peak_streak": 0,
+      "shield": true
     }
   ]
 }
