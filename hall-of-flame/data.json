@@ -1,479 +1,336 @@
 {
-  "updated": "2026-04-06",
+  "updated": "2026-04-09 20:56",
   "week": 2,
-  "course": "BIOL 2: The Crucible",
-  "quarter": "Spring 2026",
+  "sessions_completed": 3,
   "total_students": 47,
-  "sessions_completed": 2,
   "students": [
     {
-      "name": "Katie C.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Janet G.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Natasha G.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "name": "Anikha P.",
+      "streak": 3,
+      "total_xp": 42,
+      "peak_streak": 3,
       "shield": true
     },
     {
       "name": "Ashley H.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "streak": 3,
+      "total_xp": 42,
+      "peak_streak": 3,
       "shield": true
     },
     {
-      "name": "Omar M.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "name": "Janet G.",
+      "streak": 3,
+      "total_xp": 42,
+      "peak_streak": 3,
       "shield": true
     },
     {
       "name": "Jason M.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "streak": 3,
+      "total_xp": 42,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Katie C.",
+      "streak": 3,
+      "total_xp": 42,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Omar M.",
+      "streak": 3,
+      "total_xp": 42,
+      "peak_streak": 3,
       "shield": true
     },
     {
       "name": "Tobias O.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "streak": 3,
+      "total_xp": 42,
+      "peak_streak": 3,
       "shield": true
     },
     {
-      "name": "Gina P.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "name": "Aaryaa D.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
       "shield": true
     },
     {
-      "name": "Anikha P.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "name": "Caroline F.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Elika D.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Grace M.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Hanna R.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Justin S.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Katherine B.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Kyle J.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Nhan N.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Rachana C.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Reinhardt M.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Theresa H.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Tiffany N.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Valeria A.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Zaizhu P.",
+      "streak": 3,
+      "total_xp": 41,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Lucy T.",
+      "streak": 3,
+      "total_xp": 40,
+      "peak_streak": 3,
       "shield": true
     },
     {
       "name": "Ashlyn W.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "streak": 3,
+      "total_xp": 39,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Izabella O.",
+      "streak": 3,
+      "total_xp": 38,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Kashvika C.",
+      "streak": 3,
+      "total_xp": 38,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Leslie G.",
+      "streak": 3,
+      "total_xp": 38,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Sonya A.",
+      "streak": 3,
+      "total_xp": 38,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Yijia L.",
+      "streak": 3,
+      "total_xp": 38,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Gina P.",
+      "streak": 3,
+      "total_xp": 36,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Alondra R.",
+      "streak": 3,
+      "total_xp": 34,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Caroline W.",
+      "streak": 3,
+      "total_xp": 32,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Delaney K.",
+      "streak": 3,
+      "total_xp": 32,
+      "peak_streak": 3,
+      "shield": true
+    },
+    {
+      "name": "Ashlyne O.",
+      "streak": 3,
+      "total_xp": 24,
+      "peak_streak": 3,
       "shield": true
     },
     {
       "name": "Hayden L.",
       "streak": 2,
-      "peak_streak": 2,
       "total_xp": 33,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "peak_streak": 2,
       "shield": true
     },
     {
-      "name": "Sonya A.",
+      "name": "Natasha G.",
       "streak": 2,
+      "total_xp": 33,
       "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Valeria A.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Katherine B.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Rachana C.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Kashvika C.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Elika D.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Aaryaa D.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Caroline F.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Leslie G.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
       "shield": true
     },
     {
       "name": "Morgan H.",
       "streak": 2,
-      "peak_streak": 2,
       "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Theresa H.",
-      "streak": 2,
       "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Kyle J.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Yijia L.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Grace M.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Reinhardt M.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Nhan N.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Tiffany N.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Izabella O.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Zaizhu P.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Hanna R.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
       "shield": true
     },
     {
       "name": "Tanisha S.",
       "streak": 2,
-      "peak_streak": 2,
       "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Justin S.",
-      "streak": 2,
       "peak_streak": 2,
-      "total_xp": 32,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Alondra R.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 31,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Lucy T.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 31,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Delaney K.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 23,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Caroline W.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 23,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
-      "shield": true
-    },
-    {
-      "name": "Ashlyne O.",
-      "streak": 2,
-      "peak_streak": 2,
-      "total_xp": 21,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
       "shield": true
     },
     {
       "name": "Rishikesh S.",
       "streak": 2,
-      "peak_streak": 2,
       "total_xp": 21,
-      "xp_per_answer": 2,
-      "tier": "Ember",
-      "sessions": 2,
+      "peak_streak": 2,
       "shield": true
     },
     {
       "name": "Omar B.",
-      "streak": 1,
-      "peak_streak": 1,
-      "total_xp": 15,
-      "xp_per_answer": 1,
-      "tier": "Spark",
-      "sessions": 1,
+      "streak": 2,
+      "total_xp": 17,
+      "peak_streak": 2,
+      "shield": true
+    },
+    {
+      "name": "Brian T.",
+      "streak": 2,
+      "total_xp": 16,
+      "peak_streak": 2,
       "shield": true
     },
     {
       "name": "Selena C.",
       "streak": 1,
-      "peak_streak": 1,
       "total_xp": 15,
-      "xp_per_answer": 1,
-      "tier": "Spark",
-      "sessions": 1,
+      "peak_streak": 1,
       "shield": true
     },
     {
-      "name": "Brian T.",
+      "name": "Charles B.",
       "streak": 1,
+      "total_xp": 4,
       "peak_streak": 1,
-      "total_xp": 10,
-      "xp_per_answer": 1,
-      "tier": "Spark",
-      "sessions": 1,
       "shield": true
     },
     {
       "name": "Kemora B.",
-      "streak": 0,
+      "streak": 1,
+      "total_xp": 4,
       "peak_streak": 1,
-      "total_xp": 2,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 1,
       "shield": true
     },
     {
-      "name": "charles b.",
-      "streak": 0,
+      "name": "Spyridon S.",
+      "streak": 1,
+      "total_xp": 2,
       "peak_streak": 1,
-      "total_xp": 1,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 1,
       "shield": true
     },
     {
       "name": "Marco B.",
       "streak": 0,
-      "peak_streak": 0,
       "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
-      "shield": true
-    },
-    {
-      "name": "Spyridon S.",
-      "streak": 0,
       "peak_streak": 0,
-      "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
       "shield": true
     },
     {
       "name": "Xuanzhi Z.",
       "streak": 0,
-      "peak_streak": 0,
       "total_xp": 0,
-      "xp_per_answer": 0,
-      "tier": "Kindling",
-      "sessions": 0,
+      "peak_streak": 0,
       "shield": true
     }
   ]
