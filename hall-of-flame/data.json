@@ -1,337 +1,499 @@
 {
-  "updated": "2026-04-09 22:00",
+  "updated": "2026-04-11 20:06",
   "week": 2,
-  "sessions_completed": 3,
+  "sessions_completed": 4,
   "total_students": 47,
   "students": [
     {
       "name": "Anikha P.",
-      "streak": 3,
-      "total_xp": 42,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Ashley H.",
-      "streak": 3,
-      "total_xp": 42,
-      "peak_streak": 3,
-      "shield": true
+      "streak": 4,
+      "total_xp": 54,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Janet G.",
-      "streak": 3,
-      "total_xp": 42,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Jason M.",
-      "streak": 3,
-      "total_xp": 42,
-      "peak_streak": 3,
-      "shield": true
+      "streak": 4,
+      "total_xp": 54,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Katie C.",
-      "streak": 3,
-      "total_xp": 42,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Omar M.",
-      "streak": 3,
-      "total_xp": 42,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Tobias O.",
-      "streak": 3,
-      "total_xp": 42,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Aaryaa D.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
+      "streak": 4,
+      "total_xp": 54,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Caroline F.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Elika D.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Grace M.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Hanna R.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
+      "streak": 4,
+      "total_xp": 53,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Justin S.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
+      "streak": 4,
+      "total_xp": 53,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Rachana C.",
+      "streak": 4,
+      "total_xp": 53,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Ashley H.",
+      "streak": 4,
+      "total_xp": 50,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Jason M.",
+      "streak": 4,
+      "total_xp": 50,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Omar M.",
+      "streak": 4,
+      "total_xp": 50,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Tobias O.",
+      "streak": 4,
+      "total_xp": 50,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Yijia L.",
+      "streak": 4,
+      "total_xp": 50,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Aaryaa D.",
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Grace M.",
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Katherine B.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Kyle J.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Reinhardt M.",
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Theresa H.",
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Tiffany N.",
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Valeria A.",
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Zaizhu P.",
+      "streak": 4,
+      "total_xp": 49,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Gina P.",
+      "streak": 4,
+      "total_xp": 48,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Lucy T.",
+      "streak": 4,
+      "total_xp": 48,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Ashlyn W.",
+      "streak": 4,
+      "total_xp": 47,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Alondra R.",
+      "streak": 4,
+      "total_xp": 46,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Izabella O.",
+      "streak": 4,
+      "total_xp": 46,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Kashvika C.",
+      "streak": 4,
+      "total_xp": 46,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Sonya A.",
+      "streak": 4,
+      "total_xp": 46,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Elika D.",
+      "streak": 4,
+      "total_xp": 45,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Hanna R.",
+      "streak": 4,
+      "total_xp": 45,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Delaney K.",
+      "streak": 4,
+      "total_xp": 44,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Leslie G.",
+      "streak": 4,
+      "total_xp": 42,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Caroline W.",
+      "streak": 4,
+      "total_xp": 40,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Ashlyne O.",
+      "streak": 4,
+      "total_xp": 28,
+      "peak_streak": 4,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Nhan N.",
       "streak": 3,
       "total_xp": 41,
       "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Rachana C.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Reinhardt M.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Theresa H.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Tiffany N.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Valeria A.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Zaizhu P.",
-      "streak": 3,
-      "total_xp": 41,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Lucy T.",
-      "streak": 3,
-      "total_xp": 40,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Ashlyn W.",
-      "streak": 3,
-      "total_xp": 39,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Izabella O.",
-      "streak": 3,
-      "total_xp": 38,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Kashvika C.",
-      "streak": 3,
-      "total_xp": 38,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Leslie G.",
-      "streak": 3,
-      "total_xp": 38,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Sonya A.",
-      "streak": 3,
-      "total_xp": 38,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Yijia L.",
-      "streak": 3,
-      "total_xp": 38,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Gina P.",
-      "streak": 3,
-      "total_xp": 36,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Alondra R.",
-      "streak": 3,
-      "total_xp": 34,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Caroline W.",
-      "streak": 3,
-      "total_xp": 32,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Delaney K.",
-      "streak": 3,
-      "total_xp": 32,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Ashlyne O.",
-      "streak": 3,
-      "total_xp": 24,
-      "peak_streak": 3,
-      "shield": true
-    },
-    {
-      "name": "Hayden L.",
-      "streak": 2,
-      "total_xp": 33,
-      "peak_streak": 2,
-      "shield": false
-    },
-    {
-      "name": "Natasha G.",
-      "streak": 2,
-      "total_xp": 33,
-      "peak_streak": 2,
-      "shield": false
-    },
-    {
-      "name": "Morgan H.",
-      "streak": 2,
-      "total_xp": 32,
-      "peak_streak": 2,
-      "shield": false
-    },
-    {
-      "name": "Tanisha S.",
-      "streak": 2,
-      "total_xp": 32,
-      "peak_streak": 2,
-      "shield": false
-    },
-    {
-      "name": "Rishikesh S.",
-      "streak": 2,
-      "total_xp": 21,
-      "peak_streak": 2,
-      "shield": false
+      "shield": false,
+      "shields_remaining": 0,
+      "level": 1,
+      "last_shield_event": {
+        "date": "2026-04-10",
+        "session_number": 4,
+        "action": "shield_spent",
+        "streak_before": 3,
+        "streak_after": 3,
+        "shields_remaining_after": 0
+      }
     },
     {
       "name": "Omar B.",
-      "streak": 2,
-      "total_xp": 17,
-      "peak_streak": 2,
-      "shield": false
+      "streak": 3,
+      "total_xp": 26,
+      "peak_streak": 3,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Brian T.",
       "streak": 2,
       "total_xp": 16,
       "peak_streak": 2,
-      "shield": false
+      "shield": false,
+      "shields_remaining": 0,
+      "level": 1,
+      "last_shield_event": {
+        "date": "2026-04-10",
+        "session_number": 4,
+        "action": "shield_spent",
+        "streak_before": 2,
+        "streak_after": 2,
+        "shields_remaining_after": 0
+      }
+    },
+    {
+      "name": "Charles B.",
+      "streak": 2,
+      "total_xp": 8,
+      "peak_streak": 2,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Spyridon S.",
+      "streak": 2,
+      "total_xp": 6,
+      "peak_streak": 2,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Hayden L.",
+      "streak": 1,
+      "total_xp": 36,
+      "peak_streak": 2,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Natasha G.",
+      "streak": 1,
+      "total_xp": 36,
+      "peak_streak": 2,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Morgan H.",
+      "streak": 1,
+      "total_xp": 33,
+      "peak_streak": 2,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Tanisha S.",
+      "streak": 1,
+      "total_xp": 33,
+      "peak_streak": 2,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
+    },
+    {
+      "name": "Rishikesh S.",
+      "streak": 1,
+      "total_xp": 21,
+      "peak_streak": 2,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Selena C.",
       "streak": 1,
       "total_xp": 15,
       "peak_streak": 1,
-      "shield": false
-    },
-    {
-      "name": "Charles B.",
-      "streak": 1,
-      "total_xp": 4,
-      "peak_streak": 1,
-      "shield": false
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Kemora B.",
       "streak": 1,
       "total_xp": 4,
       "peak_streak": 1,
-      "shield": false
-    },
-    {
-      "name": "Spyridon S.",
-      "streak": 1,
-      "total_xp": 2,
-      "peak_streak": 1,
-      "shield": false
+      "shield": false,
+      "shields_remaining": 0,
+      "level": 1,
+      "last_shield_event": {
+        "date": "2026-04-10",
+        "session_number": 4,
+        "action": "shield_spent",
+        "streak_before": 1,
+        "streak_after": 1,
+        "shields_remaining_after": 0
+      }
     },
     {
       "name": "Marco B.",
-      "streak": 0,
-      "total_xp": 0,
-      "peak_streak": 0,
-      "shield": false
+      "streak": 1,
+      "total_xp": 2,
+      "peak_streak": 1,
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     },
     {
       "name": "Xuanzhi Z.",
       "streak": 0,
       "total_xp": 0,
       "peak_streak": 0,
-      "shield": false
+      "shield": true,
+      "shields_remaining": 1,
+      "level": 1,
+      "last_shield_event": null
     }
   ]
 }
