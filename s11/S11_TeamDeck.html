@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S11 Team Deck. Sickle Cell Story.</title>
+<style>
+/* ============================================================
+   S11 Team Deck. One page, four tabs, live Firebase sync.
+   Navy + gold palette (The Crucible identity). Inline CSS only.
+   ============================================================ */
+:root {
+  --navy-deep: #0F2440;
+  --navy-mid: #1A3A5C;
+  --navy-soft: #253F63;
+  --gold: #D4A853;
+  --gold-soft: #F0D08B;
+  --cream: #FDF8ED;
+  --paper: #FFFFFF;
+  --ink: #0F2440;
+  --muted: #6B7687;
+  --green: #2E7D50;
+  --red: #B33A3A;
+  --amber: #C28A00;
+  --guild-A: #2B6CB0;
+  --guild-B: #6B46C1;
+  --guild-C: #2F855A;
+  --guild-D: #C28A00;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--navy-deep); color: var(--ink); font-family: 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+
+/* GATE: access code entry */
+#gate {
+  position: fixed; inset: 0; background: rgba(15,36,64,0.96); z-index: 9999;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.gate-card {
+  background: var(--paper); border: 3px solid var(--gold); border-radius: 10px;
+  max-width: 440px; padding: 28px; text-align: center;
+}
+.gate-card h1 { font-family: 'Georgia', serif; color: var(--navy-deep); margin: 0 0 8px 0; font-size: 22px; }
+.gate-card p { color: var(--muted); margin: 0 0 16px 0; font-size: 14px; }
+.gate-card input {
+  font-size: 16px; padding: 10px 14px; border: 2px solid var(--navy-soft); border-radius: 6px;
+  width: 100%; text-align: center; letter-spacing: 1px; font-family: 'Courier New', monospace;
+}
+.gate-card button {
+  margin-top: 12px; padding: 10px 20px; background: var(--gold); color: var(--navy-deep);
+  font-weight: bold; border: none; border-radius: 6px; font-size: 15px; cursor: pointer;
+}
+.gate-card button:hover { background: var(--gold-soft); }
+.gate-err { color: var(--red); font-size: 13px; margin-top: 10px; }
+
+/* TEAM PICKER (shown if URL has ?guild=X but no ?team=X) */
+.picker-card {
+  background: var(--paper); border: 3px solid var(--gold); border-radius: 10px;
+  max-width: 440px; padding: 28px; text-align: center;
+}
+.picker-card h2 { font-family: 'Georgia', serif; margin: 0 0 14px 0; }
+.picker-card select {
+  font-size: 18px; padding: 10px 14px; border: 2px solid var(--navy-soft); border-radius: 6px;
+  width: 100%;
+}
+.picker-card button {
+  margin-top: 12px; padding: 10px 20px; background: var(--gold); color: var(--navy-deep);
+  font-weight: bold; border: none; border-radius: 6px; font-size: 15px; cursor: pointer; width: 100%;
+}
+
+/* TOP BAR */
+.topbar {
+  background: var(--navy-deep); color: var(--cream); border-bottom: 3px solid var(--gold);
+  padding: 10px 20px; display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.topbar .brand { font-family: 'Georgia', serif; font-size: 18px; color: var(--gold); }
+.topbar .meta { display: flex; gap: 16px; align-items: center; font-size: 13px; }
+.guild-chip {
+  padding: 4px 12px; border-radius: 20px; background: var(--guild-A);
+  color: white; font-weight: bold; font-size: 13px; letter-spacing: 0.5px;
+}
+.guild-A { background: var(--guild-A) !important; }
+.guild-B { background: var(--guild-B) !important; }
+.guild-C { background: var(--guild-C) !important; }
+.guild-D { background: var(--guild-D) !important; }
+.sync-dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--green);
+  display: inline-block; margin-right: 6px; vertical-align: middle; animation: pulse 2s infinite;
+}
+.sync-dot.offline { background: var(--red); animation: none; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* TAB BAR */
+.tabs {
+  background: var(--navy-mid); display: flex; border-bottom: 2px solid var(--gold);
+}
+.tab {
+  padding: 12px 20px; color: var(--cream); cursor: pointer; border-right: 1px solid var(--navy-soft);
+  font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px;
+}
+.tab.active { background: var(--gold); color: var(--navy-deep); font-weight: bold; }
+.tab.locked { opacity: 0.45; cursor: not-allowed; }
+.tab .badge {
+  background: var(--red); color: white; border-radius: 10px; padding: 2px 7px;
+  font-size: 11px; font-weight: bold;
+}
+.tab.active .badge { background: var(--navy-deep); color: var(--gold); }
+
+/* CONTENT CONTAINER */
+.panel {
+  background: var(--cream); min-height: calc(100vh - 100px); padding: 24px 32px;
+  display: none;
+}
+.panel.active { display: block; }
+.panel h2 { font-family: 'Georgia', serif; color: var(--navy-deep); margin: 0 0 14px 0; }
+.panel h3 { font-family: 'Georgia', serif; color: var(--navy-mid); margin: 18px 0 8px 0; }
+
+/* IDENTITY TAB */
+.id-card {
+  background: var(--paper); border: 3px solid var(--gold); border-radius: 10px;
+  padding: 24px; display: flex; gap: 24px; align-items: center; max-width: 820px;
+}
+.id-team {
+  width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-family: 'Georgia', serif; color: white; font-size: 48px; font-weight: bold; flex-shrink: 0;
+}
+.id-info h1 { margin: 0 0 4px 0; font-family: 'Georgia', serif; color: var(--navy-deep); }
+.id-info p { margin: 4px 0; color: var(--muted); font-size: 14px; }
+.spokesteam-badge {
+  display: inline-block; background: var(--gold); color: var(--navy-deep); padding: 4px 10px;
+  border-radius: 4px; font-weight: bold; font-size: 12px; margin-top: 6px; letter-spacing: 0.5px;
+}
+.phase-indicator {
+  margin-top: 20px; padding: 14px; background: var(--paper); border-left: 4px solid var(--gold);
+  max-width: 820px;
+}
+.phase-indicator strong { color: var(--navy-deep); }
+
+/* DOSSIER TAB */
+.dossier-content {
+  background: var(--paper); padding: 28px; border-radius: 8px; max-width: 820px;
+  line-height: 1.6; border: 1px solid var(--navy-soft);
+}
+.dossier-content h1 { font-family: 'Georgia', serif; color: var(--navy-deep); border-bottom: 2px solid var(--gold); padding-bottom: 6px; margin-top: 0; }
+.dossier-content h2 { font-family: 'Georgia', serif; color: var(--navy-mid); margin-top: 22px; }
+.dossier-content ul { margin: 8px 0; padding-left: 22px; }
+.dossier-content p { margin: 10px 0; }
+.dossier-content .pill {
+  display: inline-block; padding: 3px 10px; border-radius: 14px; background: var(--navy-deep);
+  color: var(--gold); font-size: 12px; font-weight: bold; letter-spacing: 0.5px; margin-right: 6px;
+}
+/* DOSSIER IMAGE GALLERY */
+.dossier-gallery {
+  display: table; width: 100%; margin: 14px 0 18px; border-spacing: 10px 0;
+  table-layout: fixed;
+}
+.dossier-gallery-cell {
+  display: table-cell; vertical-align: top; text-align: center;
+}
+.dossier-gallery-frame {
+  background: #fff; border: 1px solid var(--gold); border-radius: 6px;
+  padding: 6px; height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: transform 0.12s, box-shadow 0.12s;
+}
+.dossier-gallery-frame:hover {
+  transform: translateY(-2px); box-shadow: 0 4px 10px rgba(10,22,40,0.15);
+}
+.dossier-gallery-frame img {
+  max-width: 100%; max-height: 100%; object-fit: contain;
+}
+.dossier-gallery-caption {
+  font-size: 11px; color: var(--navy-mid); margin-top: 6px;
+  line-height: 1.3; font-weight: 600; letter-spacing: 0.2px;
+}
+.dossier-gallery-credit {
+  font-size: 9px; color: #888; margin-top: 2px; font-style: italic;
+}
+/* LIGHTBOX (click any dossier image to enlarge) */
+.lightbox-overlay {
+  position: fixed; inset: 0; background: rgba(10,22,40,0.94);
+  display: none; align-items: center; justify-content: center;
+  z-index: 1000; padding: 24px; flex-direction: column;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-img {
+  max-width: 92%; max-height: 80%; background: #fff;
+  border: 3px solid var(--gold); border-radius: 4px; padding: 8px;
+}
+.lightbox-caption {
+  color: #fff; text-align: center; margin-top: 14px;
+  font-size: 14px; max-width: 80%; line-height: 1.4;
+}
+.lightbox-close {
+  position: absolute; top: 18px; right: 28px; color: var(--gold);
+  font-size: 36px; cursor: pointer; font-weight: bold; line-height: 1;
+  user-select: none;
+}
+.lightbox-close:hover { color: #fff; }
+
+/* SIX-LINK BUILDER */
+.link-grid {
+  display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 820px;
+}
+.link-row {
+  background: var(--paper); border: 2px solid var(--navy-soft); border-radius: 8px;
+  padding: 12px 16px; transition: border-color 0.2s;
+}
+.link-row.filled { border-color: var(--green); background: #eef7ef; }
+.link-row label {
+  display: block; font-weight: bold; color: var(--navy-deep); font-size: 13px;
+  margin-bottom: 6px; letter-spacing: 0.5px;
+}
+.link-row label .num {
+  display: inline-block; width: 24px; height: 24px; border-radius: 50%; background: var(--navy-deep);
+  color: var(--gold); text-align: center; line-height: 24px; margin-right: 8px; font-size: 12px;
+}
+.link-row.filled label .num { background: var(--green); color: white; }
+.link-row textarea {
+  width: 100%; border: 1px solid var(--muted); border-radius: 4px; padding: 8px 10px;
+  font-family: inherit; font-size: 14px; line-height: 1.5; resize: vertical; min-height: 54px;
+}
+.link-row textarea:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+.link-row .hint { color: var(--muted); font-size: 12px; font-style: italic; margin-top: 4px; }
+
+.progress-box {
+  background: var(--paper); border: 2px solid var(--gold); border-radius: 8px;
+  padding: 14px 18px; max-width: 820px; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.progress-ring-wrap {
+  position: relative; width: 60px; height: 60px; flex-shrink: 0;
+}
+.progress-ring {
+  transform: rotate(-90deg);
+}
+.progress-ring .bg { fill: none; stroke: #e5e5e5; stroke-width: 8; }
+.progress-ring .fg { fill: none; stroke: var(--gold); stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 0.4s; }
+.progress-ring-label {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-weight: bold; color: var(--navy-deep); font-size: 16px;
+}
+.save-status { color: var(--green); font-size: 13px; font-style: italic; }
+.save-status.saving { color: var(--amber); }
+.save-status.error { color: var(--red); }
+
+.submit-row {
+  max-width: 820px; margin-top: 16px; display: flex; gap: 12px; align-items: center;
+}
+.btn-primary {
+  padding: 12px 24px; background: var(--gold); color: var(--navy-deep); font-weight: bold;
+  border: none; border-radius: 6px; font-size: 15px; cursor: pointer;
+}
+.btn-primary:hover { background: var(--gold-soft); }
+.btn-primary:disabled { background: #cccccc; color: #888888; cursor: not-allowed; }
+.speaker-draft {
+  background: var(--paper); border: 2px dashed var(--gold); border-radius: 8px;
+  padding: 16px; margin-top: 14px; max-width: 820px; display: none;
+}
+.speaker-draft.visible { display: block; }
+.speaker-draft h3 { margin-top: 0; }
+.speaker-draft pre { background: var(--cream); padding: 12px; border-radius: 4px; white-space: pre-wrap; font-size: 13px; font-family: 'Georgia', serif; line-height: 1.5; }
+
+/* WAGER TAB */
+.wager-locked {
+  background: var(--paper); border: 2px dashed var(--muted); border-radius: 8px;
+  padding: 36px; text-align: center; color: var(--muted); max-width: 820px;
+}
+.wager-locked svg { opacity: 0.3; margin-bottom: 10px; }
+.wager-active {
+  background: var(--paper); border: 3px solid var(--gold); border-radius: 10px;
+  padding: 24px; max-width: 820px;
+}
+.stem-text {
+  background: var(--navy-deep); color: var(--cream); padding: 16px; border-radius: 6px;
+  font-size: 16px; line-height: 1.5;
+}
+.stem-text code { background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; }
+
+.choice-grid { margin: 14px 0; display: grid; gap: 8px; }
+.choice-row {
+  display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+  border: 2px solid var(--navy-soft); border-radius: 6px; cursor: pointer; background: var(--paper);
+}
+.choice-row:hover { background: var(--cream); }
+.choice-row.selected { border-color: var(--gold); background: #fdf8ed; }
+.choice-row input[type="radio"] { margin: 0; }
+.choice-row .letter { font-weight: bold; color: var(--navy-deep); width: 24px; }
+.choice-row .txt { flex: 1; font-size: 14px; }
+
+.wager-slider-box { margin: 18px 0; padding: 14px; background: var(--cream); border-radius: 6px; }
+.wager-slider-box label { font-weight: bold; color: var(--navy-deep); display: block; margin-bottom: 8px; }
+.wager-btns { display: flex; gap: 8px; }
+.wager-btn {
+  flex: 1; padding: 12px; border: 2px solid var(--navy-soft); background: var(--paper);
+  border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; color: var(--navy-deep);
+}
+.wager-btn.selected { border-color: var(--gold); background: var(--gold); color: var(--navy-deep); }
+
+.timer-box {
+  display: flex; align-items: center; gap: 12px; margin: 14px 0;
+  padding: 10px 14px; background: var(--navy-mid); color: var(--cream); border-radius: 6px;
+}
+.timer-val { font-family: 'Courier New', monospace; font-size: 22px; font-weight: bold; color: var(--gold); }
+.timer-val.warning { color: var(--red); animation: pulse 0.8s infinite; }
+
+.wager-result {
+  margin-top: 14px; padding: 14px; border-radius: 6px; background: var(--paper);
+  border-left: 4px solid var(--green); display: none;
+}
+.wager-result.visible { display: block; }
+.wager-result.loss { border-left-color: var(--red); }
+.wager-result h3 { margin: 0 0 6px 0; }
+.wager-result .delta { font-size: 26px; font-weight: bold; font-family: 'Georgia', serif; }
+.wager-result .delta.plus { color: var(--green); }
+.wager-result .delta.minus { color: var(--red); }
+
+.wager-history { margin-top: 24px; max-width: 820px; }
+.wager-history table { width: 100%; border-collapse: collapse; background: var(--paper); }
+.wager-history th, .wager-history td { padding: 8px 12px; border: 1px solid var(--navy-soft); text-align: left; font-size: 13px; }
+.wager-history th { background: var(--navy-deep); color: var(--gold); }
+.wager-history td.correct { color: var(--green); font-weight: bold; }
+.wager-history td.wrong { color: var(--red); font-weight: bold; }
+
+.xp-totals {
+  max-width: 820px; margin-top: 14px; padding: 14px 20px; background: var(--navy-deep); color: var(--gold);
+  border-radius: 8px; display: flex; justify-content: space-between; align-items: center;
+}
+.xp-totals .val { font-size: 28px; font-weight: bold; font-family: 'Georgia', serif; }
+
+/* VOTE MODAL (peer vote during share-outs) */
+.vote-overlay {
+  position: fixed; inset: 0; background: rgba(15,36,64,0.85); z-index: 500;
+  display: none; align-items: center; justify-content: center; padding: 20px;
+}
+.vote-overlay.active { display: flex; }
+.vote-card {
+  background: var(--paper); border: 3px solid var(--gold); border-radius: 10px;
+  max-width: 540px; padding: 24px; text-align: center;
+}
+.vote-card h2 { margin: 0 0 6px 0; }
+.vote-card p { color: var(--muted); margin: 0 0 16px 0; }
+.vote-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.vote-opt {
+  padding: 16px; border: 2px solid var(--navy-soft); border-radius: 6px;
+  background: var(--paper); cursor: pointer; font-weight: bold; color: var(--navy-deep);
+}
+.vote-opt:hover { background: var(--cream); border-color: var(--gold); }
+.vote-cast { color: var(--green); font-weight: bold; margin-top: 12px; font-size: 14px; }
+
+/* OFFLINE BANNER */
+#offline-banner {
+  display: none; background: var(--red); color: white; padding: 8px 20px;
+  text-align: center; font-weight: bold; font-size: 14px;
+}
+#offline-banner.visible { display: block; }
+
+/* UTILITY */
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     GATE: access code entry (shown until user enters code)
+     ============================================================ -->
+<div id="gate">
+  <div class="gate-card">
+    <h1>S11 Team Deck</h1>
+    <p>Enter your Session 11 access code.</p>
+    <input id="code-input" type="text" placeholder="S11-XXXXX-XXXX" autofocus autocomplete="off">
+    <button onclick="checkCode()">Enter</button>
+    <div id="code-err" class="gate-err hidden"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN APP (shown after access code + team selection)
+     ============================================================ -->
+<div id="app" class="hidden">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="brand">S11 &middot; The Sickle Cell Story</div>
+    <div class="meta">
+      <div>Team <strong id="top-team">--</strong></div>
+      <div class="guild-chip guild-A" id="top-guild">Guild --</div>
+      <div><span class="sync-dot" id="sync-dot"></span><span id="sync-label">Live</span></div>
+    </div>
+  </div>
+
+  <div id="offline-banner">Offline. Your answers are queued and will sync when wifi returns.</div>
+
+  <!-- PHASE TIMER BANNER (see ARCHITECTURE 5a; hidden when inactive) -->
+  <div id="timer-banner" style="display:none; background:var(--navy-mid); color:var(--cream); border-bottom:2px solid var(--gold); padding:10px 20px; font-family:'Inter',sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase;">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:14px;">
+      <div id="timer-banner-phase" style="font-weight:600;">Phase</div>
+      <div id="timer-banner-mmss" style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:700; color:var(--gold); letter-spacing:2px;">00:00</div>
+    </div>
+    <div id="timer-banner-bar" style="height:4px; background:rgba(255,255,255,0.10); margin-top:6px; border-radius:2px; overflow:hidden;">
+      <div id="timer-banner-fill" style="height:100%; width:100%; background:var(--gold); transition:width 0.25s linear, background 0.2s;"></div>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tabs">
+    <div class="tab active" data-tab="identity" onclick="switchTab('identity')">Identity</div>
+    <div class="tab" data-tab="dossier" onclick="switchTab('dossier')">Dossier</div>
+    <div class="tab" data-tab="sixlink" onclick="switchTab('sixlink')">Six-Link Builder <span class="badge" id="sixlink-badge">0/6</span></div>
+    <div class="tab locked" data-tab="wager" onclick="switchTab('wager')">Wager Round <span class="badge" id="wager-badge">-</span></div>
+  </div>
+
+  <!-- IDENTITY TAB -->
+  <div class="panel active" data-panel="identity">
+    <h2>Who you are this session</h2>
+    <div class="id-card">
+      <div class="id-team" id="id-team-circle">--</div>
+      <div class="id-info">
+        <h1 id="id-team-name">Team --</h1>
+        <p><strong>Guild:</strong> <span id="id-guild-name">--</span></p>
+        <p><strong>Disease:</strong> <span id="id-disease">--</span></p>
+        <p><strong>Gene:</strong> <span id="id-gene">--</span> <span id="id-inheritance"></span></p>
+        <p><strong>Battle-buddy:</strong> <span id="id-buddy">--</span></p>
+        <div id="id-spokesteam" class="spokesteam-badge hidden">SPOKESTEAM. You present for the Guild.</div>
+      </div>
+    </div>
+
+    <div class="phase-indicator">
+      <strong>Current phase:</strong> <span id="phase-text">Briefing</span>. <span id="phase-desc">Watch the intro video. Dossier becomes available in a moment.</span>
+    </div>
+  </div>
+
+  <!-- DOSSIER TAB -->
+  <div class="panel" data-panel="dossier">
+    <h2>Your Guild's disease dossier</h2>
+    <div class="dossier-content" id="dossier-body">Loading dossier...</div>
+  </div>
+
+  <!-- SIX-LINK BUILDER TAB -->
+  <div class="panel" data-panel="sixlink">
+    <h2>Six-Link Builder</h2>
+    <p style="max-width:820px;">Trace your disease from DNA to patient. Fill each box as a team. Your answers auto-save to the cloud as you type. When you're done, hit <em>Generate speaker draft</em> to produce a 45-second share-out script.</p>
+
+    <div class="progress-box">
+      <div>
+        <div style="font-weight:bold;color:var(--navy-deep);">Links complete: <span id="progress-count">0</span> / 6</div>
+        <div class="save-status" id="save-status">Not saved yet</div>
+      </div>
+      <div class="progress-ring-wrap">
+        <svg class="progress-ring" width="60" height="60">
+          <circle class="bg" cx="30" cy="30" r="26"></circle>
+          <circle class="fg" id="ring-fg" cx="30" cy="30" r="26" stroke-dasharray="163" stroke-dashoffset="163"></circle>
+        </svg>
+        <div class="progress-ring-label" id="ring-label">0%</div>
+      </div>
+    </div>
+
+    <div class="link-grid" id="link-grid">
+      <!-- Link rows injected by JS -->
+    </div>
+
+    <div class="submit-row">
+      <button class="btn-primary" id="btn-speaker-draft" onclick="generateSpeakerDraft()">Generate speaker draft</button>
+      <span style="color:var(--muted);font-size:13px;">Do this only once all six links + the equity question are filled.</span>
+    </div>
+    <div class="speaker-draft" id="speaker-draft">
+      <h3>45-second share-out draft</h3>
+      <pre id="speaker-draft-text"></pre>
+    </div>
+  </div>
+
+  <!-- WAGER TAB -->
+  <div class="panel" data-panel="wager">
+    <h2>Retrieval Duel #8: Wager Round</h2>
+    <div class="xp-totals">
+      <div>Session XP</div>
+      <div class="val" id="xp-val">0</div>
+    </div>
+
+    <div id="wager-body">
+      <div class="wager-locked">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+        <h3>Wager Round will open in a moment.</h3>
+        <p>When the instructor unlocks a stem, it appears here. You'll have 90 seconds to wager 5, 10, or 20 XP and pick an answer.</p>
+      </div>
+    </div>
+
+    <div class="wager-history" id="wager-history-wrap" style="display:none;">
+      <h3>Your wager history this session</h3>
+      <table>
+        <thead><tr><th>Stem</th><th>Wager</th><th>Your answer</th><th>Correct?</th><th>XP</th></tr></thead>
+        <tbody id="wager-history-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- TEAM PICKER (shown if only guild= was provided in URL) -->
+<div id="picker-overlay" class="hidden" style="position:fixed;inset:0;background:rgba(15,36,64,0.96);z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px;">
+  <div class="picker-card">
+    <h2>Pick your team</h2>
+    <p style="color:var(--muted);">Select your team number for Guild <span id="picker-guild">--</span>. This locks in for the rest of the session.</p>
+    <select id="picker-select"></select>
+    <button onclick="confirmPickedTeam()">Continue</button>
+  </div>
+</div>
+
+<!-- DOSSIER IMAGE LIGHTBOX -->
+<div id="lightbox-overlay" class="lightbox-overlay" onclick="hideLightbox()">
+  <span class="lightbox-close" onclick="hideLightbox()">&times;</span>
+  <img id="lightbox-img" class="lightbox-img" alt="">
+  <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+<!-- PEER VOTE OVERLAY -->
+<div id="vote-overlay" class="vote-overlay">
+  <div class="vote-card">
+    <h2 id="vote-question">Which link was hardest to map?</h2>
+    <p>Vote on the Guild currently presenting. One vote per team.</p>
+    <div class="vote-options">
+      <div class="vote-opt" onclick="castVote('dna')">DNA</div>
+      <div class="vote-opt" onclick="castVote('mrna')">mRNA</div>
+      <div class="vote-opt" onclick="castVote('protein')">Protein</div>
+      <div class="vote-opt" onclick="castVote('cell')">Cell</div>
+      <div class="vote-opt" onclick="castVote('tissue')">Tissue</div>
+      <div class="vote-opt" onclick="castVote('patient')">Patient</div>
+    </div>
+    <div id="vote-cast-confirm" class="vote-cast hidden">Vote cast. Thanks.</div>
+  </div>
+</div>
+
+<script type="module">
+/* ============================================================
+   S11 TEAM DECK. LOGIC.
+   ============================================================ */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, onValue, set, update, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+// --- FIREBASE: reuse the biol2-bb1 project ---
+const firebaseConfig = {
+  apiKey: "AIzaSyA0Xe_dnQ9-BpSWep5mRJr5WHvPQBRqo4E",
+  authDomain: "biol2-bb1.firebaseapp.com",
+  databaseURL: "https://biol2-bb1-default-rtdb.firebaseio.com",
+  projectId: "biol2-bb1",
+  storageBucket: "biol2-bb1.firebasestorage.app",
+  messagingSenderId: "987841003700",
+  appId: "1:987841003700:web:4637fc8b32e55b066957e1"
+};
+const fbApp = initializeApp(firebaseConfig);
+const db = getDatabase(fbApp);
+
+// --- SESSION CONFIG ---
+const ACCESS_CODE = "S11-SICKLE-0422";
+const ROOT = "s11";
+
+// --- TEAM ROSTER (guild -> [team1, team2, team3, team4] where team2 is spokesteam) ---
+const TEAMS = {
+  A: { name: "Cystic Fibrosis Collective", disease: "Cystic Fibrosis", gene: "CFTR", inheritance: "Autosomal Recessive", teams: ["A1","A2","A3","A4"], spokesteam: "A2" },
+  B: { name: "Huntington's Hunters",       disease: "Huntington's Disease", gene: "HTT", inheritance: "Autosomal Dominant", teams: ["B1","B2","B3","B4"], spokesteam: "B2" },
+  C: { name: "PKU Protocol",                disease: "Phenylketonuria", gene: "PAH", inheritance: "Autosomal Recessive", teams: ["C1","C2","C3","C4"], spokesteam: "C2" },
+  D: { name: "Marfan Mapmakers",            disease: "Marfan Syndrome", gene: "FBN1", inheritance: "Autosomal Dominant", teams: ["D1","D2","D3","D4"], spokesteam: "D2" }
+};
+
+// Battle-buddy pairs (within guild)
+const BUDDIES = {
+  A1:"A2", A2:"A1", A3:"A4", A4:"A3",
+  B1:"B2", B2:"B1", B3:"B4", B4:"B3",
+  C1:"C2", C2:"C1", C3:"C4", C4:"C3",
+  D1:"D2", D2:"D1", D3:"D4", D4:"D3"
+};
+
+// --- LINK SKELETON (prompts per link) ---
+const LINKS = [
+  { key: "dna",     label: "Link 1. DNA",     hint: "What is the exact genetic lesion? (mutation type + location)" },
+  { key: "mrna",    label: "Link 2. mRNA",    hint: "How does the mutation change the mRNA? (splicing, stability, codon change)" },
+  { key: "protein", label: "Link 3. Protein", hint: "What happens to the protein? (folding, activity, localization)" },
+  { key: "cell",    label: "Link 4. Cell",    hint: "What breaks at the cellular level? (which cell type, what function)" },
+  { key: "tissue",  label: "Link 5. Tissue",  hint: "How does that cell failure ripple into tissue or organ failure?" },
+  { key: "patient", label: "Link 6. Patient", hint: "What does the patient experience? (symptoms, prognosis)" },
+  { key: "equity",  label: "Equity question", hint: "Where does this disease intersect with access, bias, or research funding?" }
+];
+
+// --- DOSSIER CONTENT (4 diseases) ---
+const DOSSIERS = {
+  A: `<h1>Guild A &mdash; Cystic Fibrosis</h1>
+<p><span class="pill">Gene CFTR</span><span class="pill">Chr 7</span><span class="pill">Autosomal Recessive</span></p>
+<div class="dossier-gallery">
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/cf/01_cf_body_overview.png', 'Cystic fibrosis attacks every organ that makes mucus. Airways, pancreas, liver, gut, sweat glands, and reproductive tract are all damaged by thick, sticky mucus that normally should be thin and watery. (Blausen Medical 2014, CC-BY 3.0, Wikimedia Commons.)')">
+      <img src="assets/images/cf/01_cf_body_overview.png" alt="CF organ systems">
+    </div>
+    <div class="dossier-gallery-caption">Organs affected</div>
+    <div class="dossier-gallery-credit">Blausen Medical, CC-BY</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/cf/02_cftr_gene_chr7.svg', 'The CFTR gene sits on chromosome 7. The most common CF-causing mutation, called ΔF508 (pronounced delta-F508), is a 3-letter deletion inside this gene that removes the code for a single amino acid in the CFTR protein. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/cf/02_cftr_gene_chr7.svg" alt="CFTR on chromosome 7">
+    </div>
+    <div class="dossier-gallery-caption">CFTR gene on chromosome 7</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/cf/03_autosomal_recessive.svg', 'Autosomal recessive inheritance (you need two broken copies of the gene to get the disease). Two healthy-looking carrier parents, each with one broken copy, have a 1/4 chance of an affected child, a 1/2 chance of a carrier child, and a 1/4 chance of a child with two good copies. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/cf/03_autosomal_recessive.svg" alt="Autosomal recessive">
+    </div>
+    <div class="dossier-gallery-caption">Inheritance: recessive</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+</div>
+<h2>The mutation</h2>
+<p>The most common CF-causing mutation is <strong>&Delta;F508</strong>. A 3-letter deletion inside the CFTR gene removes the code for a single amino acid (phenylalanine) at position 508 of the protein. The CFTR protein ends up 1,479 amino acids long instead of 1,480, and that one missing piece makes it misfold.</p>
+<h2>Protein, cell, tissue</h2>
+<ul>
+  <li>The cell has a quality-control system that spots misfolded proteins and destroys them. &Delta;F508 CFTR gets caught and destroyed before it can ever reach the cell surface.</li>
+  <li>CFTR is a chloride channel. Without it, the cells lining the airways, pancreas, and sweat ducts cannot pump chloride ions out of the cell.</li>
+  <li>Water follows chloride. Without chloride flow, the mucus on these surfaces stays thick and sticky. Airways clog. Pancreatic ducts block. Sweat becomes about ten times saltier than normal (the classic diagnostic test).</li>
+</ul>
+<h2>Patient</h2>
+<p>Recurrent lung infections, chronic cough, and poor nutrition (the pancreas cannot release its digestive enzymes). Before 2019, people with CF often did not live past their 30s. A new class of drugs called CFTR modulators (brand name Trikafta) rescue the folding of &Delta;F508 CFTR so the protein can reach the cell surface. Life expectancy for patients with at least one &Delta;F508 copy of the gene is now climbing toward normal.</p>
+<h2>Equity</h2>
+<p>Trikafta works on &Delta;F508 and about 30 other CF-causing mutations. Patients with rare CF mutations (more common in non-European-ancestry populations) are left out. The drug costs about $300,000 per year in the US. Newborn screening coverage still varies by state.</p>`,
+
+  B: `<h1>Guild B &mdash; Huntington's Disease</h1>
+<p><span class="pill">Gene HTT</span><span class="pill">Chr 4</span><span class="pill">Autosomal Dominant</span></p>
+<div class="dossier-gallery">
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/hd/01_basal_ganglia.svg', 'A deep region inside the brain called the striatum (shown in blue) is the first tissue to die in Huntington disease. The striatum controls voluntary movement, so its loss explains why patients develop uncontrolled movements and trouble starting intentional ones. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/hd/01_basal_ganglia.svg" alt="Basal ganglia anatomy">
+    </div>
+    <div class="dossier-gallery-caption">Striatum (the target tissue)</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/hd/02_mhtt_inclusion_neuron.jpg', 'A brain cell (neuron) containing a dark clump of misfolded mutant huntingtin protein (arrow). These protein clumps inside neurons are a hallmark of Huntington disease. They build up over years and eventually kill the neuron. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/hd/02_mhtt_inclusion_neuron.jpg" alt="mHtt inclusion in neuron">
+    </div>
+    <div class="dossier-gallery-caption">Protein clump inside a neuron</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/hd/03_autosomal_dominant.svg', 'Autosomal dominant inheritance (just one broken copy of the gene is enough to cause the disease). An affected parent has a 1/2 chance of passing HD to each child, regardless of sex. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/hd/03_autosomal_dominant.svg" alt="Autosomal dominant">
+    </div>
+    <div class="dossier-gallery-caption">Inheritance: dominant</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+</div>
+<h2>The mutation</h2>
+<p>In a healthy HTT gene, a stretch near the beginning repeats the DNA triplet CAG somewhere between 10 and 35 times. Huntington's is caused by <strong>expansion of this stretch to 36 or more repeats</strong>. Because each CAG triplet codes for the amino acid glutamine, the mutant huntingtin protein ends up with an abnormally long run of glutamines at its front end.</p>
+<h2>Protein, cell, tissue</h2>
+<ul>
+  <li>The long glutamine run makes huntingtin misfold and clump together inside cells.</li>
+  <li>One kind of neuron in the striatum (called a medium spiny neuron) is especially vulnerable to these clumps and dies off over time.</li>
+  <li>As striatal neurons are lost, patients develop the movement and cognitive symptoms of the disease.</li>
+</ul>
+<h2>Patient</h2>
+<p>Symptoms usually start in mid-adulthood (ages 35 to 45): chorea (involuntary dance-like movements), cognitive decline, and psychiatric symptoms. There is no cure and the disease gets worse over time. A genetic quirk called <em>anticipation</em> means the CAG stretch tends to grow longer when the gene is passed from father to child, so children of affected fathers often develop symptoms earlier than their father did.</p>
+<h2>Equity</h2>
+<p>A genetic test can predict Huntington's decades before symptoms appear, but deciding whether to take it is heavy: it affects insurance, family planning, and mental health. Only about 15% of at-risk individuals choose to be tested. The US law GINA (Genetic Information Nondiscrimination Act, 2008) protects people from discrimination in health insurance and employment, but not in life insurance or long-term-care insurance.</p>`,
+
+  C: `<h1>Guild C &mdash; Phenylketonuria (PKU)</h1>
+<p><span class="pill">Gene PAH</span><span class="pill">Chr 12</span><span class="pill">Autosomal Recessive</span></p>
+<div class="dossier-gallery">
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/pku/01_phe_tyr_pathway.svg', 'The metabolic pathway that PKU breaks. Normally, the enzyme PAH converts the amino acid phenylalanine (Phe) into tyrosine (the step at the top of the diagram). In PKU, PAH is broken, so Phe builds up in the blood and spills into side-pathways that produce the chemicals detected in the urine of untreated patients. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/pku/01_phe_tyr_pathway.svg" alt="Phe-Tyr metabolic pathway">
+    </div>
+    <div class="dossier-gallery-caption">The broken step: PAH enzyme</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/pku/02_newborn_heelprick.jpg', 'Newborn screening for PKU. A few drops of blood from a heel-prick are blotted onto a filter card (called a Guthrie card) and tested for high phenylalanine. Developed in the 1960s and now universal in the US, this single test converted PKU from a cause of severe intellectual disability into a manageable dietary condition. It is the single greatest public-health success of human genetics. (Wikimedia Commons, public domain.)')">
+      <img src="assets/images/pku/02_newborn_heelprick.jpg" alt="Newborn heel prick">
+    </div>
+    <div class="dossier-gallery-caption">Newborn heel-prick screen</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/pku/03_phe_warning_label.jpg', 'The PKU warning on a diet soda. The sweetener aspartame breaks down into phenylalanine in the body, which a person with PKU cannot clear. Every aspartame-containing drink must carry this label because of PKU. A genetic disease affecting roughly 1 in 15,000 newborns has reshaped product labeling for everyone. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/pku/03_phe_warning_label.jpg" alt="Phenylalanine warning">
+    </div>
+    <div class="dossier-gallery-caption">Every diet soda in the world</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/pku/04_autosomal_recessive.svg', 'Autosomal recessive inheritance (you need two broken copies of the gene to get the disease). Two healthy-looking carrier parents, each with one broken copy, have a 1/4 chance of an affected child, a 1/2 chance of a carrier child, and a 1/4 chance of a child with two good copies. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/pku/04_autosomal_recessive.svg" alt="Autosomal recessive">
+    </div>
+    <div class="dossier-gallery-caption">Inheritance: recessive</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+</div>
+<h2>The mutation</h2>
+<p>The PAH gene codes for the enzyme phenylalanine hydroxylase (PAH for short), which converts the amino acid phenylalanine (Phe) into tyrosine. Hundreds of different PAH mutations can cause PKU. A common severe one, called <strong>R408W</strong>, swaps one amino acid (arginine for tryptophan) in the enzyme, which destabilizes it so it cannot do its job.</p>
+<h2>Protein, cell, tissue</h2>
+<ul>
+  <li>Broken PAH cannot clear Phe out of the blood after a protein-containing meal.</li>
+  <li>Liver cells (hepatocytes), which normally run this conversion, can no longer convert Phe to tyrosine, so Phe levels climb throughout the body.</li>
+  <li>Very high blood Phe crosses into the brain and is toxic to developing neurons. The damage is greatest in infants and young children, whose brains are still wiring up.</li>
+</ul>
+<h2>Patient</h2>
+<p>If untreated from birth: severe intellectual disability, seizures, and behavioral problems. If caught by newborn screening and managed with a strict low-Phe diet from infancy: near-normal cognition. PKU is the success story that made universal newborn screening standard of care worldwide.</p>
+<h2>Equity</h2>
+<p>The special low-Phe medical foods (formula and modified protein products) are expensive and are inconsistently covered by insurance. Many adults drift off the diet over time and face cognitive and mental-health consequences. Women with PKU who become pregnant need very strict dietary control to protect the fetus, because high maternal Phe can cause birth defects (maternal PKU syndrome) even if the fetus does not have PKU itself.</p>`,
+
+  D: `<h1>Guild D &mdash; Marfan Syndrome</h1>
+<p><span class="pill">Gene FBN1</span><span class="pill">Chr 15</span><span class="pill">Autosomal Dominant</span></p>
+<div class="dossier-gallery">
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/marfan/01_marfan_patient.jpeg', 'Clinical anchor. A patient with the classic Marfan body shape: tall, thin, with disproportionately long arms, legs, and fingers. This shape is caused by weakened connective tissue that lets the skeleton grow longer than it should. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/marfan/01_marfan_patient.jpeg" alt="Patient with Marfan habitus">
+    </div>
+    <div class="dossier-gallery-caption">The Marfan body shape</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons (CC-BY-SA)</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/marfan/02_thumb_sign.svg', 'Physical-exam anchor. The Steinberg thumb sign. When most people fold the thumb across the palm and close the fingers over it to make a fist, the thumb stays hidden inside. In Marfan patients the thumb is so long that the tip sticks out past the pinky edge of the fist. This is one of the quick screening checks used at the bedside. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/marfan/02_thumb_sign.svg" alt="Marfan thumb sign">
+    </div>
+    <div class="dossier-gallery-caption">Steinberg thumb sign</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons (CC-BY-SA)</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/marfan/03_myxomatous_aortic_valve.jpg', 'Pathology anchor. A thin slice of aortic valve tissue from a Marfan patient, viewed under the microscope. The scattered white spaces are NOT real holes. They are deposits of a jelly-like material that has replaced the strong elastic fibers that should hold the valve together (pathologists call this myxomatous change, where myxo- simply means mucus-like). Why it matters: in Marfan, the FBN1 gene is broken, so the supporting protein fibrillin-1 is missing. Without it, the valve and the wall of the aorta just above it become floppy and weak. The weakened aorta eventually tears (aortic dissection), which is the leading cause of death in Marfan syndrome. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/marfan/03_myxomatous_aortic_valve.jpg" alt="Myxomatous aortic valve pathology">
+    </div>
+    <div class="dossier-gallery-caption">Weakened valve tissue (microscope view)</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons (CC-BY-SA)</div>
+  </div>
+  <div class="dossier-gallery-cell">
+    <div class="dossier-gallery-frame" onclick="showLightbox('assets/images/marfan/04_autosomal_dominant.svg', 'Autosomal dominant inheritance (just one broken copy of the gene is enough to cause the disease). An affected parent has a 1/2 chance of passing Marfan to each child, regardless of sex. (Wikimedia Commons, CC-BY-SA.)')">
+      <img src="assets/images/marfan/04_autosomal_dominant.svg" alt="Autosomal dominant">
+    </div>
+    <div class="dossier-gallery-caption">Inheritance: dominant</div>
+    <div class="dossier-gallery-credit">Wikimedia Commons</div>
+  </div>
+</div>
+<h2>The mutation</h2>
+<p>The FBN1 gene codes for <strong>fibrillin-1</strong>, a large protein that assembles into microfibrils (thin, rope-like fibers of the connective tissue that give skin, blood vessels, and ligaments their stretch and strength). Most Marfan mutations are <em>missense</em> changes (a single amino acid swap in the protein). They act by a <em>dominant-negative</em> mechanism, meaning the bad copy of fibrillin-1 actively jams the assembly of fibers built from the good copy, so one bad gene is enough to cause disease.</p>
+<h2>Protein, cell, tissue</h2>
+<ul>
+  <li>Mutant fibrillin-1 disrupts the assembly of microfibrils in the protein scaffold that surrounds cells (the extracellular matrix).</li>
+  <li>Fibrillin-1 normally holds a growth signal called TGF-beta in check. When fibrillin-1 is missing, extra TGF-beta signaling is released, which further weakens the tissue.</li>
+  <li>Connective tissue throughout the body becomes weaker: the wall of the aorta (the body's largest artery), the fibers that suspend the lens of the eye, skeletal joints, and the walls of the air sacs in the lungs.</li>
+</ul>
+<h2>Patient</h2>
+<p>Tall stature with long limbs and long fingers (arachnodactyly literally means "spider-fingers"). The lens of the eye can slip out of place. A curved spine (scoliosis) is common. The lethal feature is <em>aortic root dilation and dissection</em>: the aorta balloons out where it leaves the heart (the aortic root), then tears open. Managed with blood-pressure drugs (beta-blockers and a class called ARBs, angiotensin-receptor blockers such as losartan); severe cases need preventive surgery to replace the aortic root before it ruptures.</p>
+<h2>Equity</h2>
+<p>Marfan is the classic "missed in tall athletes" disease. Tall basketball and volleyball players with undiagnosed Marfan are at high risk of aortic dissection on the court. Whether it gets caught in time often depends on access to a pediatric geneticist, which tracks family income and insurance.</p>`
+};
+
+// --- WAGER STEMS (5 of them) ---
+const WAGER_STEMS = [
+  { n: 1, text: "A template DNA strand reads 5'-CGCATCGTA-3'. What is the complementary strand, also written 5' to 3'?",
+    choices: { A: "5'-GCGTAGCAT-3'", B: "5'-TACGATGCG-3'", C: "5'-CGCAUCGUA-3'", D: "5'-ATGCTACGC-3'" },
+    correct: "B" },
+  { n: 2, text: "Two HbA/HbS carrier parents are expecting two children. What is the probability that at least one child has sickle cell disease (HbS/HbS)?",
+    choices: { A: "1/16", B: "7/16", C: "1/4", D: "1/2" },
+    correct: "B" },
+  { n: 3, text: "In sickle cell hemoglobin, glutamate (Glu) at position 6 of beta-globin is replaced by valine (Val). Why does this single substitution cause polymerization?",
+    choices: { A: "Valine is positively charged and attracts negatively charged neighbors.", B: "Valine is hydrophobic and creates a sticky surface that binds a hydrophobic pocket on another HbS molecule.", C: "Valine prevents iron from being loaded into heme.", D: "Valine destabilizes the alpha-helix of beta-globin." },
+    correct: "B" },
+  { n: 4, text: "Match each disease to its correct inheritance pattern.",
+    choices: {
+      A: "CF = AD. HD = AR. PKU = AD. SC = AR.",
+      B: "CF = AR. HD = AR. PKU = AD. SC = AR.",
+      C: "CF = AR. HD = AD. PKU = AR. SC = AR.",
+      D: "CF = AD. HD = AD. PKU = AD. SC = AR."
+    }, correct: "C" },
+  { n: 5, text: "Anaerobic glycolysis in a muscle cell produces two molecules of ATP and what final carbon-containing product per glucose consumed?",
+    choices: { A: "Pyruvate", B: "Lactate", C: "Acetyl-CoA", D: "Ethanol" },
+    correct: "B" }
+];
+
+// --- SESSION STATE (cached locally) ---
+let myTeamId = null;
+let myGuild = null;
+let sessionCode = null;
+let currentWagerStem = 0;
+let currentWagerLocked = false;
+let currentWagerRevealed = false;
+let currentPhase = "briefing";
+let saveTimeout = null;
+let wagerTimer = null;
+let wagerStartTs = 0;
+let hasSubmittedCurrentWager = false;
+let myWagerAmount = 10;
+let myWagerAnswer = null;
+let localSixLink = { dna:"", mrna:"", protein:"", cell:"", tissue:"", patient:"", equity:"" };
+let peerVoteActive = false;
+let peerVoteGuildVoted = null;
+
+// Phase timer state (see ARCHITECTURE 5a — reader-only)
+let cachedTimer = null;
+let serverOffsetMs = 0;
+
+// ============================================================
+// ACCESS CODE GATE
+// ============================================================
+window.checkCode = function() {
+  const entered = document.getElementById('code-input').value.trim().toUpperCase();
+  if (entered !== ACCESS_CODE) {
+    const errEl = document.getElementById('code-err');
+    errEl.textContent = "Code incorrect. Ask your instructor.";
+    errEl.classList.remove('hidden');
+    return;
+  }
+  sessionCode = entered;
+  document.getElementById('gate').style.display = 'none';
+  resolveTeamFromURL();
+};
+document.getElementById('code-input').addEventListener('keypress', e => {
+  if (e.key === 'Enter') window.checkCode();
+});
+
+// ============================================================
+// URL ROUTING: ?team=A1 (direct), ?guild=A (picker), or nothing (full picker)
+// ============================================================
+function resolveTeamFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const teamParam = params.get('team');
+  const guildParam = params.get('guild');
+
+  if (teamParam && BUDDIES[teamParam]) {
+    myTeamId = teamParam;
+    myGuild = teamParam[0];
+    startApp();
+    return;
+  }
+  if (guildParam && TEAMS[guildParam]) {
+    myGuild = guildParam;
+    showPicker(guildParam);
+    return;
+  }
+  // No hint at all: show full picker with all 16 teams
+  showPicker(null);
+}
+
+function showPicker(guild) {
+  const select = document.getElementById('picker-select');
+  select.innerHTML = "";
+  let teamList = [];
+  if (guild) {
+    teamList = TEAMS[guild].teams;
+    document.getElementById('picker-guild').textContent = guild;
+  } else {
+    for (const g of ["A","B","C","D"]) teamList = teamList.concat(TEAMS[g].teams);
+    document.getElementById('picker-guild').textContent = "[pick any]";
+  }
+  for (const tid of teamList) {
+    const opt = document.createElement('option');
+    opt.value = tid; opt.textContent = tid;
+    select.appendChild(opt);
+  }
+  document.getElementById('picker-overlay').classList.remove('hidden');
+}
+
+window.confirmPickedTeam = function() {
+  myTeamId = document.getElementById('picker-select').value;
+  myGuild = myTeamId[0];
+  document.getElementById('picker-overlay').classList.add('hidden');
+  startApp();
+};
+
+// ============================================================
+// APP BOOT
+// ============================================================
+function startApp() {
+  document.getElementById('app').classList.remove('hidden');
+  renderIdentity();
+  renderDossier();
+  renderLinkGrid();
+  subscribeTeam();
+  subscribeGlobal();
+  subscribePeerVote();
+  subscribePhaseTimer();
+}
+
+function renderIdentity() {
+  const guild = TEAMS[myGuild];
+  const isSpokes = (myTeamId === guild.spokesteam);
+  document.getElementById('top-team').textContent = myTeamId;
+  document.getElementById('top-guild').textContent = "Guild " + myGuild;
+  document.getElementById('top-guild').className = "guild-chip guild-" + myGuild;
+  document.getElementById('id-team-circle').textContent = myTeamId;
+  document.getElementById('id-team-circle').style.background = getComputedStyle(document.documentElement).getPropertyValue('--guild-' + myGuild);
+  document.getElementById('id-team-name').textContent = "Team " + myTeamId;
+  document.getElementById('id-guild-name').textContent = guild.name;
+  document.getElementById('id-disease').textContent = guild.disease;
+  document.getElementById('id-gene').textContent = guild.gene;
+  document.getElementById('id-inheritance').textContent = "(" + guild.inheritance + ")";
+  document.getElementById('id-buddy').textContent = BUDDIES[myTeamId];
+  if (isSpokes) document.getElementById('id-spokesteam').classList.remove('hidden');
+
+  // write identity to DB (idempotent)
+  const teamRef = ref(db, `${ROOT}/teams/${myTeamId}`);
+  update(teamRef, {
+    guild: myGuild, disease: guild.disease, spokesteam: isSpokes
+  }).catch(e => console.warn("Identity write failed:", e));
+}
+
+function renderDossier() {
+  document.getElementById('dossier-body').innerHTML = DOSSIERS[myGuild];
+}
+
+// ============================================================
+// LIGHTBOX (enlarge dossier images on click)
+// ============================================================
+window.showLightbox = function(src, caption) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-caption').textContent = caption || '';
+  document.getElementById('lightbox-overlay').classList.add('active');
+};
+window.hideLightbox = function() {
+  document.getElementById('lightbox-overlay').classList.remove('active');
+};
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') window.hideLightbox();
+});
+
+function renderLinkGrid() {
+  const grid = document.getElementById('link-grid');
+  grid.innerHTML = LINKS.map(l => `
+    <div class="link-row" data-key="${l.key}">
+      <label><span class="num">${l.key === 'equity' ? 'E' : LINKS.indexOf(l) + 1}</span>${l.label}</label>
+      <textarea data-key="${l.key}" placeholder="Type your team's answer here."></textarea>
+      <div class="hint">${l.hint}</div>
+    </div>
+  `).join("");
+  grid.querySelectorAll('textarea').forEach(t => {
+    t.addEventListener('input', onLinkInput);
+  });
+}
+
+// ============================================================
+// TABS
+// ============================================================
+window.switchTab = function(name) {
+  const tab = document.querySelector(`.tab[data-tab="${name}"]`);
+  if (tab.classList.contains('locked')) return;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.panel[data-panel="${name}"]`).classList.add('active');
+};
+
+// ============================================================
+// SIX-LINK BUILDER: auto-save
+// ============================================================
+function onLinkInput(e) {
+  const key = e.target.dataset.key;
+  const val = e.target.value;
+  localSixLink[key] = val;
+  e.target.closest('.link-row').classList.toggle('filled', val.trim().length > 0);
+  updateProgress();
+  scheduleSave();
+}
+
+function updateProgress() {
+  const filled = LINKS.filter(l => l.key !== 'equity' && localSixLink[l.key].trim().length > 0).length;
+  const pct = Math.round((filled / 6) * 100);
+  document.getElementById('progress-count').textContent = filled;
+  document.getElementById('sixlink-badge').textContent = `${filled}/6`;
+  document.getElementById('ring-label').textContent = pct + "%";
+  const circ = 163;
+  document.getElementById('ring-fg').setAttribute('stroke-dashoffset', circ - (circ * filled / 6));
+}
+
+function scheduleSave() {
+  const st = document.getElementById('save-status');
+  st.textContent = "Saving...";
+  st.className = "save-status saving";
+  clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(commitSave, 400);
+}
+
+async function commitSave() {
+  const st = document.getElementById('save-status');
+  try {
+    const teamRef = ref(db, `${ROOT}/teams/${myTeamId}/sixLink`);
+    await update(teamRef, { ...localSixLink, lastUpdate: serverTimestamp() });
+    st.textContent = "Saved " + new Date().toLocaleTimeString();
+    st.className = "save-status";
+  } catch (err) {
+    st.textContent = "Save failed: " + err.message;
+    st.className = "save-status error";
+  }
+}
+
+window.generateSpeakerDraft = function() {
+  const teamData = TEAMS[myGuild];
+  const lines = [
+    `Team ${myTeamId}, Guild ${myGuild}. Disease: ${teamData.disease}. Gene: ${teamData.gene} (${teamData.inheritance}).`,
+    ``,
+    `Starting at the DNA level: ${localSixLink.dna || "[DNA link not filled]"}`,
+    ``,
+    `At the mRNA step: ${localSixLink.mrna || "[mRNA link not filled]"}`,
+    ``,
+    `The protein consequence: ${localSixLink.protein || "[Protein link not filled]"}`,
+    ``,
+    `At the cellular level: ${localSixLink.cell || "[Cell link not filled]"}`,
+    ``,
+    `This ripples into tissue or organ failure: ${localSixLink.tissue || "[Tissue link not filled]"}`,
+    ``,
+    `For the patient: ${localSixLink.patient || "[Patient link not filled]"}`,
+    ``,
+    `One equity issue: ${localSixLink.equity || "[Equity question not filled]"}`
+  ].join("\n");
+  document.getElementById('speaker-draft-text').textContent = lines;
+  document.getElementById('speaker-draft').classList.add('visible');
+};
+
+// ============================================================
+// FIREBASE SUBSCRIPTIONS
+// ============================================================
+function subscribeTeam() {
+  const teamRef = ref(db, `${ROOT}/teams/${myTeamId}`);
+  onValue(teamRef, snap => {
+    const val = snap.val() || {};
+    // Sync sixLink from DB if it changed externally (rare but safe)
+    if (val.sixLink) {
+      for (const k of Object.keys(localSixLink)) {
+        if (typeof val.sixLink[k] === 'string' && val.sixLink[k] !== localSixLink[k]) {
+          const ta = document.querySelector(`textarea[data-key="${k}"]`);
+          // Only overwrite if user is NOT currently focused on this field
+          if (ta && document.activeElement !== ta) {
+            ta.value = val.sixLink[k];
+            localSixLink[k] = val.sixLink[k];
+            ta.closest('.link-row').classList.toggle('filled', val.sixLink[k].trim().length > 0);
+          }
+        }
+      }
+      updateProgress();
+    }
+    // XP
+    if (typeof val.xp === 'number') {
+      document.getElementById('xp-val').textContent = val.xp;
+    }
+    // Wager history
+    if (val.wagers) renderWagerHistory(val.wagers);
+  }, err => {
+    setOffline();
+  });
+}
+
+function subscribeGlobal() {
+  const globalRef = ref(db, `${ROOT}/global`);
+  onValue(globalRef, snap => {
+    const g = snap.val() || {};
+    setOnline();
+    currentPhase = g.phase || "briefing";
+    currentWagerStem = g.wagerStem || 0;
+    currentWagerLocked = !!g.wagerLocked;
+    currentWagerRevealed = !!g.wagerRevealed;
+    updatePhaseUI();
+    updateWagerTabLock();
+    updateWagerPanel();
+  });
+}
+
+function subscribePeerVote() {
+  const voteRef = ref(db, `${ROOT}/global/peerVote`);
+  onValue(voteRef, snap => {
+    const pv = snap.val() || {};
+    if (pv.active && !peerVoteActive) {
+      peerVoteActive = true;
+      peerVoteGuildVoted = null;
+      document.getElementById('vote-overlay').classList.add('active');
+      document.getElementById('vote-cast-confirm').classList.add('hidden');
+    } else if (!pv.active && peerVoteActive) {
+      peerVoteActive = false;
+      document.getElementById('vote-overlay').classList.remove('active');
+    }
+  });
+}
+
+// ============================================================
+// PHASE TIMER (reader only; see ARCHITECTURE Section 5a)
+// ============================================================
+function subscribePhaseTimer() {
+  onValue(ref(db, '.info/serverTimeOffset'), snap => {
+    serverOffsetMs = snap.val() || 0;
+  });
+  onValue(ref(db, `${ROOT}/global/phaseTimer`), snap => {
+    cachedTimer = snap.val() || null;
+    renderTimerBanner();
+  });
+  setInterval(renderTimerBanner, 250);
+}
+
+function _fmtMMSS(totalSec) {
+  const s = Math.max(0, Math.floor(totalSec));
+  return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+}
+
+function renderTimerBanner() {
+  const banner = document.getElementById('timer-banner');
+  if (!banner) return;
+  const t = cachedTimer;
+  if (!t || !t.active) { banner.style.display = 'none'; return; }
+
+  banner.style.display = 'block';
+  const phaseEl = document.getElementById('timer-banner-phase');
+  const mmssEl  = document.getElementById('timer-banner-mmss');
+  const fillEl  = document.getElementById('timer-banner-fill');
+
+  const dur = Number(t.durationSec) || 0;
+  let remaining;
+  if (t.paused) {
+    remaining = Math.max(0, Number(t.pausedRemaining) || 0);
+  } else {
+    const serverNowMs = Date.now() + serverOffsetMs;
+    const startedAt = Number(t.startedAtMs) || serverNowMs;
+    const elapsedSec = (serverNowMs - startedAt) / 1000;
+    remaining = Math.max(0, dur - elapsedSec);
+  }
+
+  phaseEl.textContent = (t.paused ? 'PAUSED — ' : '') + (t.phaseName || 'Phase');
+  mmssEl.textContent  = _fmtMMSS(remaining);
+
+  // Progress bar: fill shrinks left-to-right as time runs out
+  const pct = dur > 0 ? Math.max(0, Math.min(100, (remaining / dur) * 100)) : 0;
+  fillEl.style.width = pct + '%';
+
+  // Color thresholds
+  if (t.paused) {
+    mmssEl.style.color = '#B8B8B8';
+    fillEl.style.background = '#888';
+    mmssEl.style.animation = 'none';
+  } else if (remaining <= 10) {
+    mmssEl.style.color = '#FF6B6B';
+    fillEl.style.background = '#E74C3C';
+    mmssEl.style.animation = 'tdTimerPulse 1s ease-in-out infinite';
+  } else if (remaining <= 30) {
+    mmssEl.style.color = '#F3C15A';
+    fillEl.style.background = '#F39C12';
+    mmssEl.style.animation = 'none';
+  } else {
+    mmssEl.style.color = 'var(--gold)';
+    fillEl.style.background = 'var(--gold)';
+    mmssEl.style.animation = 'none';
+  }
+}
+
+// Pulse keyframe (scoped local name to avoid collisions)
+(function(){
+  const st = document.createElement('style');
+  st.textContent = '@keyframes tdTimerPulse { 0%,100%{opacity:1} 50%{opacity:0.45} }';
+  document.head.appendChild(st);
+})();
+
+function setOnline() {
+  document.getElementById('sync-dot').classList.remove('offline');
+  document.getElementById('sync-label').textContent = "Live";
+  document.getElementById('offline-banner').classList.remove('visible');
+}
+function setOffline() {
+  document.getElementById('sync-dot').classList.add('offline');
+  document.getElementById('sync-label').textContent = "Offline";
+  document.getElementById('offline-banner').classList.add('visible');
+}
+
+// ============================================================
+// PHASE UI
+// ============================================================
+function updatePhaseUI() {
+  const descs = {
+    briefing:  "Watch the intro video. Dossier becomes available in a moment.",
+    linkbuild: "Open the Six-Link Builder. Fill all six links plus the equity question.",
+    shareout:  "Spokesteam presents for each Guild. Vote when the peer-vote prompt appears.",
+    wager:     "Wager Round is live. Head to the Wager tab.",
+    close:     "Session wrap. Leaderboard is final."
+  };
+  document.getElementById('phase-text').textContent = currentPhase.charAt(0).toUpperCase() + currentPhase.slice(1);
+  document.getElementById('phase-desc').textContent = descs[currentPhase] || "";
+}
+
+function updateWagerTabLock() {
+  const tab = document.querySelector('.tab[data-tab="wager"]');
+  const badge = document.getElementById('wager-badge');
+  if (currentPhase === 'wager' || currentWagerStem > 0) {
+    tab.classList.remove('locked');
+    badge.textContent = currentWagerStem > 0 ? `Stem ${currentWagerStem}` : 'Ready';
+  } else {
+    tab.classList.add('locked');
+    badge.textContent = '-';
+  }
+}
+
+// ============================================================
+// WAGER PANEL
+// ============================================================
+function updateWagerPanel() {
+  const body = document.getElementById('wager-body');
+  const historyWrap = document.getElementById('wager-history-wrap');
+  historyWrap.style.display = currentWagerStem > 0 ? 'block' : 'none';
+
+  if (currentWagerStem === 0) {
+    body.innerHTML = `
+      <div class="wager-locked">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+        <h3>Wager Round will open in a moment.</h3>
+        <p>When the instructor unlocks a stem, it appears here. You'll have 90 seconds to wager 5, 10, or 20 XP and pick an answer.</p>
+      </div>`;
+    return;
+  }
+
+  const stem = WAGER_STEMS[currentWagerStem - 1];
+  if (currentWagerRevealed) {
+    // Show result
+    renderWagerResult(stem);
+    return;
+  }
+
+  hasSubmittedCurrentWager = false;
+  myWagerAnswer = null;
+  myWagerAmount = 10;
+
+  body.innerHTML = `
+    <div class="wager-active">
+      <h3>Stem ${stem.n} of 5</h3>
+      <div class="stem-text">${stem.text}</div>
+      <div class="choice-grid" id="choice-grid">
+        ${Object.entries(stem.choices).map(([letter, txt]) => `
+          <label class="choice-row" data-letter="${letter}">
+            <input type="radio" name="wager-ans" value="${letter}">
+            <span class="letter">${letter}.</span>
+            <span class="txt">${txt}</span>
+          </label>`).join("")}
+      </div>
+      <div class="wager-slider-box">
+        <label>Your wager</label>
+        <div class="wager-btns">
+          <div class="wager-btn" data-amt="5" onclick="setWager(5)">5 XP</div>
+          <div class="wager-btn selected" data-amt="10" onclick="setWager(10)">10 XP</div>
+          <div class="wager-btn" data-amt="20" onclick="setWager(20)">20 XP</div>
+        </div>
+        <p style="color:var(--muted);font-size:12px;margin:8px 0 0 0;">Wager X. Right answer = +X XP. Wrong answer = -X XP.</p>
+      </div>
+      <div class="timer-box"><div>Time left:</div><div class="timer-val" id="timer-val">1:30</div></div>
+      <button class="btn-primary" id="btn-submit-wager" onclick="submitWager()">Submit wager</button>
+      <p id="submit-status" style="color:var(--muted);font-size:13px;margin-top:8px;"></p>
+    </div>`;
+
+  document.querySelectorAll('.choice-row').forEach(row => {
+    row.addEventListener('click', () => {
+      document.querySelectorAll('.choice-row').forEach(r => r.classList.remove('selected'));
+      row.classList.add('selected');
+      row.querySelector('input').checked = true;
+      myWagerAnswer = row.dataset.letter;
+    });
+  });
+
+  startWagerTimer();
+}
+
+window.setWager = function(amt) {
+  myWagerAmount = amt;
+  document.querySelectorAll('.wager-btn').forEach(b => b.classList.toggle('selected', Number(b.dataset.amt) === amt));
+};
+
+function startWagerTimer() {
+  const el = document.getElementById('timer-val');
+  const duration = 90; // seconds
+  wagerStartTs = Date.now();
+  if (wagerTimer) clearInterval(wagerTimer);
+  wagerTimer = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - wagerStartTs) / 1000);
+    const left = Math.max(0, duration - elapsed);
+    const m = Math.floor(left / 60);
+    const s = left % 60;
+    if (el) {
+      el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+      el.classList.toggle('warning', left <= 15);
+    }
+    if (left <= 0) clearInterval(wagerTimer);
+  }, 200);
+}
+
+window.submitWager = async function() {
+  if (hasSubmittedCurrentWager) return;
+  if (!myWagerAnswer) {
+    document.getElementById('submit-status').textContent = "Pick an answer first.";
+    return;
+  }
+  hasSubmittedCurrentWager = true;
+  try {
+    const wagerRef = ref(db, `${ROOT}/teams/${myTeamId}/wagers/${currentWagerStem}`);
+    await set(wagerRef, { amount: myWagerAmount, answer: myWagerAnswer, ts: Date.now() });
+    document.getElementById('submit-status').textContent = `Submitted. ${myWagerAmount} XP wagered on ${myWagerAnswer}.`;
+    document.getElementById('submit-status').style.color = "var(--green)";
+    document.getElementById('btn-submit-wager').disabled = true;
+  } catch (err) {
+    hasSubmittedCurrentWager = false;
+    document.getElementById('submit-status').textContent = "Submit failed. Try again.";
+    document.getElementById('submit-status').style.color = "var(--red)";
+  }
+};
+
+function renderWagerResult(stem) {
+  const body = document.getElementById('wager-body');
+  const teamRef = ref(db, `${ROOT}/teams/${myTeamId}/wagers/${currentWagerStem}`);
+  onValue(teamRef, snap => {
+    const w = snap.val() || {};
+    const correct = w.correct;
+    const delta = w.delta || 0;
+    const answer = w.answer || "(none)";
+    body.innerHTML = `
+      <div class="wager-active">
+        <h3>Stem ${stem.n} of 5 &middot; Revealed</h3>
+        <div class="stem-text">${stem.text}</div>
+        <p style="margin-top:10px;"><strong>Correct answer: ${stem.correct}.</strong></p>
+        <p><strong>Your answer: ${answer}.</strong></p>
+        <div class="wager-result visible ${correct === false ? 'loss' : ''}">
+          <h3>${correct === true ? "Correct" : correct === false ? "Wrong" : "Not scored"}</h3>
+          <div class="delta ${delta >= 0 ? 'plus' : 'minus'}">${delta >= 0 ? '+' : ''}${delta} XP</div>
+          ${w.firstCorrect ? '<p style="color:var(--gold);font-weight:bold;margin:8px 0 0 0;">+5 Speed bonus: fastest correct team.</p>' : ''}
+        </div>
+      </div>`;
+  }, { onlyOnce: true });
+}
+
+function renderWagerHistory(wagers) {
+  const body = document.getElementById('wager-history-body');
+  const rows = [];
+  for (let n = 1; n <= 5; n++) {
+    const w = wagers[n];
+    if (!w) { rows.push(`<tr><td>${n}</td><td colspan="4" style="color:var(--muted);font-style:italic;">Not yet played</td></tr>`); continue; }
+    const correctCell = (w.correct === true) ? '<td class="correct">correct</td>' : (w.correct === false) ? '<td class="wrong">wrong</td>' : '<td style="color:var(--muted);">pending</td>';
+    const deltaCell = (typeof w.delta === 'number') ? (w.delta >= 0 ? `+${w.delta}` : `${w.delta}`) : "-";
+    rows.push(`<tr><td>${n}</td><td>${w.amount || "-"}</td><td>${w.answer || "-"}</td>${correctCell}<td>${deltaCell}</td></tr>`);
+  }
+  body.innerHTML = rows.join("");
+}
+
+// ============================================================
+// PEER VOTE
+// ============================================================
+window.castVote = async function(linkKey) {
+  if (peerVoteGuildVoted) return;
+  try {
+    // Find the guild currently being voted on from the global ref
+    const voteRef = ref(db, `${ROOT}/global/peerVote`);
+    onValue(voteRef, snap => {
+      const pv = snap.val() || {};
+      if (!pv.guildBeingVoted) return;
+      peerVoteGuildVoted = pv.guildBeingVoted;
+      const myVoteRef = ref(db, `${ROOT}/votes/${peerVoteGuildVoted}/voter_${myTeamId}`);
+      set(myVoteRef, linkKey).then(() => {
+        document.getElementById('vote-cast-confirm').classList.remove('hidden');
+      });
+    }, { onlyOnce: true });
+  } catch (err) {
+    alert("Vote failed: " + err.message);
+  }
+};
+
+// ============================================================
+// CONNECTION MONITOR
+// ============================================================
+window.addEventListener('online', setOnline);
+window.addEventListener('offline', setOffline);
+
+</script>
+</body>
+</html>
