@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>S11 Leaderboard — The Sickle Cell Story</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy-deep: #060E1F;
+    --navy: #0F2440;
+    --navy-mid: #1A3A5C;
+    --panel: #152A45;
+    --gold: #D4A853;
+    --gold-bright: #F0C876;
+    --gold-glow: rgba(212, 168, 83, 0.4);
+    --ice: #CADCFC;
+    --white: #FFFFFF;
+    --green: #2ECC71;
+    --red: #E74C3C;
+    --muted: #6B7D99;
+    --guild-a: #4A90D9;
+    --guild-b: #9B59B6;
+    --guild-c: #27AE60;
+    --guild-d: #E67E22;
+  }
+
+  html, body {
+    background: var(--navy-deep);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  body {
+    /* Subtle radial glow from center */
+    background-image:
+      radial-gradient(ellipse at 50% 30%, rgba(26, 58, 92, 0.5) 0%, var(--navy-deep) 70%);
+    padding: 32px 48px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ============== HEADER ============== */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  .title {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--gold);
+    font-size: 42px;
+    letter-spacing: 0.08em;
+    line-height: 1;
+  }
+  .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--ice);
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+  .phase-display {
+    text-align: right;
+  }
+  .phase-display .label {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .phase-display .value {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--gold-bright);
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 6px;
+  }
+  .phase-display .wager-active {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  /* ============== MAIN BOARD ============== */
+  .board {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    overflow: hidden;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    background: var(--panel);
+    border-left: 4px solid var(--navy-mid);
+    position: relative;
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    min-height: 52px;
+  }
+  .bar-row.a { border-left-color: var(--guild-a); }
+  .bar-row.b { border-left-color: var(--guild-b); }
+  .bar-row.c { border-left-color: var(--guild-c); }
+  .bar-row.d { border-left-color: var(--guild-d); }
+
+  /* Rank badge */
+  .rank {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--muted);
+    min-width: 38px;
+    text-align: center;
+  }
+  .bar-row.top1 .rank { color: var(--gold-bright); font-size: 28px; }
+  .bar-row.top2 .rank { color: var(--gold); font-size: 24px; }
+  .bar-row.top3 .rank { color: var(--gold); font-size: 22px; }
+
+  .tid {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    min-width: 60px;
+  }
+  .bar-row.top1 .tid { color: var(--gold-bright); font-size: 28px; }
+
+  /* Bar track + fill */
+  .track {
+    flex: 1;
+    height: 22px;
+    background: var(--navy-mid);
+    position: relative;
+    overflow: hidden;
+  }
+  .fill {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    background: var(--gold);
+    transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .bar-row.a .fill { background: var(--guild-a); }
+  .bar-row.b .fill { background: var(--guild-b); }
+  .bar-row.c .fill { background: var(--guild-c); }
+  .bar-row.d .fill { background: var(--guild-d); }
+
+  /* Shimmer on top-1 only */
+  .bar-row.top1 .fill::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    animation: shimmer 2.2s infinite;
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .xp {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white);
+    min-width: 90px;
+    text-align: right;
+  }
+  .bar-row.top1 .xp { color: var(--gold-bright); font-size: 26px; }
+
+  .speed-icon {
+    font-size: 18px;
+    color: var(--gold-bright);
+    margin-left: 4px;
+    display: inline-block;
+  }
+  .spoke-icon {
+    font-size: 10px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 2px 5px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-left: 2px;
+    vertical-align: middle;
+  }
+
+  /* Offline indicator */
+  .bar-row.offline { opacity: 0.35; }
+  .bar-row.offline::after {
+    content: "OFFLINE";
+    position: absolute;
+    top: 6px; right: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+
+  /* Flash animation when XP changes */
+  @keyframes flashWin {
+    0% { background: var(--panel); }
+    30% { background: rgba(46, 204, 113, 0.55); box-shadow: 0 0 28px rgba(46, 204, 113, 0.6); }
+    100% { background: var(--panel); }
+  }
+  @keyframes flashLose {
+    0% { background: var(--panel); }
+    30% { background: rgba(231, 76, 60, 0.5); box-shadow: 0 0 28px rgba(231, 76, 60, 0.5); }
+    100% { background: var(--panel); }
+  }
+  .bar-row.flash-win { animation: flashWin 1.2s ease-out; }
+  .bar-row.flash-lose { animation: flashLose 1.2s ease-out; }
+
+  /* ============== FOOTER ============== */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--navy-mid);
+    margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  footer .legend {
+    display: flex;
+    gap: 20px;
+  }
+  footer .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend .swatch {
+    display: inline-block;
+    width: 14px; height: 14px;
+  }
+  .legend .swatch.a { background: var(--guild-a); }
+  .legend .swatch.b { background: var(--guild-b); }
+  .legend .swatch.c { background: var(--guild-c); }
+  .legend .swatch.d { background: var(--guild-d); }
+
+  /* ============== VOTE OVERLAY (during peer-vote phase) ============== */
+  #vote-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 14, 31, 0.96);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: 40px;
+  }
+  #vote-overlay.active { display: flex; }
+  #vote-overlay .vh {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--gold-bright);
+    font-size: 52px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  #vote-overlay .vsub {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--ice);
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  #vote-overlay .vgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    width: 100%;
+  }
+  .v-item {
+    background: var(--panel);
+    border: 2px solid var(--navy-mid);
+    padding: 22px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-height: 160px;
+    position: relative;
+  }
+  .v-item .vlabel {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 26px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .v-item .vcount {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    color: var(--white);
+    font-size: 70px;
+    line-height: 1;
+  }
+  .v-item .vmeter {
+    width: 100%;
+    height: 14px;
+    background: var(--navy-mid);
+    position: relative;
+    overflow: hidden;
+  }
+  .v-item .vmfill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    background: var(--gold);
+    transition: width 0.6s ease-out;
+  }
+  .v-item.winner { border-color: var(--gold-bright); background: rgba(212, 168, 83, 0.18); }
+  .v-item.winner .vcount { color: var(--gold-bright); }
+
+  /* ============== STEM REVEAL BANNER ============== */
+  #reveal-banner {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(140%);
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 18px 56px;
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 40;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  }
+  #reveal-banner.show { transform: translateX(-50%) translateY(0); }
+
+  /* ============== CLOSE SCREEN ============== */
+  #close-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--navy-deep);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+    padding: 60px;
+    text-align: center;
+  }
+  #close-screen.active { display: flex; }
+  #close-screen .thesis {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--gold);
+    font-size: 120px;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+  #close-screen .thesis .small {
+    font-size: 60%;
+    color: var(--gold-bright);
+  }
+  #close-screen .top-teams {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .podium {
+    text-align: center;
+    min-width: 200px;
+  }
+  .podium .rank-label {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .podium .podium-tid {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--gold-bright);
+    font-size: 72px;
+    letter-spacing: 0.08em;
+    margin: 8px 0;
+  }
+  .podium .podium-xp {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .podium.p1 .podium-tid { font-size: 100px; }
+  .podium.p2 .podium-tid, .podium.p3 .podium-tid { opacity: 0.75; }
+
+  /* ============== STATUS DOT ============== */
+  .status-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--green);
+    display: inline-block;
+    margin-right: 6px;
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s infinite;
+  }
+  .status-dot.err { background: var(--red); box-shadow: 0 0 8px var(--red); }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="title">S11 &middot; THE SICKLE CELL STORY</div>
+    <div class="subtitle">Live Leaderboard &middot; Wed Apr 22, 2026</div>
+  </div>
+  <div class="phase-display">
+    <div class="label">
+      <span id="status-dot" class="status-dot"></span>
+      <span id="status-text">LIVE</span>
+    </div>
+    <div id="phase-value" class="value">BRIEFING</div>
+    <div id="wager-active-line" class="wager-active">&nbsp;</div>
+  </div>
+</header>
+
+<!-- GIANT PHASE TIMER (see ARCHITECTURE 5a; top-anchored, hidden when inactive) -->
+<div id="lb-timer-panel" style="display:none; margin:20px auto 28px; max-width:1200px; background:linear-gradient(180deg, rgba(26,58,92,0.55) 0%, rgba(15,36,64,0.55) 100%); border:2px solid var(--gold); border-radius:12px; padding:28px 40px; text-align:center; box-shadow:0 0 40px rgba(212,168,83,0.25);">
+  <div id="lb-timer-phase" style="font-family:'Cinzel',serif; font-size:28px; font-weight:600; color:var(--gold-bright); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:8px;">Phase</div>
+  <div id="lb-timer-mmss" style="font-family:'JetBrains Mono',monospace; font-size:148px; font-weight:700; color:var(--gold); line-height:1; letter-spacing:6px; text-shadow:0 0 30px rgba(240,200,118,0.35);">00:00</div>
+  <div id="lb-timer-bar" style="height:10px; background:rgba(255,255,255,0.08); margin-top:18px; border-radius:5px; overflow:hidden;">
+    <div id="lb-timer-fill" style="height:100%; width:100%; background:var(--gold); transition:width 0.25s linear, background 0.2s;"></div>
+  </div>
+</div>
+
+<div class="board">
+  <div id="col-left"></div>
+  <div id="col-right"></div>
+</div>
+
+<footer>
+  <div class="legend">
+    <span><span class="swatch a"></span>Guild A &middot; Cystic Fibrosis</span>
+    <span><span class="swatch b"></span>Guild B &middot; Huntington's</span>
+    <span><span class="swatch c"></span>Guild C &middot; PKU</span>
+    <span><span class="swatch d"></span>Guild D &middot; Marfan</span>
+  </div>
+  <div>BIOL 2 &middot; The Crucible &middot; Spring 2026</div>
+</footer>
+
+<!-- ========= PEER VOTE OVERLAY ========= -->
+<div id="vote-overlay">
+  <div class="vh" id="vote-header">WHICH LINK WAS THE HARDEST?</div>
+  <div class="vsub" id="vote-sub">VOTING ON GUILD A</div>
+  <div class="vgrid" id="vote-grid"></div>
+</div>
+
+<!-- ========= REVEAL BANNER ========= -->
+<div id="reveal-banner">Stem revealed</div>
+
+<!-- ========= CLOSE / PODIUM SCREEN ========= -->
+<div id="close-screen">
+  <div class="thesis">MUTATION <span class="small">IS</span> CONTEXT</div>
+  <div class="top-teams" id="podium"></div>
+</div>
+
+<!-- =================== SCRIPT =================== -->
+<script type="module">
+/* S11 Leaderboard — read-only Firebase mirror for the Apple TV projector. */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA0Xe_dnQ9-BpSWep5mRJr5WHvPQBRqo4E",
+  authDomain: "biol2-bb1.firebaseapp.com",
+  databaseURL: "https://biol2-bb1-default-rtdb.firebaseio.com",
+  projectId: "biol2-bb1",
+  storageBucket: "biol2-bb1.firebasestorage.app",
+  messagingSenderId: "987841003700",
+  appId: "1:987841003700:web:4637fc8b32e55b066957e1"
+};
+const fbApp = initializeApp(firebaseConfig);
+const db = getDatabase(fbApp);
+
+const ROOT = "s11";
+
+const TEAMS = {
+  A: { teams: ["A1","A2","A3","A4"], spokesteam: "A2" },
+  B: { teams: ["B1","B2","B3","B4"], spokesteam: "B2" },
+  C: { teams: ["C1","C2","C3","C4"], spokesteam: "C2" },
+  D: { teams: ["D1","D2","D3","D4"], spokesteam: "D2" }
+};
+const ALL_TEAMS = [];
+const GUILD_OF = {};
+const SPOKE_OF = {};
+for (const g of ["A","B","C","D"]) {
+  for (const t of TEAMS[g].teams) {
+    ALL_TEAMS.push(t);
+    GUILD_OF[t] = g;
+    SPOKE_OF[t] = (TEAMS[g].spokesteam === t);
+  }
+}
+
+// Cached state
+let cachedTeams = {};
+let cachedGlobal = {};
+let cachedVotes = {};
+let cachedTimer = null;
+let serverOffsetMs = 0;
+let prevXp = {};            // previous XP per team, for flash detection
+let prevRevealState = {};   // previous revealed state per stem
+
+for (const t of ALL_TEAMS) prevXp[t] = 0;
+
+// ============================================================
+// BUILD INITIAL DOM (16 rows split across two columns)
+// ============================================================
+function buildRows() {
+  const left = document.getElementById('col-left');
+  const right = document.getElementById('col-right');
+  // Distribute all 16 teams across two columns, 8 each, in a deterministic initial order
+  // (will be re-sorted live). We use: left = top 8 by rank, right = next 8.
+  for (let i = 0; i < 16; i++) {
+    const side = i < 8 ? left : right;
+    const row = document.createElement('div');
+    row.className = 'bar-row';
+    row.id = `slot-${i}`;
+    row.innerHTML = `
+      <div class="rank"></div>
+      <div class="tid"></div>
+      <div class="track"><div class="fill"></div></div>
+      <div class="xp"></div>
+    `;
+    side.appendChild(row);
+  }
+}
+buildRows();
+
+// ============================================================
+// RENDER — paint the 16 ranked rows
+// ============================================================
+function render() {
+  // Sort teams by XP descending (tiebreak: team ID ascending)
+  const sorted = ALL_TEAMS.slice().map(tid => {
+    const t = cachedTeams[tid] || {};
+    return {
+      tid,
+      xp: t.xp || 0,
+      offline: !!t.offline,
+      firstCorrect: !!t.firstCorrect,
+      wagers: t.wagers || {}
+    };
+  }).sort((a,b) => {
+    if (b.xp !== a.xp) return b.xp - a.xp;
+    return a.tid.localeCompare(b.tid);
+  });
+
+  const maxXp = Math.max(50, ...sorted.map(s => s.xp));
+
+  sorted.forEach((s, i) => {
+    const slot = document.getElementById(`slot-${i}`);
+    const g = GUILD_OF[s.tid];
+    slot.className = `bar-row ${g.toLowerCase()}`;
+    if (i === 0) slot.classList.add('top1');
+    else if (i === 1) slot.classList.add('top2');
+    else if (i === 2) slot.classList.add('top3');
+    if (s.offline) slot.classList.add('offline');
+
+    const rankEl = slot.querySelector('.rank');
+    const tidEl = slot.querySelector('.tid');
+    const fillEl = slot.querySelector('.fill');
+    const xpEl = slot.querySelector('.xp');
+
+    rankEl.textContent = `${i + 1}`;
+    tidEl.innerHTML = `${s.tid}${SPOKE_OF[s.tid] ? '<span class="spoke-icon">SPOKE</span>' : ''}`;
+    const pct = Math.max(2, (s.xp / maxXp) * 100);
+    fillEl.style.width = `${pct}%`;
+    xpEl.innerHTML = `${s.xp} XP${s.firstCorrect ? '<span class="speed-icon">⚡</span>' : ''}`;
+  });
+}
+
+// ============================================================
+// FLASH — detect XP deltas and animate the row at its NEW rank
+// ============================================================
+function flashDelta() {
+  const changed = [];
+  for (const tid of ALL_TEAMS) {
+    const cur = (cachedTeams[tid]?.xp) || 0;
+    if (cur !== prevXp[tid]) {
+      changed.push({ tid, delta: cur - prevXp[tid] });
+      prevXp[tid] = cur;
+    }
+  }
+  if (!changed.length) return;
+
+  // Which row in the sorted output is this team on right now?
+  const sorted = ALL_TEAMS.slice()
+    .map(t => ({ tid: t, xp: (cachedTeams[t]?.xp) || 0 }))
+    .sort((a,b) => {
+      if (b.xp !== a.xp) return b.xp - a.xp;
+      return a.tid.localeCompare(b.tid);
+    });
+  const rankByTid = {};
+  sorted.forEach((s, i) => rankByTid[s.tid] = i);
+
+  for (const c of changed) {
+    const slot = document.getElementById(`slot-${rankByTid[c.tid]}`);
+    if (!slot) continue;
+    slot.classList.remove('flash-win','flash-lose');
+    // Force reflow so animation restarts
+    void slot.offsetWidth;
+    if (c.delta > 0) slot.classList.add('flash-win');
+    else slot.classList.add('flash-lose');
+  }
+}
+
+// ============================================================
+// FIREBASE SUBSCRIPTIONS
+// ============================================================
+const statusDot = document.getElementById('status-dot');
+const statusText = document.getElementById('status-text');
+
+onValue(ref(db, `${ROOT}/teams`), snap => {
+  cachedTeams = snap.val() || {};
+  render();
+  flashDelta();
+  statusDot.classList.remove('err');
+  statusText.textContent = 'LIVE';
+}, err => {
+  statusDot.classList.add('err');
+  statusText.textContent = 'NO SYNC';
+});
+
+onValue(ref(db, `${ROOT}/global`), snap => {
+  cachedGlobal = snap.val() || {};
+  renderGlobal();
+}, err => {
+  statusDot.classList.add('err');
+  statusText.textContent = 'NO SYNC';
+});
+
+onValue(ref(db, `${ROOT}/votes`), snap => {
+  cachedVotes = snap.val() || {};
+  renderVoteOverlay();
+});
+
+// ============================================================
+// PHASE TIMER (reader only; see ARCHITECTURE Section 5a)
+// ============================================================
+onValue(ref(db, '.info/serverTimeOffset'), snap => {
+  serverOffsetMs = snap.val() || 0;
+});
+onValue(ref(db, `${ROOT}/global/phaseTimer`), snap => {
+  cachedTimer = snap.val() || null;
+  renderGiantTimer();
+});
+setInterval(renderGiantTimer, 250);
+
+function _lbFmtMMSS(totalSec) {
+  const s = Math.max(0, Math.floor(totalSec));
+  return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+}
+
+function renderGiantTimer() {
+  const panel = document.getElementById('lb-timer-panel');
+  if (!panel) return;
+  const t = cachedTimer;
+  if (!t || !t.active) { panel.style.display = 'none'; return; }
+
+  panel.style.display = 'block';
+  const phaseEl = document.getElementById('lb-timer-phase');
+  const mmssEl  = document.getElementById('lb-timer-mmss');
+  const fillEl  = document.getElementById('lb-timer-fill');
+
+  const dur = Number(t.durationSec) || 0;
+  let remaining;
+  if (t.paused) {
+    remaining = Math.max(0, Number(t.pausedRemaining) || 0);
+  } else {
+    const serverNowMs = Date.now() + serverOffsetMs;
+    const startedAt = Number(t.startedAtMs) || serverNowMs;
+    const elapsedSec = (serverNowMs - startedAt) / 1000;
+    remaining = Math.max(0, dur - elapsedSec);
+  }
+
+  phaseEl.textContent = (t.paused ? 'PAUSED — ' : '') + (t.phaseName || 'Phase');
+  mmssEl.textContent  = _lbFmtMMSS(remaining);
+  const pct = dur > 0 ? Math.max(0, Math.min(100, (remaining / dur) * 100)) : 0;
+  fillEl.style.width = pct + '%';
+
+  if (t.paused) {
+    mmssEl.style.color = '#8A8A8A';
+    fillEl.style.background = '#666';
+    mmssEl.style.animation = 'none';
+  } else if (remaining <= 10) {
+    mmssEl.style.color = '#FF6B6B';
+    fillEl.style.background = '#E74C3C';
+    mmssEl.style.animation = 'lbTimerPulse 1s ease-in-out infinite';
+  } else if (remaining <= 30) {
+    mmssEl.style.color = '#F3C15A';
+    fillEl.style.background = '#F39C12';
+    mmssEl.style.animation = 'none';
+  } else {
+    mmssEl.style.color = 'var(--gold)';
+    fillEl.style.background = 'var(--gold)';
+    mmssEl.style.animation = 'none';
+  }
+}
+
+(function(){
+  const st = document.createElement('style');
+  st.textContent = '@keyframes lbTimerPulse { 0%,100%{opacity:1} 50%{opacity:0.4} }';
+  document.head.appendChild(st);
+})();
+
+// ============================================================
+// RENDER — GLOBAL STATE (phase, wager banner, close screen)
+// ============================================================
+const phaseValue = document.getElementById('phase-value');
+const wagerLine = document.getElementById('wager-active-line');
+const voteOverlay = document.getElementById('vote-overlay');
+const closeScreen = document.getElementById('close-screen');
+const revealBanner = document.getElementById('reveal-banner');
+
+function renderGlobal() {
+  const phase = cachedGlobal.phase || 'briefing';
+  phaseValue.textContent = phase.toUpperCase();
+
+  // Wager status line
+  const cs = cachedGlobal.wagerStem || 0;
+  if (cs === 0) {
+    wagerLine.textContent = '\u00A0';
+  } else if (cachedGlobal.wagerRevealed) {
+    wagerLine.textContent = `STEM ${cs} \u00B7 REVEALED`;
+    triggerRevealBanner(cs);
+  } else if (cachedGlobal.wagerLocked) {
+    wagerLine.textContent = `STEM ${cs} \u00B7 LOCKED`;
+  } else {
+    wagerLine.textContent = `STEM ${cs} \u00B7 LIVE`;
+  }
+
+  // Peer vote overlay
+  const pv = cachedGlobal.peerVote || {};
+  voteOverlay.classList.toggle('active', !!pv.active);
+  if (pv.active) renderVoteOverlay();
+
+  // Close screen
+  closeScreen.classList.toggle('active', phase === 'close');
+  if (phase === 'close') renderPodium();
+}
+
+// ============================================================
+// REVEAL BANNER — briefly show when a stem transitions to revealed
+// ============================================================
+function triggerRevealBanner(stemN) {
+  const key = `stem-${stemN}-revealed`;
+  if (prevRevealState[key]) return;
+  prevRevealState[key] = true;
+  revealBanner.textContent = `Stem ${stemN} revealed`;
+  revealBanner.classList.add('show');
+  setTimeout(() => revealBanner.classList.remove('show'), 2400);
+}
+// When wagerStem changes back to unrevealed, clear the marker so next reveal fires
+setInterval(() => {
+  const cs = cachedGlobal.wagerStem || 0;
+  if (cs > 0 && !cachedGlobal.wagerRevealed) {
+    delete prevRevealState[`stem-${cs}-revealed`];
+  }
+}, 1500);
+
+// ============================================================
+// PEER VOTE OVERLAY
+// ============================================================
+const voteSub = document.getElementById('vote-sub');
+const voteGrid = document.getElementById('vote-grid');
+
+function renderVoteOverlay() {
+  const pv = cachedGlobal.peerVote || {};
+  if (!pv.active || !pv.guildBeingVoted) return;
+  const g = pv.guildBeingVoted;
+  voteSub.textContent = `VOTING ON GUILD ${g}`;
+  const votes = cachedVotes?.[g] || {};
+  const tallies = { dna:0, mrna:0, protein:0, cell:0, tissue:0, patient:0 };
+  for (const voter in votes) {
+    const link = votes[voter];
+    if (link in tallies) tallies[link]++;
+  }
+  const total = Math.max(1, Object.values(tallies).reduce((a,b)=>a+b,0));
+  const maxCount = Math.max(1, ...Object.values(tallies));
+  const winners = Object.keys(tallies).filter(k => tallies[k] === maxCount && maxCount > 0);
+
+  const labels = {
+    dna: 'DNA', mrna: 'mRNA', protein: 'Protein',
+    cell: 'Cell', tissue: 'Tissue', patient: 'Patient'
+  };
+  voteGrid.innerHTML = '';
+  for (const k of ['dna','mrna','protein','cell','tissue','patient']) {
+    const pct = (tallies[k] / maxCount) * 100;
+    const isWinner = winners.includes(k) && total > 1;
+    const el = document.createElement('div');
+    el.className = `v-item${isWinner ? ' winner' : ''}`;
+    el.innerHTML = `
+      <div class="vlabel">${labels[k]}</div>
+      <div class="vcount">${tallies[k]}</div>
+      <div class="vmeter"><div class="vmfill" style="width:${pct}%"></div></div>
+    `;
+    voteGrid.appendChild(el);
+  }
+}
+
+// ============================================================
+// CLOSE-SCREEN PODIUM
+// ============================================================
+const podium = document.getElementById('podium');
+function renderPodium() {
+  const sorted = ALL_TEAMS.slice()
+    .map(tid => ({ tid, xp: (cachedTeams[tid]?.xp) || 0 }))
+    .sort((a,b) => b.xp - a.xp || a.tid.localeCompare(b.tid));
+  const top3 = sorted.slice(0, 3);
+  const order = [top3[1], top3[0], top3[2]]; // #2 left, #1 center, #3 right
+  const ranks = ['2', '1', '3'];
+  const classes = ['p2', 'p1', 'p3'];
+  podium.innerHTML = '';
+  for (let i = 0; i < 3; i++) {
+    const t = order[i];
+    if (!t) continue;
+    const d = document.createElement('div');
+    d.className = `podium ${classes[i]}`;
+    d.innerHTML = `
+      <div class="rank-label">Rank #${ranks[i]}</div>
+      <div class="podium-tid">${t.tid}</div>
+      <div class="podium-xp">${t.xp} XP</div>
+    `;
+    podium.appendChild(d);
+  }
+}
+
+// ============================================================
+// Initial paint
+// ============================================================
+render();
+
+</script>
+
+</body>
+</html>
