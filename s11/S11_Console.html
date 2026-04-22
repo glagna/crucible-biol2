@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1400">
+<title>S11 Console — The Sickle Cell Story (Instructor)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy-deep: #0A1628;
+    --navy: #0F2440;
+    --navy-mid: #1A3A5C;
+    --panel: #152A45;
+    --panel-light: #1D3555;
+    --gold: #D4A853;
+    --gold-dim: #A8843F;
+    --gold-bright: #F0C876;
+    --ice: #CADCFC;
+    --white: #FFFFFF;
+    --green: #2ECC71;
+    --green-dark: #1E8449;
+    --yellow: #F1C40F;
+    --red: #E74C3C;
+    --red-dark: #C0392B;
+    --muted: #6B7D99;
+    --guild-a: #4A90D9;
+    --guild-b: #9B59B6;
+    --guild-c: #27AE60;
+    --guild-d: #E67E22;
+  }
+
+  body {
+    background: var(--navy-deep);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  .wrap { max-width: 1360px; margin: 0 auto; }
+
+  /* ============== ACCESS GATE ============== */
+  #gate {
+    position: fixed; inset: 0;
+    background: var(--navy-deep);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1000;
+  }
+  .gate-card {
+    background: var(--navy);
+    border-top: 4px solid var(--gold);
+    padding: 44px 52px;
+    max-width: 440px; width: 92%;
+    text-align: center;
+  }
+  .gate-card .brand {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--gold);
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .gate-card .sub {
+    color: var(--ice);
+    font-size: 13px;
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .gate-card h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--white);
+    font-size: 17px;
+    margin-bottom: 16px;
+    letter-spacing: 0.08em;
+  }
+  .gate-card input {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--panel);
+    border: 1px solid var(--navy-mid);
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .gate-card input:focus { outline: 2px solid var(--gold); }
+  .gate-card button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+  }
+  .gate-card button:hover { background: var(--gold-bright); }
+  .gate-err {
+    color: var(--red);
+    font-size: 12px;
+    margin-top: 10px;
+    min-height: 16px;
+  }
+
+  /* ============== HEADER ============== */
+  header.top {
+    background: var(--navy);
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid var(--navy-mid);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  header.top .brand {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 0.1em;
+  }
+  header.top .brand .sub {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    color: var(--ice);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+  header.top .meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .phase-pill {
+    background: var(--panel);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .sync-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 6px 12px;
+    background: var(--panel);
+    border: 1px solid var(--navy-mid);
+    color: var(--green);
+  }
+  .sync-pill.err { color: var(--red); border-color: var(--red-dark); }
+
+  /* ============== LAYOUT ============== */
+  .grid-main {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 18px;
+  }
+
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--navy-mid);
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .panel-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gold-dim);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .panel-title .badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ice);
+    letter-spacing: 0.1em;
+  }
+
+  /* ============== BUTTONS ============== */
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 11px 14px;
+    background: var(--navy-mid);
+    color: var(--white);
+    border: 1px solid var(--navy-mid);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.12s;
+    text-align: left;
+  }
+  .btn:hover:not(:disabled) { background: var(--panel-light); border-color: var(--gold-dim); }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn.primary {
+    background: var(--gold);
+    color: var(--navy-deep);
+    border-color: var(--gold);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+  .btn.primary:hover:not(:disabled) { background: var(--gold-bright); }
+  .btn.danger {
+    background: var(--red-dark);
+    color: var(--white);
+    border-color: var(--red-dark);
+    text-align: center;
+  }
+  .btn.danger:hover:not(:disabled) { background: var(--red); }
+  .btn.active {
+    background: var(--gold);
+    color: var(--navy-deep);
+    border-color: var(--gold);
+    font-weight: 700;
+  }
+  .btn-row { display: flex; gap: 8px; margin-top: 8px; }
+  .btn-row .btn { flex: 1; text-align: center; }
+
+  .btn-small {
+    padding: 7px 10px;
+    font-size: 12px;
+    background: var(--navy-mid);
+    color: var(--white);
+    border: 1px solid var(--navy-mid);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+  .btn-small:hover:not(:disabled) { background: var(--panel-light); border-color: var(--gold-dim); }
+  .btn-small:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* ============== PHASE CONTROL ============== */
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* ============== WAGER CONTROL ============== */
+  .wager-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .wager-slot {
+    background: var(--navy-mid);
+    padding: 10px 6px;
+    text-align: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative;
+  }
+  .wager-slot .n {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--ice);
+  }
+  .wager-slot .st {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .wager-slot.active {
+    background: var(--gold);
+    border-color: var(--gold-bright);
+  }
+  .wager-slot.active .n { color: var(--navy-deep); }
+  .wager-slot.active .st { color: var(--navy); font-weight: 700; }
+  .wager-slot.locked .st { color: var(--yellow); }
+  .wager-slot.revealed { background: var(--green-dark); border-color: var(--green); }
+  .wager-slot.revealed .n { color: var(--white); }
+  .wager-slot.revealed .st { color: var(--white); }
+
+  .wager-status {
+    background: var(--navy-mid);
+    padding: 12px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ice);
+    margin-bottom: 10px;
+    min-height: 54px;
+    line-height: 1.6;
+  }
+  .wager-status strong { color: var(--gold); }
+  .wager-status .correct { color: var(--green); font-weight: 700; }
+  .wager-controls { display: flex; gap: 6px; }
+  .wager-controls .btn { font-size: 12px; padding: 10px 8px; text-align: center; }
+
+  /* ============== PEER VOTE ============== */
+  .vote-guild-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .vote-guild-btn {
+    padding: 9px 6px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 13px;
+    background: var(--navy-mid);
+    color: var(--white);
+    border: 1px solid var(--navy-mid);
+    cursor: pointer;
+    letter-spacing: 0.1em;
+  }
+  .vote-guild-btn.a.active { background: var(--guild-a); border-color: var(--guild-a); }
+  .vote-guild-btn.b.active { background: var(--guild-b); border-color: var(--guild-b); }
+  .vote-guild-btn.c.active { background: var(--guild-c); border-color: var(--guild-c); }
+  .vote-guild-btn.d.active { background: var(--guild-d); border-color: var(--guild-d); }
+  .vote-guild-btn:hover:not(.active) { border-color: var(--gold-dim); }
+  .vote-tallies {
+    background: var(--navy-mid);
+    padding: 10px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .vote-tallies .row { display: flex; justify-content: space-between; }
+  .vote-tallies .lbl { color: var(--ice); text-transform: uppercase; letter-spacing: 0.08em; }
+  .vote-tallies .ct { color: var(--gold); font-weight: 700; }
+
+  /* ============== TEAM TILES ============== */
+  .tile-group {
+    margin-bottom: 18px;
+  }
+  .tile-group-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    color: var(--navy-deep);
+  }
+  .tile-group.a .tile-group-title { background: var(--guild-a); }
+  .tile-group.b .tile-group-title { background: var(--guild-b); }
+  .tile-group.c .tile-group-title { background: var(--guild-c); }
+  .tile-group.d .tile-group-title { background: var(--guild-d); }
+
+  .tile-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .tile {
+    background: var(--panel);
+    border: 1px solid var(--navy-mid);
+    padding: 10px 12px;
+    position: relative;
+  }
+  .tile.a { border-left: 3px solid var(--guild-a); }
+  .tile.b { border-left: 3px solid var(--guild-b); }
+  .tile.c { border-left: 3px solid var(--guild-c); }
+  .tile.d { border-left: 3px solid var(--guild-d); }
+
+  .tile .hd {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .tile .tid {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 16px;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+  }
+  .tile .xp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ice);
+    font-weight: 700;
+  }
+  .tile .xp.pos { color: var(--green); }
+  .tile .xp.neg { color: var(--red); }
+  .tile .spokeflag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    margin-left: 4px;
+    letter-spacing: 0.08em;
+    vertical-align: middle;
+  }
+  .tile .links {
+    display: flex; gap: 2px;
+    margin-bottom: 6px;
+  }
+  .tile .link-dot {
+    flex: 1;
+    height: 6px;
+    background: var(--navy-mid);
+  }
+  .tile .link-dot.filled { background: var(--gold); }
+  .tile .wstate {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    min-height: 14px;
+  }
+  .tile .wstate.submitted { color: var(--yellow); }
+  .tile .wstate.correct { color: var(--green); }
+  .tile .wstate.wrong { color: var(--red); }
+  .tile .wstate.speed::before { content: "⚡ "; color: var(--gold-bright); }
+  .tile.offline { opacity: 0.4; }
+  .tile.offline::after {
+    content: "OFFLINE";
+    position: absolute;
+    top: 6px; right: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+
+  /* ============== LATE-ENTRY FORM ============== */
+  .lateform {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 8px;
+    align-items: end;
+  }
+  .lateform label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .lateform select,
+  .lateform input {
+    width: 100%;
+    background: var(--navy-mid);
+    border: 1px solid var(--navy-mid);
+    color: var(--white);
+    padding: 8px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .lateform select:focus, .lateform input:focus { outline: 1px solid var(--gold); }
+
+  /* ============== LOG ============== */
+  #log {
+    max-height: 180px;
+    overflow-y: auto;
+    background: var(--navy-deep);
+    border: 1px solid var(--navy-mid);
+    padding: 8px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  #log .entry { display: flex; gap: 10px; }
+  #log .ts { color: var(--muted); min-width: 68px; }
+  #log .ok { color: var(--green); }
+  #log .err { color: var(--red); }
+  #log .info { color: var(--ice); }
+  #log .warn { color: var(--yellow); }
+
+  footer {
+    text-align: center;
+    padding: 18px 0 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  footer code { color: var(--ice); }
+
+  @media (max-width: 1100px) {
+    .grid-main { grid-template-columns: 1fr; }
+    .tile-row { grid-template-columns: repeat(2, 1fr); }
+    .lateform { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== ACCESS GATE =================== -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="brand">BIOL 2 · The Crucible</div>
+    <div class="sub">S11 Instructor Console &mdash; Wed Apr 22, 2026</div>
+    <h2>Access code</h2>
+    <input id="gate-input" type="text" placeholder="S11-SICKLE-0422" autocomplete="off">
+    <button id="gate-btn">Enter</button>
+    <div id="gate-err" class="gate-err"></div>
+  </div>
+</div>
+
+<!-- =================== APP =================== -->
+<div class="wrap" id="app" style="display:none;">
+
+<header class="top">
+  <div class="brand">
+    S11 CONSOLE
+    <span class="sub">THE SICKLE CELL STORY · MUTATION IS CONTEXT</span>
+  </div>
+  <div class="meta">
+    <div id="phase-pill" class="phase-pill">PHASE: BRIEFING</div>
+    <div id="sync-pill" class="sync-pill">Connecting&hellip;</div>
+  </div>
+</header>
+
+<div class="grid-main">
+
+<!-- ============== LEFT COLUMN ============== -->
+<div>
+
+  <!-- PHASE CONTROL -->
+  <div class="panel">
+    <div class="panel-title">Phase Control <span class="badge">1-6</span></div>
+    <div class="phase-grid">
+      <button class="btn" data-phase="briefing" onclick="pushPhase('briefing')">1. Briefing</button>
+      <button class="btn" data-phase="linkbuild" onclick="pushPhase('linkbuild')">2. Link Build</button>
+      <button class="btn" data-phase="shareout" onclick="pushPhase('shareout')">3. Share-Out</button>
+      <button class="btn" data-phase="wager" onclick="pushPhase('wager')">4. Wager Round</button>
+      <button class="btn" data-phase="close" onclick="pushPhase('close')">5. Close</button>
+      <button class="btn danger" onclick="resetAll()">RESET ALL</button>
+    </div>
+    <div style="margin-top:10px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--muted); letter-spacing:0.08em; line-height:1.5;">
+      Keys: 1-5 phases · Shift+1..5 unlock stem · L lock · V reveal · X reset
+    </div>
+  </div>
+
+  <!-- WAGER CONTROL -->
+  <div class="panel">
+    <div class="panel-title">Wager Round <span class="badge" id="wager-phase-badge">STEM 0</span></div>
+    <div class="wager-grid">
+      <div class="wager-slot" data-stem="1" onclick="unlockStem(1)"><div class="n">1</div><div class="st">Tap</div></div>
+      <div class="wager-slot" data-stem="2" onclick="unlockStem(2)"><div class="n">2</div><div class="st">Tap</div></div>
+      <div class="wager-slot" data-stem="3" onclick="unlockStem(3)"><div class="n">3</div><div class="st">Tap</div></div>
+      <div class="wager-slot" data-stem="4" onclick="unlockStem(4)"><div class="n">4</div><div class="st">Tap</div></div>
+      <div class="wager-slot" data-stem="5" onclick="unlockStem(5)"><div class="n">5</div><div class="st">Tap</div></div>
+    </div>
+    <div class="wager-status" id="wager-status">
+      No stem active. Tap a number to unlock.
+    </div>
+    <div class="wager-controls">
+      <button class="btn" id="btn-lock" onclick="lockStem()" disabled>Lock</button>
+      <button class="btn primary" id="btn-reveal" onclick="revealStem()" disabled>Reveal + Score</button>
+    </div>
+  </div>
+
+  <!-- PEER VOTE -->
+  <div class="panel">
+    <div class="panel-title">Peer Vote <span class="badge">SHARE-OUT</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:8px; letter-spacing:0.06em;">
+      Ask the room: "Which link was the hardest?" Select a Guild to open voting.
+    </div>
+    <div class="vote-guild-row">
+      <button class="vote-guild-btn a" id="vote-a" onclick="triggerVote('A')">A</button>
+      <button class="vote-guild-btn b" id="vote-b" onclick="triggerVote('B')">B</button>
+      <button class="vote-guild-btn c" id="vote-c" onclick="triggerVote('C')">C</button>
+      <button class="vote-guild-btn d" id="vote-d" onclick="triggerVote('D')">D</button>
+    </div>
+    <div class="vote-tallies" id="vote-tallies">
+      <div class="row"><span class="lbl">No active vote</span><span class="ct">&mdash;</span></div>
+    </div>
+    <div style="margin-top:8px;">
+      <button class="btn" onclick="closeVote()" id="btn-close-vote" disabled>Close vote</button>
+    </div>
+  </div>
+
+  <!-- TIMER CONTROLS -->
+  <div class="panel">
+    <div class="panel-title">Phase Timer <span class="badge" id="timer-status-badge">IDLE</span></div>
+    <div id="timer-display" style="font-family:'JetBrains Mono',monospace; font-size:40px; font-weight:700; color:var(--gold-bright); text-align:center; padding:14px 0 6px; letter-spacing:2px; line-height:1;">--:--</div>
+    <div id="timer-phase-label" style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); text-align:center; padding-bottom:10px; letter-spacing:0.08em; text-transform:uppercase; min-height:14px;">no active timer</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-bottom:8px;">
+      <button class="btn primary" onclick="startTimer('Trace Your Disease', 14*60)" title="Shortcut: T">Trace 14:00</button>
+      <button class="btn primary" onclick="startTimer('Guild Share-Out', 3*60)" title="Shortcut: S">Share 3:00</button>
+      <button class="btn" onclick="startTimer('Jackpot Bell Stem', 90)" title="Shortcut: J">JB 1:30</button>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+      <button class="btn" id="btn-timer-pause" onclick="togglePauseTimer()" title="Shortcut: Space">Pause</button>
+      <button class="btn danger" onclick="resetTimer(true)" title="Shortcut: R">Reset</button>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:0.06em; text-align:center; margin-top:8px;">
+      shortcuts: T trace / S share / J jb / Space pause / R reset
+    </div>
+  </div>
+
+  <!-- LOG -->
+  <div class="panel">
+    <div class="panel-title">Activity Log</div>
+    <div id="log"></div>
+  </div>
+
+</div>
+
+<!-- ============== RIGHT COLUMN ============== -->
+<div>
+
+  <div class="panel">
+    <div class="panel-title">Team Tiles <span class="badge" id="tile-badge">16 teams &middot; live</span></div>
+
+    <div class="tile-group a">
+      <div class="tile-group-title">Guild A &middot; Cystic Fibrosis &middot; CFTR &middot; AR</div>
+      <div class="tile-row" id="row-a"></div>
+    </div>
+    <div class="tile-group b">
+      <div class="tile-group-title">Guild B &middot; Huntington's &middot; HTT &middot; AD</div>
+      <div class="tile-row" id="row-b"></div>
+    </div>
+    <div class="tile-group c">
+      <div class="tile-group-title">Guild C &middot; PKU &middot; PAH &middot; AR</div>
+      <div class="tile-row" id="row-c"></div>
+    </div>
+    <div class="tile-group d">
+      <div class="tile-group-title">Guild D &middot; Marfan &middot; FBN1 &middot; AD</div>
+      <div class="tile-row" id="row-d"></div>
+    </div>
+  </div>
+
+  <!-- LATE-ENTRY FORM -->
+  <div class="panel">
+    <div class="panel-title">Late Entry &middot; Offline Team Recovery</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:10px; letter-spacing:0.06em;">
+      Use this for a team that wrote on paper while wifi was down. Enter their stem + amount + answer after the fact. Speed bonus is NOT eligible for late entries.
+    </div>
+    <div class="lateform">
+      <div>
+        <label>Team</label>
+        <select id="late-team">
+          <option value="">&mdash;</option>
+        </select>
+      </div>
+      <div>
+        <label>Stem</label>
+        <select id="late-stem">
+          <option value="1">Stem 1</option>
+          <option value="2">Stem 2</option>
+          <option value="3">Stem 3</option>
+          <option value="4">Stem 4</option>
+          <option value="5">Stem 5</option>
+        </select>
+      </div>
+      <div>
+        <label>Amount</label>
+        <select id="late-amount">
+          <option value="5">5 XP</option>
+          <option value="10" selected>10 XP</option>
+          <option value="20">20 XP</option>
+        </select>
+      </div>
+      <div>
+        <label>Answer</label>
+        <select id="late-answer">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+      </div>
+      <button class="btn primary" style="padding:8px 16px;" onclick="submitLateEntry()">Submit</button>
+    </div>
+  </div>
+
+  <!-- MANUAL XP ADJUST -->
+  <div class="panel">
+    <div class="panel-title">Manual XP Adjust <span class="badge">USE SPARINGLY</span></div>
+    <div class="lateform">
+      <div>
+        <label>Team</label>
+        <select id="adj-team">
+          <option value="">&mdash;</option>
+        </select>
+      </div>
+      <div>
+        <label>Delta (signed)</label>
+        <input id="adj-delta" type="number" value="5" step="1">
+      </div>
+      <div>
+        <label>Reason (log only)</label>
+        <input id="adj-reason" type="text" placeholder="e.g. brilliant question">
+      </div>
+      <div>
+        <label>Offline?</label>
+        <select id="adj-offline">
+          <option value="">No change</option>
+          <option value="true">Mark offline</option>
+          <option value="false">Mark online</option>
+        </select>
+      </div>
+      <button class="btn" style="padding:8px 16px;" onclick="manualAdjust()">Apply</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  Pushes to <code>/s11/global/</code> &middot; reads <code>/s11/teams/</code> &middot; Firebase project <code>biol2-bb1</code>
+</footer>
+
+</div>
+
+<!-- =================== SCRIPT =================== -->
+<script type="module">
+/* ============================================================
+   S11 Instructor Console
+   Writes:  /s11/global/{phase, wagerStem, wagerLocked, wagerRevealed, peerVote}
+            /s11/teams/{tid}/xp, wagers/{N}/correct, wagers/{N}/delta, firstCorrect, offline
+   Reads:   /s11/teams (full)   /s11/votes (for peer-vote tally)
+   ============================================================ */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import {
+  getDatabase, ref, onValue, set, update, get, remove, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+// --- FIREBASE: reuse biol2-bb1 ---
+const firebaseConfig = {
+  apiKey: "AIzaSyA0Xe_dnQ9-BpSWep5mRJr5WHvPQBRqo4E",
+  authDomain: "biol2-bb1.firebaseapp.com",
+  databaseURL: "https://biol2-bb1-default-rtdb.firebaseio.com",
+  projectId: "biol2-bb1",
+  storageBucket: "biol2-bb1.firebasestorage.app",
+  messagingSenderId: "987841003700",
+  appId: "1:987841003700:web:4637fc8b32e55b066957e1"
+};
+const fbApp = initializeApp(firebaseConfig);
+const db = getDatabase(fbApp);
+
+// --- SESSION CONFIG ---
+const ACCESS_CODE = "S11-SICKLE-0422";
+const ROOT = "s11";
+
+// --- TEAM ROSTER (must match TeamDeck) ---
+const TEAMS = {
+  A: { name: "Cystic Fibrosis Collective", disease: "Cystic Fibrosis", gene: "CFTR", inheritance: "AR", teams: ["A1","A2","A3","A4"], spokesteam: "A2" },
+  B: { name: "Huntington's Hunters",       disease: "Huntington's",    gene: "HTT",  inheritance: "AD", teams: ["B1","B2","B3","B4"], spokesteam: "B2" },
+  C: { name: "PKU Protocol",                disease: "PKU",             gene: "PAH",  inheritance: "AR", teams: ["C1","C2","C3","C4"], spokesteam: "C2" },
+  D: { name: "Marfan Mapmakers",            disease: "Marfan",          gene: "FBN1", inheritance: "AD", teams: ["D1","D2","D3","D4"], spokesteam: "D2" }
+};
+const ALL_TEAMS = [];
+for (const g of ["A","B","C","D"]) for (const t of TEAMS[g].teams) ALL_TEAMS.push(t);
+
+// --- ANSWER KEY (must match TeamDeck WAGER_STEMS) ---
+const ANSWER_KEY = { 1: "B", 2: "B", 3: "B", 4: "C", 5: "B" };
+const STEM_TEXT = {
+  1: "Complement of 5'-CGCATCGTA-3'",
+  2: "P(>=1 of 2 kids has HbSS)",
+  3: "Why Val->polymerization",
+  4: "Disease/inheritance match",
+  5: "Anaerobic glycolysis product"
+};
+
+// --- LOCAL CACHE ---
+let cachedGlobal = {
+  phase: "briefing",
+  wagerStem: 0,
+  wagerLocked: false,
+  wagerRevealed: false,
+  speedBonus: false,
+  peerVote: { active: false, guildBeingVoted: null, question: "Which link was the hardest?", tallies: {} }
+};
+let cachedTeams = {};
+let cachedVotes = {};
+let cachedTimer = null;          // { phaseName, durationSec, startedAtMs, paused, pausedRemaining, active }
+let serverOffsetMs = 0;          // filled by .info/serverTimeOffset subscription
+let lastTimerSec = null;         // cache for audible-threshold edge detection
+
+// --- FIREBASE REFS ---
+const globalRef = ref(db, `${ROOT}/global`);
+const teamsRef  = ref(db, `${ROOT}/teams`);
+const votesRef  = ref(db, `${ROOT}/votes`);
+const timerRef  = ref(db, `${ROOT}/global/phaseTimer`);
+
+// ============================================================
+// AUDIO (tiny confirmation beep)
+// ============================================================
+let audioCtx = null;
+function beep(freq=1400, dur=0.08, vol=0.06) {
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(vol, now + 0.005);
+    gain.gain.linearRampToValueAtTime(0.0001, now + dur);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + dur + 0.02);
+  } catch(e) {}
+}
+
+// ============================================================
+// LOGGING
+// ============================================================
+const logEl = document.getElementById('log');
+function stamp() {
+  const d = new Date();
+  return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}:${String(d.getSeconds()).padStart(2,'0')}`;
+}
+function log(msg, cls='info') {
+  const div = document.createElement('div');
+  div.className = 'entry';
+  div.innerHTML = `<span class="ts">${stamp()}</span><span class="${cls}">${msg}</span>`;
+  logEl.prepend(div);
+  // Trim to last 60 entries
+  while (logEl.children.length > 60) logEl.removeChild(logEl.lastChild);
+}
+
+// ============================================================
+// ACCESS GATE
+// ============================================================
+const gate = document.getElementById('gate');
+const gateInput = document.getElementById('gate-input');
+const gateBtn = document.getElementById('gate-btn');
+const gateErr = document.getElementById('gate-err');
+const app = document.getElementById('app');
+
+gateBtn.addEventListener('click', checkGate);
+gateInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkGate(); });
+
+function checkGate() {
+  const entered = gateInput.value.trim().toUpperCase();
+  if (entered !== ACCESS_CODE) {
+    gateErr.textContent = "Wrong code. Try again.";
+    gateInput.value = '';
+    gateInput.focus();
+    return;
+  }
+  gate.style.display = 'none';
+  app.style.display = 'block';
+  log("Instructor authenticated.", 'ok');
+  init();
+}
+
+gateInput.focus();
+
+// ============================================================
+// INIT
+// ============================================================
+function init() {
+  // Populate team-select dropdowns
+  const lateSel = document.getElementById('late-team');
+  const adjSel = document.getElementById('adj-team');
+  for (const tid of ALL_TEAMS) {
+    const opt1 = document.createElement('option');
+    opt1.value = tid; opt1.textContent = tid;
+    lateSel.appendChild(opt1);
+    const opt2 = document.createElement('option');
+    opt2.value = tid; opt2.textContent = tid;
+    adjSel.appendChild(opt2);
+  }
+
+  // Build 16 team tiles (empty scaffolds)
+  for (const g of ["A","B","C","D"]) {
+    const row = document.getElementById(`row-${g.toLowerCase()}`);
+    for (const tid of TEAMS[g].teams) {
+      const isSpoke = TEAMS[g].spokesteam === tid;
+      const tile = document.createElement('div');
+      tile.className = `tile ${g.toLowerCase()}`;
+      tile.id = `tile-${tid}`;
+      tile.innerHTML = `
+        <div class="hd">
+          <div><span class="tid">${tid}</span>${isSpoke ? '<span class="spokeflag">SPOKE</span>' : ''}</div>
+          <div class="xp" id="xp-${tid}">0 XP</div>
+        </div>
+        <div class="links" id="links-${tid}">
+          <div class="link-dot"></div><div class="link-dot"></div><div class="link-dot"></div>
+          <div class="link-dot"></div><div class="link-dot"></div><div class="link-dot"></div>
+          <div class="link-dot"></div>
+        </div>
+        <div class="wstate" id="wstate-${tid}">&mdash;</div>
+      `;
+      row.appendChild(tile);
+    }
+  }
+
+  // Subscribe to Firebase
+  onValue(globalRef, snap => {
+    const v = snap.val();
+    if (v) {
+      cachedGlobal = Object.assign(cachedGlobal, v);
+      if (!v.peerVote) cachedGlobal.peerVote = { active: false, guildBeingVoted: null, tallies: {} };
+    }
+    renderGlobal();
+    setSync(true);
+  }, err => {
+    log(`Firebase listen (global) failed: ${err.message}`, 'err');
+    setSync(false);
+  });
+
+  onValue(teamsRef, snap => {
+    cachedTeams = snap.val() || {};
+    renderTiles();
+  }, err => {
+    log(`Firebase listen (teams) failed: ${err.message}`, 'err');
+  });
+
+  onValue(votesRef, snap => {
+    cachedVotes = snap.val() || {};
+    renderVoteTallies();
+  }, err => {
+    log(`Firebase listen (votes) failed: ${err.message}`, 'err');
+  });
+
+  // Subscribe to server-time offset (drift-safe rendering; see ARCHITECTURE Section 5a)
+  onValue(ref(db, '.info/serverTimeOffset'), snap => {
+    serverOffsetMs = snap.val() || 0;
+  });
+
+  // Subscribe to phaseTimer
+  onValue(timerRef, snap => {
+    cachedTimer = snap.val() || null;
+    renderTimer();
+  }, err => {
+    log(`Firebase listen (phaseTimer) failed: ${err.message}`, 'err');
+  });
+
+  // Local render tick (keeps mm:ss counting even between Firebase pushes)
+  setInterval(renderTimer, 250);
+
+  // If /s11/global does not exist yet, seed it.
+  get(globalRef).then(snap => {
+    if (!snap.exists()) {
+      set(globalRef, {
+        phase: "briefing",
+        wagerStem: 0,
+        wagerLocked: false,
+        wagerRevealed: false,
+        speedBonus: false,
+        peerVote: { active: false, guildBeingVoted: null, question: "Which link was the hardest?", tallies: {} },
+        phaseTimer: { phaseName: "", durationSec: 0, startedAtMs: 0, paused: false, pausedRemaining: 0, active: false },
+        lastUpdate: serverTimestamp()
+      }).then(() => log("Seeded /s11/global with defaults.", 'info'));
+    }
+  });
+
+  log("Console ready. Phase = briefing.", 'info');
+}
+
+// ============================================================
+// SYNC INDICATOR
+// ============================================================
+const syncPill = document.getElementById('sync-pill');
+function setSync(ok) {
+  if (ok) {
+    syncPill.textContent = `Live · ${stamp()}`;
+    syncPill.classList.remove('err');
+  } else {
+    syncPill.textContent = "Connection error";
+    syncPill.classList.add('err');
+  }
+}
+
+// ============================================================
+// RENDER — GLOBAL STATE (phase pill, wager slots, peer-vote row)
+// ============================================================
+const phasePill = document.getElementById('phase-pill');
+const wagerPhaseBadge = document.getElementById('wager-phase-badge');
+const wagerStatus = document.getElementById('wager-status');
+const btnLock = document.getElementById('btn-lock');
+const btnReveal = document.getElementById('btn-reveal');
+const btnCloseVote = document.getElementById('btn-close-vote');
+
+function renderGlobal() {
+  // Phase pill
+  phasePill.textContent = `PHASE: ${(cachedGlobal.phase || "briefing").toUpperCase()}`;
+  document.querySelectorAll('.phase-grid .btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.phase === cachedGlobal.phase);
+  });
+
+  // Wager slots
+  const cs = cachedGlobal.wagerStem || 0;
+  wagerPhaseBadge.textContent = cs === 0 ? "NO ACTIVE STEM" : `STEM ${cs}`;
+  document.querySelectorAll('.wager-slot').forEach(slot => {
+    const n = Number(slot.dataset.stem);
+    slot.classList.remove('active', 'locked', 'revealed');
+    const stemData = cs === n ? {
+      locked: !!cachedGlobal.wagerLocked,
+      revealed: !!cachedGlobal.wagerRevealed
+    } : null;
+    // Check if this stem has been revealed already (we track by any team having wagers[n].correct set)
+    let everRevealed = false;
+    for (const tid of ALL_TEAMS) {
+      const w = cachedTeams[tid]?.wagers?.[n];
+      if (w && typeof w.correct !== 'undefined') { everRevealed = true; break; }
+    }
+    if (cs === n) {
+      if (cachedGlobal.wagerRevealed) {
+        slot.classList.add('revealed');
+        slot.querySelector('.st').textContent = 'Done';
+      } else if (cachedGlobal.wagerLocked) {
+        slot.classList.add('locked');
+        slot.querySelector('.st').textContent = 'Locked';
+      } else {
+        slot.classList.add('active');
+        slot.querySelector('.st').textContent = 'LIVE';
+      }
+    } else if (everRevealed) {
+      slot.classList.add('revealed');
+      slot.querySelector('.st').textContent = 'Done';
+    } else {
+      slot.querySelector('.st').textContent = 'Tap';
+    }
+  });
+
+  // Wager status line
+  if (cs === 0) {
+    wagerStatus.innerHTML = 'No stem active. Tap a number to unlock.';
+    btnLock.disabled = true;
+    btnReveal.disabled = true;
+  } else {
+    const submittedTeams = countSubmitted(cs);
+    const correctKey = ANSWER_KEY[cs];
+    if (cachedGlobal.wagerRevealed) {
+      const correctCount = countCorrect(cs);
+      wagerStatus.innerHTML = `<strong>Stem ${cs}</strong> &middot; ${STEM_TEXT[cs]}<br>Revealed: <span class="correct">${correctCount}/${submittedTeams} correct</span> &middot; answer was <strong>${correctKey}</strong>`;
+      btnLock.disabled = true;
+      btnReveal.disabled = true;
+    } else if (cachedGlobal.wagerLocked) {
+      wagerStatus.innerHTML = `<strong>Stem ${cs}</strong> &middot; ${STEM_TEXT[cs]}<br>LOCKED &middot; ${submittedTeams}/16 submitted &middot; ready to reveal (correct = <strong>${correctKey}</strong>)`;
+      btnLock.disabled = true;
+      btnReveal.disabled = false;
+    } else {
+      wagerStatus.innerHTML = `<strong>Stem ${cs}</strong> &middot; ${STEM_TEXT[cs]}<br>LIVE &middot; ${submittedTeams}/16 submitted &middot; lock when ready`;
+      btnLock.disabled = false;
+      btnReveal.disabled = true;
+    }
+  }
+
+  // Peer-vote guild buttons
+  document.querySelectorAll('.vote-guild-btn').forEach(b => b.classList.remove('active'));
+  const pv = cachedGlobal.peerVote || {};
+  if (pv.active && pv.guildBeingVoted) {
+    const btn = document.getElementById(`vote-${pv.guildBeingVoted.toLowerCase()}`);
+    if (btn) btn.classList.add('active');
+    btnCloseVote.disabled = false;
+  } else {
+    btnCloseVote.disabled = true;
+  }
+}
+
+function countSubmitted(stem) {
+  let n = 0;
+  for (const tid of ALL_TEAMS) {
+    const w = cachedTeams[tid]?.wagers?.[stem];
+    if (w && typeof w.answer !== 'undefined') n++;
+  }
+  return n;
+}
+function countCorrect(stem) {
+  let n = 0;
+  for (const tid of ALL_TEAMS) {
+    const w = cachedTeams[tid]?.wagers?.[stem];
+    if (w && w.correct === true) n++;
+  }
+  return n;
+}
+
+// ============================================================
+// RENDER — 16 TEAM TILES
+// ============================================================
+function renderTiles() {
+  for (const tid of ALL_TEAMS) {
+    const t = cachedTeams[tid] || {};
+    const xpEl = document.getElementById(`xp-${tid}`);
+    const tileEl = document.getElementById(`tile-${tid}`);
+    const linksEl = document.getElementById(`links-${tid}`);
+    const wstateEl = document.getElementById(`wstate-${tid}`);
+
+    // XP
+    const xp = t.xp || 0;
+    xpEl.textContent = `${xp >= 0 ? '+' : ''}${xp} XP`;
+    xpEl.classList.toggle('pos', xp > 0);
+    xpEl.classList.toggle('neg', xp < 0);
+
+    // Offline
+    tileEl.classList.toggle('offline', !!t.offline);
+
+    // Six-link progress dots (7 keys: dna/mrna/protein/cell/tissue/patient/equity)
+    const keys = ['dna','mrna','protein','cell','tissue','patient','equity'];
+    const sl = t.sixLink || {};
+    linksEl.querySelectorAll('.link-dot').forEach((d, i) => {
+      const val = (sl[keys[i]] || '').trim();
+      d.classList.toggle('filled', val.length >= 10); // "filled" when >=10 chars
+    });
+
+    // Current wager state for the CURRENT stem
+    const cs = cachedGlobal.wagerStem || 0;
+    wstateEl.className = 'wstate';
+    if (cs === 0) {
+      const totalLinks = keys.filter(k => (sl[k] || '').trim().length >= 10).length;
+      wstateEl.textContent = `${totalLinks}/7 links`;
+    } else {
+      const w = t.wagers?.[cs];
+      if (!w || typeof w.answer === 'undefined') {
+        wstateEl.textContent = 'No wager';
+      } else if (typeof w.correct === 'undefined') {
+        wstateEl.textContent = `Wagered ${w.amount} on ${w.answer}`;
+        wstateEl.classList.add('submitted');
+      } else if (w.correct) {
+        wstateEl.textContent = `+${w.delta} XP (${w.answer})${t.firstCorrect ? ' SPEED' : ''}`;
+        wstateEl.classList.add('correct');
+        if (t.firstCorrect) wstateEl.classList.add('speed');
+      } else {
+        wstateEl.textContent = `${w.delta} XP (${w.answer} wrong)`;
+        wstateEl.classList.add('wrong');
+      }
+    }
+  }
+}
+
+// ============================================================
+// RENDER — PEER VOTE TALLIES
+// ============================================================
+const voteTalliesEl = document.getElementById('vote-tallies');
+function renderVoteTallies() {
+  const pv = cachedGlobal.peerVote || {};
+  if (!pv.active || !pv.guildBeingVoted) {
+    voteTalliesEl.innerHTML = '<div class="row"><span class="lbl">No active vote</span><span class="ct">&mdash;</span></div>';
+    return;
+  }
+  const g = pv.guildBeingVoted;
+  const votes = cachedVotes?.[g] || {};
+  const tallies = { dna:0, mrna:0, protein:0, cell:0, tissue:0, patient:0 };
+  for (const voter in votes) {
+    const link = votes[voter];
+    if (link in tallies) tallies[link]++;
+  }
+  const total = Object.values(tallies).reduce((a,b)=>a+b,0);
+  let html = `<div class="row"><span class="lbl">Voting on Guild ${g} &middot; total ${total}/12</span><span class="ct"></span></div>`;
+  for (const k of ['dna','mrna','protein','cell','tissue','patient']) {
+    html += `<div class="row"><span class="lbl">${k}</span><span class="ct">${tallies[k]}</span></div>`;
+  }
+  voteTalliesEl.innerHTML = html;
+}
+
+// ============================================================
+// WRITE OPS
+// ============================================================
+async function writeGlobal(patch, label) {
+  try {
+    patch.lastUpdate = serverTimestamp();
+    await update(globalRef, patch);
+    log(`PUSH global: ${label}`, 'ok');
+    beep();
+  } catch (e) {
+    log(`PUSH FAILED (${label}): ${e.message}`, 'err');
+    alert(`Write failed: ${e.message}`);
+  }
+}
+
+async function pushPhase(p) {
+  await writeGlobal({ phase: p }, `phase = ${p}`);
+}
+
+async function unlockStem(n) {
+  if (cachedGlobal.wagerStem === n && !cachedGlobal.wagerRevealed) {
+    if (!confirm(`Stem ${n} is already active. Re-unlock anyway? (This will not clear submitted wagers.)`)) return;
+  }
+  // Check if this stem was already revealed — warn
+  let alreadyScored = false;
+  for (const tid of ALL_TEAMS) {
+    if (cachedTeams[tid]?.wagers?.[n] && typeof cachedTeams[tid].wagers[n].correct !== 'undefined') {
+      alreadyScored = true; break;
+    }
+  }
+  if (alreadyScored) {
+    if (!confirm(`Stem ${n} has already been scored on at least one team. Unlock again (for late-entry catch-up)?`)) return;
+  }
+  await writeGlobal({
+    wagerStem: n,
+    wagerLocked: false,
+    wagerRevealed: false
+  }, `unlock stem ${n}`);
+  beep(1600, 0.1, 0.08);
+}
+
+async function lockStem() {
+  const cs = cachedGlobal.wagerStem;
+  if (!cs) return;
+  await writeGlobal({ wagerLocked: true }, `lock stem ${cs}`);
+  beep(900, 0.12, 0.08);
+}
+
+async function revealStem() {
+  const cs = cachedGlobal.wagerStem;
+  if (!cs) return;
+  if (!cachedGlobal.wagerLocked) {
+    if (!confirm(`Stem ${cs} is not locked yet. Reveal anyway?`)) return;
+  }
+  const correctAnswer = ANSWER_KEY[cs];
+  const submissions = [];
+
+  // First pass: compute per-team delta + isCorrect
+  for (const tid of ALL_TEAMS) {
+    const t = cachedTeams[tid] || {};
+    const w = t.wagers?.[cs];
+    if (!w || typeof w.answer === 'undefined') continue;
+    // Skip if already scored (idempotent)
+    if (typeof w.correct !== 'undefined' && typeof w.delta !== 'undefined') {
+      submissions.push({ tid, ts: w.ts || 0, isCorrect: !!w.correct, delta: w.delta, alreadyScored: true });
+      continue;
+    }
+    const isCorrect = (w.answer === correctAnswer);
+    const delta = (w.amount || 0) * (isCorrect ? 1 : -1);
+    submissions.push({ tid, ts: w.ts || 0, isCorrect, delta, alreadyScored: false });
+  }
+
+  // Second pass: write results
+  let correctCount = 0, wrongCount = 0, deltaSum = 0;
+  for (const s of submissions) {
+    if (s.alreadyScored) continue;
+    const tRef = ref(db, `${ROOT}/teams/${s.tid}`);
+    // Get current XP to enforce floor
+    const curSnap = await get(tRef);
+    const cur = curSnap.val() || {};
+    const curXp = cur.xp || 0;
+    const newXp = Math.max(0, curXp + s.delta);
+    await update(tRef, {
+      [`wagers/${cs}/correct`]: s.isCorrect,
+      [`wagers/${cs}/delta`]: s.delta,
+      xp: newXp
+    });
+    if (s.isCorrect) correctCount++; else wrongCount++;
+    deltaSum += s.delta;
+  }
+
+  // Speed bonus: fastest correct gets +5 (only if not already awarded for this stem)
+  const correctByTs = submissions
+    .filter(s => s.isCorrect && !s.alreadyScored)
+    .sort((a,b) => (a.ts || 0) - (b.ts || 0));
+  if (correctByTs.length > 0) {
+    const winner = correctByTs[0].tid;
+    const wRef = ref(db, `${ROOT}/teams/${winner}`);
+    const curSnap = await get(wRef);
+    const cur = curSnap.val() || {};
+    const curXp = cur.xp || 0;
+    await update(wRef, {
+      firstCorrect: true,
+      xp: Math.max(0, curXp + 5)
+    });
+    log(`SPEED BONUS +5 to ${winner}`, 'ok');
+  }
+
+  await writeGlobal({ wagerRevealed: true, speedBonus: correctByTs.length > 0 }, `reveal stem ${cs}`);
+  log(`Stem ${cs} scored: ${correctCount} correct, ${wrongCount} wrong, total delta ${deltaSum >= 0 ? '+' : ''}${deltaSum}`, 'ok');
+  beep(1800, 0.25, 0.1);
+  setTimeout(() => beep(1200, 0.15, 0.08), 120);
+}
+
+// ============================================================
+// PEER VOTE
+// ============================================================
+async function triggerVote(guild) {
+  // Clear previous tallies
+  await writeGlobal({
+    peerVote: {
+      active: true,
+      guildBeingVoted: guild,
+      question: "Which link was the hardest?",
+      tallies: { dna:0, mrna:0, protein:0, cell:0, tissue:0, patient:0 }
+    }
+  }, `open vote on Guild ${guild}`);
+  // Clear previous votes for this guild
+  await remove(ref(db, `${ROOT}/votes/${guild}`));
+}
+
+async function closeVote() {
+  await writeGlobal({
+    peerVote: Object.assign({}, cachedGlobal.peerVote, { active: false })
+  }, `close vote`);
+}
+
+// ============================================================
+// LATE ENTRY
+// ============================================================
+async function submitLateEntry() {
+  const tid = document.getElementById('late-team').value;
+  const stem = Number(document.getElementById('late-stem').value);
+  const amount = Number(document.getElementById('late-amount').value);
+  const answer = document.getElementById('late-answer').value;
+  if (!tid) { alert("Pick a team."); return; }
+  if (![5,10,20].includes(amount)) { alert("Amount must be 5, 10, or 20."); return; }
+  if (!confirm(`Late entry: ${tid} wagered ${amount} on "${answer}" for Stem ${stem}. Apply now?`)) return;
+
+  const correctAnswer = ANSWER_KEY[stem];
+  const isCorrect = (answer === correctAnswer);
+  const delta = amount * (isCorrect ? 1 : -1);
+
+  const tRef = ref(db, `${ROOT}/teams/${tid}`);
+  const curSnap = await get(tRef);
+  const cur = curSnap.val() || {};
+  const curXp = cur.xp || 0;
+  const newXp = Math.max(0, curXp + delta);
+
+  await update(tRef, {
+    [`wagers/${stem}/amount`]: amount,
+    [`wagers/${stem}/answer`]: answer,
+    [`wagers/${stem}/ts`]: 9999999999999, // late entries cannot win speed bonus
+    [`wagers/${stem}/correct`]: isCorrect,
+    [`wagers/${stem}/delta`]: delta,
+    xp: newXp
+  });
+  log(`LATE ENTRY: ${tid} stem ${stem} = ${isCorrect ? 'correct' : 'wrong'}, delta ${delta >= 0 ? '+' : ''}${delta}`, 'ok');
+  beep(1000, 0.12);
+}
+
+// ============================================================
+// MANUAL XP ADJUST
+// ============================================================
+async function manualAdjust() {
+  const tid = document.getElementById('adj-team').value;
+  const delta = Number(document.getElementById('adj-delta').value);
+  const reason = document.getElementById('adj-reason').value || '(no reason)';
+  const offlineRaw = document.getElementById('adj-offline').value;
+  if (!tid) { alert("Pick a team."); return; }
+  if (isNaN(delta)) { alert("Delta must be a number."); return; }
+  if (!confirm(`${tid}: ${delta >= 0 ? '+' : ''}${delta} XP (${reason})${offlineRaw ? ' / offline=' + offlineRaw : ''}. Apply?`)) return;
+
+  const tRef = ref(db, `${ROOT}/teams/${tid}`);
+  const curSnap = await get(tRef);
+  const cur = curSnap.val() || {};
+  const curXp = cur.xp || 0;
+  const newXp = Math.max(0, curXp + delta);
+  const patch = { xp: newXp };
+  if (offlineRaw === 'true')  patch.offline = true;
+  if (offlineRaw === 'false') patch.offline = false;
+  await update(tRef, patch);
+  log(`ADJUST: ${tid} ${delta >= 0 ? '+' : ''}${delta} XP &middot; ${reason}`, 'warn');
+  beep(1300, 0.1);
+}
+
+// ============================================================
+// RESET ALL
+// ============================================================
+async function resetAll() {
+  if (!confirm("RESET EVERYTHING? This clears all team wagers, XP, and returns phase to briefing. Use only between run-throughs.")) return;
+  if (!confirm("Are you sure? This cannot be undone.")) return;
+
+  // Reset global
+  await set(globalRef, {
+    phase: "briefing",
+    wagerStem: 0,
+    wagerLocked: false,
+    wagerRevealed: false,
+    speedBonus: false,
+    peerVote: { active: false, guildBeingVoted: null, question: "Which link was the hardest?", tallies: {} },
+    lastUpdate: serverTimestamp()
+  });
+  // Reset per-team (just xp, wagers, firstCorrect, offline — keep sixLink/equity so teams don't lose their work)
+  for (const tid of ALL_TEAMS) {
+    await update(ref(db, `${ROOT}/teams/${tid}`), {
+      xp: 0,
+      wagers: null,
+      firstCorrect: false,
+      offline: false
+    });
+  }
+  // Clear votes
+  await remove(votesRef);
+  log("RESET complete. All XP, wagers, and votes cleared.", 'warn');
+  beep(600, 0.3, 0.1);
+}
+
+// ============================================================
+// PHASE TIMER (see ARCHITECTURE Section 5a)
+// ============================================================
+// Only the Console writes /s11/global/phaseTimer. TeamDeck and Leaderboard
+// are read-only subscribers. Server-authored startedAtMs + local
+// serverOffsetMs makes this drift-safe.
+
+const timerDisplay    = document.getElementById('timer-display');
+const timerPhaseLabel = document.getElementById('timer-phase-label');
+const timerStatusBadge= document.getElementById('timer-status-badge');
+const btnTimerPause   = document.getElementById('btn-timer-pause');
+
+function fmtMMSS(totalSec) {
+  const s = Math.max(0, Math.floor(totalSec));
+  const m = Math.floor(s / 60);
+  const r = s % 60;
+  return `${String(m).padStart(2,'0')}:${String(r).padStart(2,'0')}`;
+}
+
+function computeRemainingSec() {
+  const t = cachedTimer;
+  if (!t || !t.active) return null;
+  if (t.paused) return Math.max(0, Number(t.pausedRemaining) || 0);
+  const serverNowMs = Date.now() + serverOffsetMs;
+  const startedAt = Number(t.startedAtMs) || serverNowMs;
+  const elapsedSec = (serverNowMs - startedAt) / 1000;
+  return Math.max(0, (Number(t.durationSec) || 0) - elapsedSec);
+}
+
+function renderTimer() {
+  const t = cachedTimer;
+  if (!t || !t.active) {
+    timerDisplay.textContent = '--:--';
+    timerDisplay.style.color = 'var(--gold-bright)';
+    timerDisplay.style.animation = 'none';
+    timerPhaseLabel.textContent = 'no active timer';
+    timerStatusBadge.textContent = 'IDLE';
+    timerStatusBadge.style.background = '';
+    btnTimerPause.textContent = 'Pause';
+    lastTimerSec = null;
+    return;
+  }
+  const remaining = computeRemainingSec();
+  timerDisplay.textContent = fmtMMSS(remaining);
+  timerPhaseLabel.textContent = t.phaseName || '(unnamed phase)';
+  if (t.paused) {
+    timerStatusBadge.textContent = 'PAUSED';
+    timerDisplay.style.color = 'var(--muted)';
+    timerDisplay.style.animation = 'none';
+    btnTimerPause.textContent = 'Resume';
+  } else {
+    timerStatusBadge.textContent = 'RUNNING';
+    btnTimerPause.textContent = 'Pause';
+    // Color thresholds: green > 30s, amber 30-11s, red ≤10s with pulse
+    if (remaining <= 10) {
+      timerDisplay.style.color = '#E74C3C';
+      timerDisplay.style.animation = 'timerPulse 1s ease-in-out infinite';
+    } else if (remaining <= 30) {
+      timerDisplay.style.color = '#F39C12';
+      timerDisplay.style.animation = 'none';
+    } else {
+      timerDisplay.style.color = 'var(--gold-bright)';
+      timerDisplay.style.animation = 'none';
+    }
+    // Single soft beep at 0:00 transition (locally, not broadcast)
+    if (lastTimerSec !== null && lastTimerSec > 0 && remaining <= 0) {
+      beep(600, 0.25, 0.08);
+    }
+    lastTimerSec = remaining;
+  }
+}
+
+async function startTimer(phaseName, durationSec) {
+  try {
+    await set(timerRef, {
+      phaseName: String(phaseName || 'Phase'),
+      durationSec: Number(durationSec) || 0,
+      startedAtMs: serverTimestamp(),
+      paused: false,
+      pausedRemaining: 0,
+      active: true
+    });
+    log(`Timer started: ${phaseName} · ${fmtMMSS(durationSec)}`, 'info');
+    beep(880, 0.12, 0.06);
+  } catch (err) {
+    log(`Timer start failed: ${err.message}`, 'err');
+  }
+}
+
+async function togglePauseTimer() {
+  const t = cachedTimer;
+  if (!t || !t.active) { log("No active timer to pause.", 'warn'); return; }
+  try {
+    if (t.paused) {
+      // Resume: re-anchor startedAtMs, use pausedRemaining as new duration
+      const remaining = Number(t.pausedRemaining) || 0;
+      await update(timerRef, {
+        durationSec: remaining,
+        startedAtMs: serverTimestamp(),
+        paused: false,
+        pausedRemaining: 0
+      });
+      log(`Timer resumed at ${fmtMMSS(remaining)}.`, 'info');
+    } else {
+      // Pause: stamp current remaining
+      const remaining = Math.max(0, Math.floor(computeRemainingSec() || 0));
+      await update(timerRef, {
+        paused: true,
+        pausedRemaining: remaining
+      });
+      log(`Timer paused at ${fmtMMSS(remaining)}.`, 'info');
+    }
+  } catch (err) {
+    log(`Timer pause/resume failed: ${err.message}`, 'err');
+  }
+}
+
+async function resetTimer(confirmFirst) {
+  if (confirmFirst && !confirm('Reset the phase timer? All screens clear.')) return;
+  try {
+    await update(timerRef, { active: false, paused: false });
+    log("Timer reset.", 'warn');
+  } catch (err) {
+    log(`Timer reset failed: ${err.message}`, 'err');
+  }
+}
+
+// Inject CSS keyframe for pulse (scoped inline to keep artifact self-contained)
+(function(){
+  const st = document.createElement('style');
+  st.textContent = '@keyframes timerPulse { 0%,100%{opacity:1} 50%{opacity:0.45} }';
+  document.head.appendChild(st);
+})();
+
+// ============================================================
+// KEYBOARD SHORTCUTS
+// ============================================================
+const phaseByKey = { '1':'briefing', '2':'linkbuild', '3':'shareout', '4':'wager', '5':'close' };
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  const k = e.key.toLowerCase();
+  // Shift+1..5 = unlock stem 1..5
+  if (e.shiftKey && ['!','@','#','$','%'].includes(e.key)) {
+    const idx = ['!','@','#','$','%'].indexOf(e.key);
+    unlockStem(idx + 1);
+    return;
+  }
+  // Timer shortcuts — require no modifier to avoid collision with OS keys
+  if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+    if (k === 't')      { e.preventDefault(); startTimer('Trace Your Disease', 14*60); return; }
+    if (k === 's')      { e.preventDefault(); startTimer('Guild Share-Out', 3*60); return; }
+    if (k === 'j')      { e.preventDefault(); startTimer('Jackpot Bell Stem', 90); return; }
+    if (e.code === 'Space') { e.preventDefault(); togglePauseTimer(); return; }
+    if (k === 'r')      { e.preventDefault(); resetTimer(true); return; }
+  }
+  if (phaseByKey[e.key]) pushPhase(phaseByKey[e.key]);
+  else if (k === 'l') lockStem();
+  else if (k === 'v') revealStem();
+  else if (k === 'x') resetAll();
+});
+
+// ============================================================
+// EXPOSE GLOBALS FOR INLINE ONCLICK
+// ============================================================
+window.pushPhase = pushPhase;
+window.unlockStem = unlockStem;
+window.lockStem = lockStem;
+window.revealStem = revealStem;
+window.triggerVote = triggerVote;
+window.closeVote = closeVote;
+window.submitLateEntry = submitLateEntry;
+window.manualAdjust = manualAdjust;
+window.resetAll = resetAll;
+window.startTimer = startTimer;
+window.togglePauseTimer = togglePauseTimer;
+window.resetTimer = resetTimer;
+
+</script>
+
+</body>
+</html>
