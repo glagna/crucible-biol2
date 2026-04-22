@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="75px" height="487px" viewBox="0 0 75 487" enable-background="new 0 0 75 487" xml:space="preserve">
+<g>
+	<path fill="#FFFFFF" d="M9.771,207.183L9.771,207.183L9.77,476.517c0,4.142,5.597,7.5,12.501,7.5c6.903,0,12.5-3.358,12.5-7.5
+		V207.183H9.771z"/>
+	<path fill="#FFFFFF" stroke="#FFFFFF" d="M34.77,41.183h-0.014c0.003-0.056,0.015-0.11,0.015-0.167c0-4.142-5.597-7.5-12.5-7.5
+		c-6.904,0-12.501,3.358-12.501,7.5c0,0.056,0.013,0.11,0.015,0.167H9.77v154h0.001h25H34.77V41.183z"/>
+	<polygon fill="#708090" points="22.27,201.183 9.77,207.183 34.77,207.183 	"/>
+	<path fill="#FFFFFF" d="M34.771,41.017c0-4.142-5.597-7.5-12.5-7.5c-6.904,0-12.501,3.358-12.501,7.5
+		c0,0.056,0.013,0.11,0.015,0.167H9.77v154h25v-154h-0.014C34.759,41.127,34.771,41.073,34.771,41.017z"/>
+	<polygon fill="#708090" points="22.27,201.183 9.77,195.183 34.77,195.183 	"/>
+	<g>
+		<rect x="9.77" y="41.183" fill="#D9D9D9" width="25" height="4"/>
+		<rect x="9.77" y="104.85" fill="#999999" width="25.001" height="7"/>
+		<rect x="9.77" y="221.85" fill="#999999" width="25" height="15"/>
+		<rect x="9.77" y="398.517" fill="#D9D9D9" width="25.001" height="4"/>
+		<rect x="9.77" y="52.85" width="25" height="18"/>
+		<rect x="9.77" y="75.85" width="25" height="16"/>
+		<rect x="9.77" y="118.85" fill="#666666" width="25.001" height="13"/>
+		<rect x="9.77" y="137.85" fill="#666666" width="25" height="18"/>
+		<rect x="9.77" y="166.85" fill="#666666" width="25" height="8"/>
+		<rect x="9.77" y="177.85" fill="#666666" width="25" height="8"/>
+		<rect x="9.77" y="252.517" width="25" height="24.334"/>
+		<rect x="9.77" y="281.851" fill="#666666" width="25" height="9"/>
+		<rect x="9.77" y="296.184" fill="#666666" width="25" height="13.667"/>
+		<rect x="9.77" y="327.184" fill="#999999" width="25" height="1.667"/>
+		<rect x="9.77" y="336.851" fill="#666666" width="25.001" height="20"/>
+		<rect x="9.77" y="356.851" fill="#FF0000" width="25" height="8"/>
+		<rect x="9.77" y="364.851" fill="#666666" width="25" height="11"/>
+		<rect x="9.77" y="381.851" fill="#666666" width="25" height="9"/>
+		<rect x="9.77" y="407.851" fill="#999999" width="25" height="14"/>
+		<rect x="9.77" y="438.851" fill="#666666" width="25" height="12"/>
+	</g>
+	<path fill="none" stroke="#231F20" d="M9.77,207.183v269.333c0,4.142,5.597,7.5,12.501,7.5c6.903,0,12.5-3.358,12.5-7.5V207.183"/>
+	<path fill="none" stroke="#231F20" stroke-miterlimit="10" d="M22.271,201.183l-12.5,6H9.77v269.333c0,4.142,5.597,7.5,12.501,7.5
+		c6.903,0,12.5-3.358,12.5-7.5V207.183L22.271,201.183z"/>
+	<path fill="none" stroke="#231F20" d="M34.77,41.183h-0.014c0.003-0.056,0.015-0.11,0.015-0.167c0-4.142-5.597-7.5-12.5-7.5
+		c-6.904,0-12.501,3.358-12.501,7.5c0,0.056,0.013,0.11,0.015,0.167H9.77v154h0.001l12.5,6l12.5-6H34.77V41.183z"/>
+	<text transform="matrix(1 0 0 1 37.4297 40.8501)" font-family="'LucidaSans'" font-size="8">p22.3</text>
+	<text transform="matrix(1 0 0 1 37.4297 53.1831)" font-family="'LucidaSans'" font-size="8">p22.1</text>
+	<text transform="matrix(1 0 0 1 37.4297 65.1836)" font-family="'LucidaSans'" font-size="8">p21.3</text>
+	<text transform="matrix(1 0 0 1 37.4297 88.1831)" font-family="'LucidaSans'" font-size="8">p21.1</text>
+	<text transform="matrix(1 0 0 1 37.4297 101.8496)" font-family="'LucidaSans'" font-size="8">p15.3</text>
+	<text transform="matrix(1 0 0 1 37.4297 118.8496)" font-family="'LucidaSans'" font-size="8">p15.4</text>
+	<text transform="matrix(1 0 0 1 37.4297 129.1831)" font-family="'LucidaSans'" font-size="8">p14.3</text>
+	<text transform="matrix(1 0 0 1 37.4297 151.1831)" font-family="'LucidaSans'" font-size="8">p14.1</text>
+	<text transform="matrix(1 0 0 1 37.4297 164.8496)" font-family="'LucidaSans'" font-size="8">p13</text>
+	<text transform="matrix(1 0 0 1 37.4297 173.8496)" font-family="'LucidaSans'" font-size="8">p12.3</text>
+	<text transform="matrix(1 0 0 1 37.4297 184.8496)" font-family="'LucidaSans'" font-size="8">p12.1</text>
+	<text transform="matrix(1 0 0 1 37.4297 194.1826)" font-family="'LucidaSans'" font-size="8">p11.2</text>
+	<text transform="matrix(1 0 0 1 37.4297 217.8491)" font-family="'LucidaSans'" font-size="8">q11.21</text>
+	<text transform="matrix(1 0 0 1 37.4297 233.1826)" font-family="'LucidaSans'" font-size="8">q11.22</text>
+	<text transform="matrix(1 0 0 1 37.4297 248.1826)" font-family="'LucidaSans'" font-size="8">q11.23</text>
+	<text transform="matrix(1 0 0 1 37.4297 289.8496)" font-family="'LucidaSans'" font-size="8">q21.13</text>
+	<text transform="matrix(1 0 0 1 37.4297 305.8496)" font-family="'LucidaSans'" font-size="8">q21.3</text>
+	<text transform="matrix(1 0 0 1 37.4287 321.8496)" font-family="'LucidaSans'" font-size="8">q22.1</text>
+	<text transform="matrix(1 0 0 1 37.4297 335.5156)" font-family="'LucidaSans'" font-size="8">q22.3</text>
+	<text transform="matrix(1 0 0 1 37.4287 350.8496)" font-family="'LucidaSans'" font-size="8">q31.1</text>
+	<text transform="matrix(1 0 0 1 37.4287 364.8496)" font-family="'LucidaSans'" font-size="8">q31.2</text>
+	<text transform="matrix(1 0 0 1 37.4287 373.8496)" font-family="'LucidaSans'" font-size="8">q31.31</text>
+	<text transform="matrix(1 0 0 1 37.4287 389.8496)" font-family="'LucidaSans'" font-size="8">q31.33</text>
+	<text transform="matrix(1 0 0 1 37.4297 397.8496)" font-family="'LucidaSans'" font-size="8">q32.1</text>
+	<text transform="matrix(1 0 0 1 37.4297 418.8496)" font-family="'LucidaSans'" font-size="8">q33</text>
+	<text transform="matrix(1 0 0 1 37.4287 433.8496)" font-family="'LucidaSans'" font-size="8">q34</text>
+	<text transform="matrix(1 0 0 1 37.4287 448.5156)" font-family="'LucidaSans'" font-size="8">q35</text>
+	<text transform="matrix(1 0 0 1 37.4287 461.1836)" font-family="'LucidaSans'" font-size="8">q36.1</text>
+	<text transform="matrix(1 0 0 1 37.4297 480.8516)" font-family="'LucidaSans'" font-size="8">q36.3</text>
+	<text transform="matrix(1 0 0 1 37.4297 267.8496)" font-family="'LucidaSans'" font-size="8">q21.11</text>
+</g>
+<text transform="matrix(1 0 0 1 0.2632 8.8516)" font-family="'LucidaSans'" font-size="10">Chromosome 7</text>
+</svg>
