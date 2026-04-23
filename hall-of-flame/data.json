@@ -1,337 +1,1140 @@
 {
-  "updated": "2026-04-21 20:39",
+  "updated": "2026-04-22",
   "week": 4,
-  "sessions_completed": 7,
+  "course": "BIOL 2: The Crucible",
+  "quarter": "Spring 2026",
   "total_students": 47,
+  "sessions_completed": 10,
   "students": [
     {
-      "name": "Jason M.",
-      "streak": 7,
-      "total_xp": 95,
-      "peak_streak": 7,
+      "name": "Rachana C.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 83,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Omar M.",
-      "streak": 7,
-      "total_xp": 95,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 80,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Jason M.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 80,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Tobias O.",
-      "streak": 7,
-      "total_xp": 95,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 80,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Katie C.",
-      "streak": 7,
-      "total_xp": 94,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Kyle J.",
-      "streak": 7,
-      "total_xp": 94,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Caroline F.",
-      "streak": 7,
-      "total_xp": 93,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Justin S.",
-      "streak": 7,
-      "total_xp": 93,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Lucy T.",
-      "streak": 7,
-      "total_xp": 93,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Ashlyn W.",
-      "streak": 7,
-      "total_xp": 92,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Izabella O.",
-      "streak": 7,
-      "total_xp": 91,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Ashley H.",
-      "streak": 7,
-      "total_xp": 90,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 79,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Aaryaa D.",
-      "streak": 7,
-      "total_xp": 89,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 79,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
-      "name": "Delaney K.",
-      "streak": 7,
-      "total_xp": 89,
-      "peak_streak": 7,
+      "name": "Kyle J.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 79,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
-      "name": "Katherine B.",
-      "streak": 7,
-      "total_xp": 89,
-      "peak_streak": 7,
+      "name": "Caroline F.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 78,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
-      "name": "Zaizhu P.",
-      "streak": 7,
-      "total_xp": 89,
-      "peak_streak": 7,
+      "name": "Justin S.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 78,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
-      "name": "Sonya A.",
-      "streak": 7,
-      "total_xp": 86,
-      "peak_streak": 7,
+      "name": "Lucy T.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 78,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Ashlyn W.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 77,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Izabella O.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 76,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Elika D.",
-      "streak": 7,
-      "total_xp": 85,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 75,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Ashley H.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 75,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Katherine B.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 74,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Delaney K.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 74,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Reinhardt M.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 74,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Zaizhu P.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 74,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Sonya A.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 71,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Valeria A.",
-      "streak": 7,
-      "total_xp": 84,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 69,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
-      "name": "Caroline W.",
-      "streak": 7,
-      "total_xp": 80,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Yijia L.",
-      "streak": 7,
-      "total_xp": 80,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Grace M.",
-      "streak": 7,
-      "total_xp": 79,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Theresa H.",
-      "streak": 7,
-      "total_xp": 79,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Tiffany N.",
-      "streak": 7,
-      "total_xp": 79,
-      "peak_streak": 7,
-      "shield": true
+      "name": "Anikha P.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 69,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 5,
+      "shield": false
     },
     {
       "name": "Gina P.",
-      "streak": 7,
-      "total_xp": 78,
-      "peak_streak": 7,
-      "shield": true
-    },
-    {
-      "name": "Leslie G.",
-      "streak": 7,
-      "total_xp": 77,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 68,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Kashvika C.",
-      "streak": 7,
-      "total_xp": 76,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 66,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Yijia L.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 65,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Caroline W.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 65,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Janet G.",
-      "streak": 7,
-      "total_xp": 74,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 64,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Theresa H.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 64,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Grace M.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 64,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Tiffany N.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 64,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Leslie G.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 62,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
       "name": "Hanna R.",
-      "streak": 7,
-      "total_xp": 65,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 55,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
+      "shield": true
+    },
+    {
+      "name": "Alondra R.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 51,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 5,
+      "shield": true
+    },
+    {
+      "name": "Omar B.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 45,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 5,
       "shield": true
     },
     {
       "name": "Ashlyne O.",
-      "streak": 7,
-      "total_xp": 53,
-      "peak_streak": 7,
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 43,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 6,
       "shield": true
     },
     {
-      "name": "Rachana C.",
-      "streak": 6,
-      "total_xp": 83,
-      "peak_streak": 6,
-      "shield": false
-    },
-    {
-      "name": "Reinhardt M.",
-      "streak": 6,
-      "total_xp": 74,
-      "peak_streak": 6,
-      "shield": false
-    },
-    {
-      "name": "Alondra R.",
-      "streak": 6,
-      "total_xp": 61,
-      "peak_streak": 6,
-      "shield": false
-    },
-    {
-      "name": "Omar B.",
-      "streak": 6,
-      "total_xp": 55,
-      "peak_streak": 6,
+      "name": "Brian T.",
+      "streak": 4,
+      "peak_streak": 4,
+      "total_xp": 27,
+      "xp_per_answer": 4,
+      "tier": "Blaze",
+      "sessions": 5,
       "shield": false
     },
     {
       "name": "Spyridon S.",
-      "streak": 5,
-      "total_xp": 39,
-      "peak_streak": 5,
-      "shield": false
-    },
-    {
-      "name": "Charles B.",
-      "streak": 5,
-      "total_xp": 38,
-      "peak_streak": 5,
-      "shield": false
-    },
-    {
-      "name": "Kemora B.",
-      "streak": 5,
-      "total_xp": 17,
-      "peak_streak": 5,
-      "shield": false
-    },
-    {
-      "name": "Tanisha S.",
       "streak": 4,
-      "total_xp": 52,
       "peak_streak": 4,
-      "shield": false
+      "total_xp": 24,
+      "xp_per_answer": 4,
+      "tier": "Blaze",
+      "sessions": 4,
+      "shield": true
     },
     {
-      "name": "Morgan H.",
+      "name": "charles b.",
       "streak": 4,
-      "total_xp": 42,
       "peak_streak": 4,
-      "shield": false
+      "total_xp": 23,
+      "xp_per_answer": 4,
+      "tier": "Blaze",
+      "sessions": 5,
+      "shield": true
     },
     {
       "name": "Natasha G.",
       "streak": 3,
-      "total_xp": 51,
       "peak_streak": 3,
+      "total_xp": 51,
+      "xp_per_answer": 3,
+      "tier": "Ember",
+      "sessions": 5,
+      "shield": true
+    },
+    {
+      "name": "Tanisha S.",
+      "streak": 3,
+      "peak_streak": 3,
+      "total_xp": 44,
+      "xp_per_answer": 3,
+      "tier": "Ember",
+      "sessions": 5,
+      "shield": true
+    },
+    {
+      "name": "Nhan N.",
+      "streak": 3,
+      "peak_streak": 3,
+      "total_xp": 41,
+      "xp_per_answer": 3,
+      "tier": "Ember",
+      "sessions": 4,
       "shield": false
+    },
+    {
+      "name": "Morgan H.",
+      "streak": 3,
+      "peak_streak": 3,
+      "total_xp": 38,
+      "xp_per_answer": 3,
+      "tier": "Ember",
+      "sessions": 5,
+      "shield": true
     },
     {
       "name": "Selena C.",
       "streak": 3,
-      "total_xp": 31,
       "peak_streak": 3,
+      "total_xp": 27,
+      "xp_per_answer": 3,
+      "tier": "Ember",
+      "sessions": 3,
       "shield": false
     },
     {
-      "name": "Xuanzhi Z.",
+      "name": "Kemora B.",
       "streak": 3,
-      "total_xp": 17,
       "peak_streak": 3,
-      "shield": false
-    },
-    {
-      "name": "Marco B.",
-      "streak": 3,
-      "total_xp": 12,
-      "peak_streak": 3,
-      "shield": false
-    },
-    {
-      "name": "Anikha P.",
-      "streak": 2,
-      "total_xp": 63,
-      "peak_streak": 4,
+      "total_xp": 10,
+      "xp_per_answer": 3,
+      "tier": "Ember",
+      "sessions": 5,
       "shield": false
     },
     {
       "name": "Hayden L.",
       "streak": 2,
-      "total_xp": 45,
       "peak_streak": 2,
-      "shield": false
-    },
-    {
-      "name": "Brian T.",
-      "streak": 2,
-      "total_xp": 30,
-      "peak_streak": 5,
-      "shield": false
-    },
-    {
-      "name": "Nhan N.",
-      "streak": 1,
-      "total_xp": 41,
-      "peak_streak": 4,
+      "total_xp": 42,
+      "xp_per_answer": 2,
+      "tier": "Ember",
+      "sessions": 4,
       "shield": false
     },
     {
       "name": "Rishikesh S.",
-      "streak": 1,
-      "total_xp": 23,
+      "streak": 2,
       "peak_streak": 2,
-      "shield": false
+      "total_xp": 23,
+      "xp_per_answer": 2,
+      "tier": "Ember",
+      "sessions": 4,
+      "shield": true
+    },
+    {
+      "name": "Xuanzhi Z.",
+      "streak": 2,
+      "peak_streak": 2,
+      "total_xp": 8,
+      "xp_per_answer": 2,
+      "tier": "Ember",
+      "sessions": 2,
+      "shield": true
+    },
+    {
+      "name": "Marco B.",
+      "streak": 2,
+      "peak_streak": 2,
+      "total_xp": 6,
+      "xp_per_answer": 2,
+      "tier": "Ember",
+      "sessions": 2,
+      "shield": true
+    }
+  ],
+  "engagement": [
+    {
+      "name": "Rachana C.",
+      "jb_xp": 83,
+      "other_xp": 44,
+      "total_xp": 127,
+      "sources": {
+        "retrieval_duels": 19,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Jason M.",
+      "jb_xp": 80,
+      "other_xp": 47,
+      "total_xp": 127,
+      "sources": {
+        "retrieval_duels": 22,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Tobias O.",
+      "jb_xp": 80,
+      "other_xp": 45,
+      "total_xp": 125,
+      "sources": {
+        "retrieval_duels": 20,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Aaryaa D.",
+      "jb_xp": 79,
+      "other_xp": 44,
+      "total_xp": 123,
+      "sources": {
+        "retrieval_duels": 19,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Omar M.",
+      "jb_xp": 80,
+      "other_xp": 41,
+      "total_xp": 121,
+      "sources": {
+        "retrieval_duels": 16,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Katie C.",
+      "jb_xp": 79,
+      "other_xp": 42,
+      "total_xp": 121,
+      "sources": {
+        "retrieval_duels": 17,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Izabella O.",
+      "jb_xp": 76,
+      "other_xp": 44,
+      "total_xp": 120,
+      "sources": {
+        "retrieval_duels": 19,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Elika D.",
+      "jb_xp": 75,
+      "other_xp": 44,
+      "total_xp": 119,
+      "sources": {
+        "retrieval_duels": 19,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Zaizhu P.",
+      "jb_xp": 74,
+      "other_xp": 45,
+      "total_xp": 119,
+      "sources": {
+        "retrieval_duels": 20,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Caroline F.",
+      "jb_xp": 78,
+      "other_xp": 40,
+      "total_xp": 118,
+      "sources": {
+        "retrieval_duels": 15,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Ashley H.",
+      "jb_xp": 75,
+      "other_xp": 41,
+      "total_xp": 116,
+      "sources": {
+        "retrieval_duels": 16,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Kyle J.",
+      "jb_xp": 79,
+      "other_xp": 35,
+      "total_xp": 114,
+      "sources": {
+        "retrieval_duels": 10,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Ashlyn W.",
+      "jb_xp": 77,
+      "other_xp": 37,
+      "total_xp": 114,
+      "sources": {
+        "retrieval_duels": 22,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 10,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Reinhardt M.",
+      "jb_xp": 74,
+      "other_xp": 40,
+      "total_xp": 114,
+      "sources": {
+        "retrieval_duels": 15,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Justin S.",
+      "jb_xp": 78,
+      "other_xp": 35,
+      "total_xp": 113,
+      "sources": {
+        "retrieval_duels": 10,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Delaney K.",
+      "jb_xp": 74,
+      "other_xp": 38,
+      "total_xp": 112,
+      "sources": {
+        "retrieval_duels": 13,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Sonya A.",
+      "jb_xp": 71,
+      "other_xp": 40,
+      "total_xp": 111,
+      "sources": {
+        "retrieval_duels": 15,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Janet G.",
+      "jb_xp": 64,
+      "other_xp": 47,
+      "total_xp": 111,
+      "sources": {
+        "retrieval_duels": 22,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Tiffany N.",
+      "jb_xp": 64,
+      "other_xp": 46,
+      "total_xp": 110,
+      "sources": {
+        "retrieval_duels": 21,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Katherine B.",
+      "jb_xp": 74,
+      "other_xp": 35,
+      "total_xp": 109,
+      "sources": {
+        "retrieval_duels": 10,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Kashvika C.",
+      "jb_xp": 66,
+      "other_xp": 39,
+      "total_xp": 105,
+      "sources": {
+        "retrieval_duels": 14,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Grace M.",
+      "jb_xp": 64,
+      "other_xp": 41,
+      "total_xp": 105,
+      "sources": {
+        "retrieval_duels": 16,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Valeria A.",
+      "jb_xp": 69,
+      "other_xp": 34,
+      "total_xp": 103,
+      "sources": {
+        "retrieval_duels": 9,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Anikha P.",
+      "jb_xp": 69,
+      "other_xp": 34,
+      "total_xp": 103,
+      "sources": {
+        "retrieval_duels": 9,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Gina P.",
+      "jb_xp": 68,
+      "other_xp": 35,
+      "total_xp": 103,
+      "sources": {
+        "retrieval_duels": 20,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 10,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Caroline W.",
+      "jb_xp": 65,
+      "other_xp": 38,
+      "total_xp": 103,
+      "sources": {
+        "retrieval_duels": 23,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 10,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Theresa H.",
+      "jb_xp": 64,
+      "other_xp": 37,
+      "total_xp": 101,
+      "sources": {
+        "retrieval_duels": 12,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Lucy T.",
+      "jb_xp": 78,
+      "other_xp": 16,
+      "total_xp": 94,
+      "sources": {
+        "retrieval_duels": 11,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 0,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Hanna R.",
+      "jb_xp": 55,
+      "other_xp": 37,
+      "total_xp": 92,
+      "sources": {
+        "retrieval_duels": 12,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Yijia L.",
+      "jb_xp": 65,
+      "other_xp": 23,
+      "total_xp": 88,
+      "sources": {
+        "retrieval_duels": 18,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 0,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Leslie G.",
+      "jb_xp": 62,
+      "other_xp": 25,
+      "total_xp": 87,
+      "sources": {
+        "retrieval_duels": 20,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 0,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Alondra R.",
+      "jb_xp": 51,
+      "other_xp": 35,
+      "total_xp": 86,
+      "sources": {
+        "retrieval_duels": 10,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Natasha G.",
+      "jb_xp": 51,
+      "other_xp": 33,
+      "total_xp": 84,
+      "sources": {
+        "retrieval_duels": 8,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Omar B.",
+      "jb_xp": 45,
+      "other_xp": 36,
+      "total_xp": 81,
+      "sources": {
+        "retrieval_duels": 11,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Ashlyne O.",
+      "jb_xp": 43,
+      "other_xp": 38,
+      "total_xp": 81,
+      "sources": {
+        "retrieval_duels": 13,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Morgan H.",
+      "jb_xp": 38,
+      "other_xp": 43,
+      "total_xp": 81,
+      "sources": {
+        "retrieval_duels": 18,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Tanisha S.",
+      "jb_xp": 44,
+      "other_xp": 36,
+      "total_xp": 80,
+      "sources": {
+        "retrieval_duels": 11,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Nhan N.",
+      "jb_xp": 41,
+      "other_xp": 36,
+      "total_xp": 77,
+      "sources": {
+        "retrieval_duels": 16,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 0,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Brian T.",
+      "jb_xp": 27,
+      "other_xp": 46,
+      "total_xp": 73,
+      "sources": {
+        "retrieval_duels": 21,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "charles b.",
+      "jb_xp": 23,
+      "other_xp": 47,
+      "total_xp": 70,
+      "sources": {
+        "retrieval_duels": 22,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Hayden L.",
+      "jb_xp": 42,
+      "other_xp": 26,
+      "total_xp": 68,
+      "sources": {
+        "retrieval_duels": 16,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 0,
+        "surveys": 10,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Spyridon S.",
+      "jb_xp": 24,
+      "other_xp": 40,
+      "total_xp": 64,
+      "sources": {
+        "retrieval_duels": 20,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 0,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Selena C.",
+      "jb_xp": 27,
+      "other_xp": 28,
+      "total_xp": 55,
+      "sources": {
+        "retrieval_duels": 8,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 0,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Rishikesh S.",
+      "jb_xp": 23,
+      "other_xp": 23,
+      "total_xp": 46,
+      "sources": {
+        "retrieval_duels": 13,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 0,
+        "surveys": 10,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Kemora B.",
+      "jb_xp": 10,
+      "other_xp": 33,
+      "total_xp": 43,
+      "sources": {
+        "retrieval_duels": 8,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 5,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Xuanzhi Z.",
+      "jb_xp": 8,
+      "other_xp": 23,
+      "total_xp": 31,
+      "sources": {
+        "retrieval_duels": 3,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 0,
+        "surveys": 20,
+        "volunteer_shares": 0
+      }
+    },
+    {
+      "name": "Marco B.",
+      "jb_xp": 6,
+      "other_xp": 16,
+      "total_xp": 22,
+      "sources": {
+        "retrieval_duels": 6,
+        "boss_battle": 0,
+        "ai_error_log": 0,
+        "game_events": 0,
+        "surveys": 10,
+        "volunteer_shares": 0
+      }
     }
   ]
 }
