@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-24",
+  "updated": "2026-04-25",
   "week": 4,
   "course": "BIOL 2: The Crucible",
   "quarter": "Spring 2026",
@@ -407,6 +407,16 @@
       "shield": false
     },
     {
+      "name": "Anikha P.",
+      "streak": 3,
+      "peak_streak": 4,
+      "total_xp": 73,
+      "xp_per_answer": 3,
+      "tier": "Spark",
+      "sessions": 7,
+      "shield": false
+    },
+    {
       "name": "Brian T.",
       "streak": 3,
       "peak_streak": 5,
@@ -437,13 +447,13 @@
       "shield": false
     },
     {
-      "name": "Anikha P.",
-      "streak": 1,
-      "peak_streak": 4,
-      "total_xp": 63,
-      "xp_per_answer": 1,
+      "name": "Rishikesh S.",
+      "streak": 2,
+      "peak_streak": 2,
+      "total_xp": 28,
+      "xp_per_answer": 2,
       "tier": "Spark",
-      "sessions": 6,
+      "sessions": 5,
       "shield": false
     },
     {
@@ -464,16 +474,6 @@
       "xp_per_answer": 1,
       "tier": "Spark",
       "sessions": 3,
-      "shield": false
-    },
-    {
-      "name": "Rishikesh S.",
-      "streak": 0,
-      "peak_streak": 2,
-      "total_xp": 23,
-      "xp_per_answer": 0,
-      "tier": "Spark",
-      "sessions": 4,
       "shield": false
     }
   ],
@@ -1054,9 +1054,9 @@
     },
     {
       "name": "Anikha P.",
-      "jb_xp": 68,
+      "jb_xp": 78,
       "other_xp": 24,
-      "total_xp": 92,
+      "total_xp": 102,
       "sources": {
         "retrieval_duels": 4,
         "boss_battle": 0,
@@ -1082,9 +1082,9 @@
     },
     {
       "name": "Rishikesh S.",
-      "jb_xp": 44,
+      "jb_xp": 49,
       "other_xp": 29,
-      "total_xp": 73,
+      "total_xp": 78,
       "sources": {
         "retrieval_duels": 9,
         "boss_battle": 0,
