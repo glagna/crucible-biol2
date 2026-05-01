@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-30 21:00",
+  "updated": "2026-04-30 21:35",
   "week": 5,
   "sessions_completed": 11,
   "total_students": 47,
@@ -332,6 +332,290 @@
       "total_xp": 30,
       "peak_streak": 3,
       "shield": false
+    }
+  ],
+  "engagement": [
+    {
+      "name": "Jason M.",
+      "total_xp": 215,
+      "jb_xp": 135,
+      "other_xp": 80
+    },
+    {
+      "name": "Katie C.",
+      "total_xp": 214,
+      "jb_xp": 135,
+      "other_xp": 79
+    },
+    {
+      "name": "Justin S.",
+      "total_xp": 213,
+      "jb_xp": 135,
+      "other_xp": 78
+    },
+    {
+      "name": "Lucy T.",
+      "total_xp": 213,
+      "jb_xp": 135,
+      "other_xp": 78
+    },
+    {
+      "name": "Ashley H.",
+      "total_xp": 210,
+      "jb_xp": 135,
+      "other_xp": 75
+    },
+    {
+      "name": "Omar M.",
+      "total_xp": 205,
+      "jb_xp": 125,
+      "other_xp": 80
+    },
+    {
+      "name": "Delaney K.",
+      "total_xp": 204,
+      "jb_xp": 130,
+      "other_xp": 74
+    },
+    {
+      "name": "Katherine B.",
+      "total_xp": 204,
+      "jb_xp": 130,
+      "other_xp": 74
+    },
+    {
+      "name": "Izabella O.",
+      "total_xp": 201,
+      "jb_xp": 125,
+      "other_xp": 76
+    },
+    {
+      "name": "Sonya A.",
+      "total_xp": 201,
+      "jb_xp": 130,
+      "other_xp": 71
+    },
+    {
+      "name": "Caroline W.",
+      "total_xp": 200,
+      "jb_xp": 135,
+      "other_xp": 65
+    },
+    {
+      "name": "Yijia L.",
+      "total_xp": 200,
+      "jb_xp": 135,
+      "other_xp": 65
+    },
+    {
+      "name": "Tiffany N.",
+      "total_xp": 199,
+      "jb_xp": 135,
+      "other_xp": 64
+    },
+    {
+      "name": "Caroline F.",
+      "total_xp": 198,
+      "jb_xp": 120,
+      "other_xp": 78
+    },
+    {
+      "name": "Kashvika C.",
+      "total_xp": 196,
+      "jb_xp": 130,
+      "other_xp": 66
+    },
+    {
+      "name": "Zaizhu P.",
+      "total_xp": 194,
+      "jb_xp": 120,
+      "other_xp": 74
+    },
+    {
+      "name": "Ashlyn W.",
+      "total_xp": 192,
+      "jb_xp": 115,
+      "other_xp": 77
+    },
+    {
+      "name": "Tobias O.",
+      "total_xp": 190,
+      "jb_xp": 110,
+      "other_xp": 80
+    },
+    {
+      "name": "Elika D.",
+      "total_xp": 185,
+      "jb_xp": 110,
+      "other_xp": 75
+    },
+    {
+      "name": "Valeria A.",
+      "total_xp": 179,
+      "jb_xp": 110,
+      "other_xp": 69
+    },
+    {
+      "name": "Grace M.",
+      "total_xp": 174,
+      "jb_xp": 110,
+      "other_xp": 64
+    },
+    {
+      "name": "Leslie G.",
+      "total_xp": 167,
+      "jb_xp": 105,
+      "other_xp": 62
+    },
+    {
+      "name": "Tanisha S.",
+      "total_xp": 167,
+      "jb_xp": 123,
+      "other_xp": 44
+    },
+    {
+      "name": "Alondra R.",
+      "total_xp": 160,
+      "jb_xp": 109,
+      "other_xp": 51
+    },
+    {
+      "name": "Spyridon S.",
+      "total_xp": 159,
+      "jb_xp": 135,
+      "other_xp": 24
+    },
+    {
+      "name": "Reinhardt M.",
+      "total_xp": 154,
+      "jb_xp": 80,
+      "other_xp": 74
+    },
+    {
+      "name": "Kyle J.",
+      "total_xp": 139,
+      "jb_xp": 60,
+      "other_xp": 79
+    },
+    {
+      "name": "Omar B.",
+      "total_xp": 135,
+      "jb_xp": 90,
+      "other_xp": 45
+    },
+    {
+      "name": "Ashlyne O.",
+      "total_xp": 128,
+      "jb_xp": 85,
+      "other_xp": 43
+    },
+    {
+      "name": "Aaryaa D.",
+      "total_xp": 124,
+      "jb_xp": 45,
+      "other_xp": 79
+    },
+    {
+      "name": "Theresa H.",
+      "total_xp": 114,
+      "jb_xp": 50,
+      "other_xp": 64
+    },
+    {
+      "name": "Gina P.",
+      "total_xp": 113,
+      "jb_xp": 45,
+      "other_xp": 68
+    },
+    {
+      "name": "Morgan H.",
+      "total_xp": 112,
+      "jb_xp": 74,
+      "other_xp": 38
+    },
+    {
+      "name": "Hayden L.",
+      "total_xp": 111,
+      "jb_xp": 72,
+      "other_xp": 39
+    },
+    {
+      "name": "Anikha P.",
+      "total_xp": 109,
+      "jb_xp": 52,
+      "other_xp": 57
+    },
+    {
+      "name": "Hanna R.",
+      "total_xp": 95,
+      "jb_xp": 40,
+      "other_xp": 55
+    },
+    {
+      "name": "Janet G.",
+      "total_xp": 94,
+      "jb_xp": 30,
+      "other_xp": 64
+    },
+    {
+      "name": "Selena C.",
+      "total_xp": 89,
+      "jb_xp": 67,
+      "other_xp": 22
+    },
+    {
+      "name": "Charles B.",
+      "total_xp": 83,
+      "jb_xp": 60,
+      "other_xp": 23
+    },
+    {
+      "name": "Rachana C.",
+      "total_xp": 83,
+      "jb_xp": 0,
+      "other_xp": 83
+    },
+    {
+      "name": "Brian T.",
+      "total_xp": 77,
+      "jb_xp": 47,
+      "other_xp": 30
+    },
+    {
+      "name": "Nhan N.",
+      "total_xp": 71,
+      "jb_xp": 30,
+      "other_xp": 41
+    },
+    {
+      "name": "Natasha G.",
+      "total_xp": 51,
+      "jb_xp": 0,
+      "other_xp": 51
+    },
+    {
+      "name": "Xuanzhi Z.",
+      "total_xp": 49,
+      "jb_xp": 41,
+      "other_xp": 8
+    },
+    {
+      "name": "Kemora B.",
+      "total_xp": 47,
+      "jb_xp": 35,
+      "other_xp": 12
+    },
+    {
+      "name": "Rishikesh S.",
+      "total_xp": 34,
+      "jb_xp": 11,
+      "other_xp": 23
+    },
+    {
+      "name": "Marco B.",
+      "total_xp": 30,
+      "jb_xp": 24,
+      "other_xp": 6
     }
   ]
 }
