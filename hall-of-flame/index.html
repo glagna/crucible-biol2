@@ -421,7 +421,7 @@
   <!-- ══════════ SECTION 2: TOTAL ENGAGEMENT XP ══════════ -->
   <div class="section-header engagement">
     <h2>⚡ Total Engagement XP</h2>
-    <span class="sub">All XP sources combined — 400 XP = full 10% Engagement Score</span>
+    <span class="sub">All XP sources combined — 800 XP = full 10% Engagement Score</span>
   </div>
 
   <!-- XP Lookup -->
@@ -469,7 +469,7 @@
   <div class="rules">
     <h3>⚡ How XP Works</h3>
     <ul>
-      <li><strong>400 XP = full 10% Engagement Score.</strong> Below 400, your grade fraction scales linearly (e.g., 200 XP = 5%).</li>
+      <li><strong>800 XP = full 10% Engagement Score.</strong> Below 800, your grade fraction scales linearly (e.g., 400 XP = 5%, 200 XP = 2.5%). Updated 2026-05-04 from a 400 XP target after many of you breezed past it.</li>
       <li>Your <strong>Jackpot Bell streak</strong> is your biggest daily XP source. Streak of 5 = 5 XP per correct answer = up to <strong style="color:#f59e0b;">15 XP per class</strong>.</li>
       <li><strong>Retrieval Duels</strong> earn 1-3 XP per round. Wager rounds can lose XP — risk vs. reward.</li>
       <li><strong>Boss Battles</strong> earn 5-50 team XP depending on performance. Team of the Round gets +20.</li>
@@ -493,7 +493,7 @@ const TIERS = [
   { min:  0, name: 'Kindling', emoji: '🪵',     color: '#8b7355', bg: '#2a2015' },
 ];
 
-const XP_CEILING = 400;
+const XP_CEILING = 800;
 const XP_CAP = 5;
 const MEDALS = ['🥇', '🥈', '🥉'];
 
@@ -631,7 +631,7 @@ function renderEngTable(data) {
       <td class="name">${s.name}</td>
       <td style="color:#ff6b35;font-weight:600;font-size:0.9em;">${jbXP}</td>
       <td style="color:#d4a853;font-weight:600;font-size:0.9em;">${otherXP > 0 ? '+' + otherXP : '—'}</td>
-      <td style="font-weight:700;font-size:1.05em;color:${total >= XP_CEILING ? '#f59e0b' : total >= 200 ? '#d4a853' : '#8b7355'};">${total}</td>
+      <td style="font-weight:700;font-size:1.05em;color:${total >= XP_CEILING ? '#f59e0b' : total >= XP_CEILING/2 ? '#d4a853' : '#8b7355'};">${total}</td>
       <td>
         <div class="xp-bar-track" style="position:relative;">
           <div class="xp-bar-fill" style="width:${pct}%;background:${xpBarColor(total)}"></div>
