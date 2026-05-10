@@ -1,10 +1,10 @@
 {
-  "updated": "2026-05-05 00:36",
+  "updated": "2026-05-10 01:30",
   "week": 6,
   "course": "BIOL 2: The Crucible",
   "quarter": "Spring 2026",
   "total_students": 47,
-  "sessions_completed": 10,
+  "sessions_completed": 18,
   "students": [
     {
       "name": "Jason M.",
@@ -340,8 +340,8 @@
     {
       "name": "Lucy T.",
       "jb_xp": 243,
-      "other_xp": 377,
-      "total_xp": 620,
+      "other_xp": 377.0,
+      "total_xp": 620.0,
       "sources": {
         "retrieval_duels": 160,
         "boss_battle": 85,
@@ -354,8 +354,8 @@
     {
       "name": "Ashlyn W.",
       "jb_xp": 222,
-      "other_xp": 378,
-      "total_xp": 600,
+      "other_xp": 378.0,
+      "total_xp": 600.0,
       "sources": {
         "retrieval_duels": 145,
         "boss_battle": 100,
@@ -368,8 +368,8 @@
     {
       "name": "Katie C.",
       "jb_xp": 239,
-      "other_xp": 361,
-      "total_xp": 600,
+      "other_xp": 376.0,
+      "total_xp": 615.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -382,8 +382,8 @@
     {
       "name": "Justin S.",
       "jb_xp": 243,
-      "other_xp": 356.5,
-      "total_xp": 599.5,
+      "other_xp": 371.5,
+      "total_xp": 614.5,
       "sources": {
         "retrieval_duels": 143,
         "boss_battle": 85,
@@ -396,8 +396,8 @@
     {
       "name": "Tiffany N.",
       "jb_xp": 229,
-      "other_xp": 368,
-      "total_xp": 597,
+      "other_xp": 383.0,
+      "total_xp": 612.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -410,8 +410,8 @@
     {
       "name": "Omar M.",
       "jb_xp": 230,
-      "other_xp": 365,
-      "total_xp": 595,
+      "other_xp": 380.0,
+      "total_xp": 610.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -424,8 +424,8 @@
     {
       "name": "Yijia L.",
       "jb_xp": 225,
-      "other_xp": 369.5,
-      "total_xp": 594.5,
+      "other_xp": 374.5,
+      "total_xp": 599.5,
       "sources": {
         "retrieval_duels": 140,
         "boss_battle": 100,
@@ -438,8 +438,8 @@
     {
       "name": "Kashvika C.",
       "jb_xp": 226,
-      "other_xp": 367,
-      "total_xp": 593,
+      "other_xp": 367.0,
+      "total_xp": 593.0,
       "sources": {
         "retrieval_duels": 155,
         "boss_battle": 85,
@@ -452,8 +452,8 @@
     {
       "name": "Katherine B.",
       "jb_xp": 234,
-      "other_xp": 358,
-      "total_xp": 592,
+      "other_xp": 373.0,
+      "total_xp": 607.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -466,8 +466,8 @@
     {
       "name": "Izabella O.",
       "jb_xp": 226,
-      "other_xp": 365,
-      "total_xp": 591,
+      "other_xp": 380.0,
+      "total_xp": 606.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -480,8 +480,8 @@
     {
       "name": "Valeria A.",
       "jb_xp": 209,
-      "other_xp": 381,
-      "total_xp": 590,
+      "other_xp": 391.0,
+      "total_xp": 600.0,
       "sources": {
         "retrieval_duels": 160,
         "boss_battle": 85,
@@ -494,8 +494,8 @@
     {
       "name": "Elika D.",
       "jb_xp": 205,
-      "other_xp": 377,
-      "total_xp": 582,
+      "other_xp": 377.0,
+      "total_xp": 582.0,
       "sources": {
         "retrieval_duels": 165,
         "boss_battle": 70,
@@ -508,8 +508,8 @@
     {
       "name": "Jason M.",
       "jb_xp": 245,
-      "other_xp": 335,
-      "total_xp": 580,
+      "other_xp": 350.0,
+      "total_xp": 595.0,
       "sources": {
         "retrieval_duels": 145,
         "boss_battle": 85,
@@ -522,8 +522,8 @@
     {
       "name": "Caroline F.",
       "jb_xp": 213,
-      "other_xp": 366,
-      "total_xp": 579,
+      "other_xp": 376.0,
+      "total_xp": 589.0,
       "sources": {
         "retrieval_duels": 155,
         "boss_battle": 85,
@@ -536,8 +536,8 @@
     {
       "name": "Tobias O.",
       "jb_xp": 220,
-      "other_xp": 355,
-      "total_xp": 575,
+      "other_xp": 355.0,
+      "total_xp": 575.0,
       "sources": {
         "retrieval_duels": 135,
         "boss_battle": 100,
@@ -550,8 +550,8 @@
     {
       "name": "Sonya A.",
       "jb_xp": 216,
-      "other_xp": 358,
-      "total_xp": 574,
+      "other_xp": 373.0,
+      "total_xp": 589.0,
       "sources": {
         "retrieval_duels": 143,
         "boss_battle": 85,
@@ -564,8 +564,8 @@
     {
       "name": "Tanisha S.",
       "jb_xp": 197,
-      "other_xp": 377,
-      "total_xp": 574,
+      "other_xp": 377.0,
+      "total_xp": 574.0,
       "sources": {
         "retrieval_duels": 170,
         "boss_battle": 70,
@@ -578,8 +578,8 @@
     {
       "name": "Zaizhu P.",
       "jb_xp": 219,
-      "other_xp": 354,
-      "total_xp": 573,
+      "other_xp": 359.0,
+      "total_xp": 578.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -606,8 +606,8 @@
     {
       "name": "Caroline W.",
       "jb_xp": 230,
-      "other_xp": 333,
-      "total_xp": 563,
+      "other_xp": 343.0,
+      "total_xp": 573.0,
       "sources": {
         "retrieval_duels": 135,
         "boss_battle": 85,
@@ -620,8 +620,8 @@
     {
       "name": "Delaney K.",
       "jb_xp": 224,
-      "other_xp": 337,
-      "total_xp": 561,
+      "other_xp": 342.0,
+      "total_xp": 566.0,
       "sources": {
         "retrieval_duels": 125,
         "boss_battle": 85,
@@ -634,8 +634,8 @@
     {
       "name": "Grace M.",
       "jb_xp": 199,
-      "other_xp": 360,
-      "total_xp": 559,
+      "other_xp": 360.0,
+      "total_xp": 559.0,
       "sources": {
         "retrieval_duels": 135,
         "boss_battle": 100,
@@ -648,8 +648,8 @@
     {
       "name": "Reinhardt M.",
       "jb_xp": 184,
-      "other_xp": 360,
-      "total_xp": 544,
+      "other_xp": 360.0,
+      "total_xp": 544.0,
       "sources": {
         "retrieval_duels": 155,
         "boss_battle": 85,
@@ -662,8 +662,8 @@
     {
       "name": "Aaryaa D.",
       "jb_xp": 149,
-      "other_xp": 382,
-      "total_xp": 531,
+      "other_xp": 382.0,
+      "total_xp": 531.0,
       "sources": {
         "retrieval_duels": 170,
         "boss_battle": 70,
@@ -676,8 +676,8 @@
     {
       "name": "Spyridon S.",
       "jb_xp": 179,
-      "other_xp": 347,
-      "total_xp": 526,
+      "other_xp": 352.0,
+      "total_xp": 531.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -690,8 +690,8 @@
     {
       "name": "Kyle J.",
       "jb_xp": 149,
-      "other_xp": 370.5,
-      "total_xp": 519.5,
+      "other_xp": 380.5,
+      "total_xp": 529.5,
       "sources": {
         "retrieval_duels": 160,
         "boss_battle": 85,
@@ -704,8 +704,8 @@
     {
       "name": "Alondra R.",
       "jb_xp": 182,
-      "other_xp": 332,
-      "total_xp": 514,
+      "other_xp": 342.0,
+      "total_xp": 524.0,
       "sources": {
         "retrieval_duels": 130,
         "boss_battle": 85,
@@ -718,8 +718,8 @@
     {
       "name": "Theresa H.",
       "jb_xp": 139,
-      "other_xp": 369,
-      "total_xp": 508,
+      "other_xp": 369.0,
+      "total_xp": 508.0,
       "sources": {
         "retrieval_duels": 160,
         "boss_battle": 85,
@@ -732,8 +732,8 @@
     {
       "name": "Ashlyne O.",
       "jb_xp": 121,
-      "other_xp": 378,
-      "total_xp": 499,
+      "other_xp": 383.0,
+      "total_xp": 504.0,
       "sources": {
         "retrieval_duels": 145,
         "boss_battle": 100,
@@ -746,8 +746,8 @@
     {
       "name": "Anikha P.",
       "jb_xp": 118,
-      "other_xp": 379,
-      "total_xp": 497,
+      "other_xp": 389.0,
+      "total_xp": 507.0,
       "sources": {
         "retrieval_duels": 160,
         "boss_battle": 85,
@@ -760,8 +760,8 @@
     {
       "name": "Omar B.",
       "jb_xp": 155,
-      "other_xp": 342,
-      "total_xp": 497,
+      "other_xp": 347.0,
+      "total_xp": 502.0,
       "sources": {
         "retrieval_duels": 125,
         "boss_battle": 85,
@@ -774,8 +774,8 @@
     {
       "name": "Leslie G.",
       "jb_xp": 182,
-      "other_xp": 311,
-      "total_xp": 493,
+      "other_xp": 321.0,
+      "total_xp": 503.0,
       "sources": {
         "retrieval_duels": 98,
         "boss_battle": 85,
@@ -788,8 +788,8 @@
     {
       "name": "Morgan H.",
       "jb_xp": 132,
-      "other_xp": 360,
-      "total_xp": 492,
+      "other_xp": 360.0,
+      "total_xp": 492.0,
       "sources": {
         "retrieval_duels": 135,
         "boss_battle": 100,
@@ -802,8 +802,8 @@
     {
       "name": "Gina P.",
       "jb_xp": 113,
-      "other_xp": 371,
-      "total_xp": 484,
+      "other_xp": 381.0,
+      "total_xp": 494.0,
       "sources": {
         "retrieval_duels": 160,
         "boss_battle": 85,
@@ -816,8 +816,8 @@
     {
       "name": "charles b.",
       "jb_xp": 113,
-      "other_xp": 362,
-      "total_xp": 475,
+      "other_xp": 362.0,
+      "total_xp": 475.0,
       "sources": {
         "retrieval_duels": 155,
         "boss_battle": 85,
@@ -830,8 +830,8 @@
     {
       "name": "Hayden L.",
       "jb_xp": 124,
-      "other_xp": 350,
-      "total_xp": 474,
+      "other_xp": 350.0,
+      "total_xp": 474.0,
       "sources": {
         "retrieval_duels": 155,
         "boss_battle": 100,
@@ -844,8 +844,8 @@
     {
       "name": "Janet G.",
       "jb_xp": 109,
-      "other_xp": 355,
-      "total_xp": 464,
+      "other_xp": 360.0,
+      "total_xp": 469.0,
       "sources": {
         "retrieval_duels": 155,
         "boss_battle": 100,
@@ -858,8 +858,8 @@
     {
       "name": "Xuanzhi Z.",
       "jb_xp": 79,
-      "other_xp": 379,
-      "total_xp": 458,
+      "other_xp": 379.0,
+      "total_xp": 458.0,
       "sources": {
         "retrieval_duels": 160,
         "boss_battle": 85,
@@ -872,8 +872,8 @@
     {
       "name": "Rachana C.",
       "jb_xp": 83,
-      "other_xp": 374,
-      "total_xp": 457,
+      "other_xp": 384.0,
+      "total_xp": 467.0,
       "sources": {
         "retrieval_duels": 155,
         "boss_battle": 85,
@@ -886,8 +886,8 @@
     {
       "name": "Selena C.",
       "jb_xp": 99,
-      "other_xp": 347,
-      "total_xp": 446,
+      "other_xp": 352.0,
+      "total_xp": 451.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -900,8 +900,8 @@
     {
       "name": "Hanna R.",
       "jb_xp": 120,
-      "other_xp": 316,
-      "total_xp": 436,
+      "other_xp": 326.0,
+      "total_xp": 446.0,
       "sources": {
         "retrieval_duels": 98,
         "boss_battle": 85,
@@ -914,8 +914,8 @@
     {
       "name": "Brian T.",
       "jb_xp": 92,
-      "other_xp": 317,
-      "total_xp": 409,
+      "other_xp": 322.0,
+      "total_xp": 414.0,
       "sources": {
         "retrieval_duels": 125,
         "boss_battle": 85,
@@ -928,8 +928,8 @@
     {
       "name": "Kemora B.",
       "jb_xp": 50,
-      "other_xp": 353,
-      "total_xp": 403,
+      "other_xp": 368.0,
+      "total_xp": 418.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 85,
@@ -942,8 +942,8 @@
     {
       "name": "Natasha G.",
       "jb_xp": 51,
-      "other_xp": 345,
-      "total_xp": 396,
+      "other_xp": 350.0,
+      "total_xp": 401.0,
       "sources": {
         "retrieval_duels": 150,
         "boss_battle": 100,
@@ -956,8 +956,8 @@
     {
       "name": "Nhan N.",
       "jb_xp": 71,
-      "other_xp": 325,
-      "total_xp": 396,
+      "other_xp": 340.0,
+      "total_xp": 411.0,
       "sources": {
         "retrieval_duels": 140,
         "boss_battle": 85,
@@ -970,8 +970,8 @@
     {
       "name": "Rishikesh S.",
       "jb_xp": 34,
-      "other_xp": 351,
-      "total_xp": 385,
+      "other_xp": 366.0,
+      "total_xp": 400.0,
       "sources": {
         "retrieval_duels": 143,
         "boss_battle": 85,
@@ -984,8 +984,8 @@
     {
       "name": "Marco B.",
       "jb_xp": 24,
-      "other_xp": 320,
-      "total_xp": 344,
+      "other_xp": 335.0,
+      "total_xp": 359.0,
       "sources": {
         "retrieval_duels": 145,
         "boss_battle": 85,
