@@ -4,36 +4,126 @@
   "course": "BIOL 2: The Crucible",
   "quarter": "Spring 2026",
   "total_students": 47,
-  "sessions_completed": 20,
+  "sessions_completed": 21,
   "students": [
     {
       "name": "Justin S.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 458,
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 473,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 20,
+      "sessions": 21,
       "shield": true
     },
     {
       "name": "Lucy T.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 458,
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 473,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 20,
+      "sessions": 21,
       "shield": true
     },
     {
       "name": "Katie C.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 454,
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 469,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 20,
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Katherine B.",
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 464,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Omar M.",
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 460,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Tiffany N.",
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 459,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Caroline W.",
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 455,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Kashvika C.",
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 451,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Zaizhu P.",
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 444,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Tobias O.",
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 425,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Valeria A.",
+      "streak": 21,
+      "peak_streak": 21,
+      "total_xp": 414,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Jason M.",
+      "streak": 20,
+      "peak_streak": 20,
+      "total_xp": 460,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
       "shield": true
     },
     {
@@ -43,97 +133,57 @@
       "total_xp": 450,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 20,
+      "sessions": 21,
       "shield": true
     },
     {
-      "name": "Katherine B.",
+      "name": "Izabella O.",
       "streak": 20,
       "peak_streak": 20,
-      "total_xp": 449,
+      "total_xp": 371,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Hanna R.",
+      "streak": 20,
+      "peak_streak": 20,
+      "total_xp": 305,
       "xp_per_answer": 5,
       "tier": "Blaze",
       "sessions": 20,
       "shield": true
     },
     {
-      "name": "Omar M.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 445,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Tiffany N.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 444,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Caroline W.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 440,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Kashvika C.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 436,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Zaizhu P.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 434,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Tobias O.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 410,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Valeria A.",
-      "streak": 20,
-      "peak_streak": 20,
-      "total_xp": 399,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Jason M.",
+      "name": "Sonya A.",
       "streak": 19,
       "peak_streak": 19,
-      "total_xp": 445,
+      "total_xp": 431,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 20,
+      "sessions": 21,
+      "shield": false
+    },
+    {
+      "name": "Reinhardt M.",
+      "streak": 19,
+      "peak_streak": 19,
+      "total_xp": 404,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 19,
+      "shield": true
+    },
+    {
+      "name": "Yijia L.",
+      "streak": 19,
+      "peak_streak": 19,
+      "total_xp": 375,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
       "shield": true
     },
     {
@@ -143,17 +193,7 @@
       "total_xp": 364,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Izabella O.",
-      "streak": 19,
-      "peak_streak": 19,
-      "total_xp": 361,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
+      "sessions": 21,
       "shield": true
     },
     {
@@ -163,44 +203,14 @@
       "total_xp": 349,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 19,
+      "sessions": 20,
       "shield": true
     },
     {
-      "name": "Hanna R.",
+      "name": "Aaryaa D.",
       "streak": 19,
       "peak_streak": 19,
-      "total_xp": 290,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 19,
-      "shield": true
-    },
-    {
-      "name": "Sonya A.",
-      "streak": 18,
-      "peak_streak": 18,
-      "total_xp": 416,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 20,
-      "shield": false
-    },
-    {
-      "name": "Reinhardt M.",
-      "streak": 18,
-      "peak_streak": 18,
-      "total_xp": 394,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 18,
-      "shield": true
-    },
-    {
-      "name": "Yijia L.",
-      "streak": 18,
-      "peak_streak": 18,
-      "total_xp": 360,
+      "total_xp": 309,
       "xp_per_answer": 5,
       "tier": "Blaze",
       "sessions": 20,
@@ -213,137 +223,157 @@
       "total_xp": 339,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 19,
-      "shield": true
-    },
-    {
-      "name": "Aaryaa D.",
-      "streak": 18,
-      "peak_streak": 18,
-      "total_xp": 294,
-      "xp_per_answer": 5,
-      "tier": "Blaze",
-      "sessions": 19,
+      "sessions": 20,
       "shield": true
     },
     {
       "name": "Spyridon S.",
-      "streak": 17,
-      "peak_streak": 17,
-      "total_xp": 329,
+      "streak": 18,
+      "peak_streak": 18,
+      "total_xp": 334,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 18,
+      "sessions": 19,
       "shield": false
     },
     {
       "name": "Charles B.",
-      "streak": 16,
-      "peak_streak": 16,
-      "total_xp": 313,
+      "streak": 17,
+      "peak_streak": 17,
+      "total_xp": 328,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 18,
+      "sessions": 19,
       "shield": true
     },
     {
       "name": "Tanisha S.",
-      "streak": 15,
-      "peak_streak": 15,
-      "total_xp": 377,
+      "streak": 16,
+      "peak_streak": 16,
+      "total_xp": 387,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 19,
+      "sessions": 20,
       "shield": true
     },
     {
       "name": "Ashlyn W.",
-      "streak": 11,
+      "streak": 12,
       "peak_streak": 13,
-      "total_xp": 417,
+      "total_xp": 432,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 19,
+      "sessions": 20,
       "shield": true
     },
     {
       "name": "Anikha P.",
-      "streak": 11,
-      "peak_streak": 11,
-      "total_xp": 305,
+      "streak": 12,
+      "peak_streak": 12,
+      "total_xp": 320,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 19,
+      "sessions": 20,
       "shield": true
     },
     {
       "name": "Brian T.",
-      "streak": 11,
-      "peak_streak": 11,
-      "total_xp": 264,
+      "streak": 12,
+      "peak_streak": 12,
+      "total_xp": 279,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 18,
+      "sessions": 19,
       "shield": true
     },
     {
       "name": "Alondra R.",
-      "streak": 11,
+      "streak": 12,
+      "peak_streak": 12,
+      "total_xp": 247,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 19,
+      "shield": true
+    },
+    {
+      "name": "Omar B.",
+      "streak": 10,
       "peak_streak": 11,
-      "total_xp": 242,
+      "total_xp": 280,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 20,
+      "shield": false
+    },
+    {
+      "name": "Selena C.",
+      "streak": 10,
+      "peak_streak": 10,
+      "total_xp": 177,
       "xp_per_answer": 5,
       "tier": "Blaze",
       "sessions": 18,
       "shield": true
     },
     {
-      "name": "Omar B.",
-      "streak": 9,
-      "peak_streak": 11,
-      "total_xp": 265,
+      "name": "Leslie G.",
+      "streak": 8,
+      "peak_streak": 12,
+      "total_xp": 279,
       "xp_per_answer": 5,
       "tier": "Blaze",
-      "sessions": 19,
-      "shield": false
+      "sessions": 21,
+      "shield": true
     },
     {
-      "name": "Selena C.",
-      "streak": 9,
+      "name": "Ashlyne O.",
+      "streak": 8,
       "peak_streak": 9,
-      "total_xp": 162,
+      "total_xp": 239,
+      "xp_per_answer": 5,
+      "tier": "Blaze",
+      "sessions": 21,
+      "shield": true
+    },
+    {
+      "name": "Rachana C.",
+      "streak": 8,
+      "peak_streak": 8,
+      "total_xp": 197,
       "xp_per_answer": 5,
       "tier": "Blaze",
       "sessions": 17,
       "shield": true
     },
     {
-      "name": "Leslie G.",
-      "streak": 7,
-      "peak_streak": 12,
-      "total_xp": 269,
-      "xp_per_answer": 5,
-      "tier": "Ember",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Ashlyne O.",
-      "streak": 7,
+      "name": "Xuanzhi Z.",
+      "streak": 5,
       "peak_streak": 9,
-      "total_xp": 224,
-      "xp_per_answer": 5,
-      "tier": "Ember",
-      "sessions": 20,
-      "shield": true
-    },
-    {
-      "name": "Rachana C.",
-      "streak": 7,
-      "peak_streak": 7,
-      "total_xp": 182,
+      "total_xp": 155,
       "xp_per_answer": 5,
       "tier": "Ember",
       "sessions": 16,
+      "shield": true
+    },
+    {
+      "name": "Kemora B.",
+      "streak": 5,
+      "peak_streak": 6,
+      "total_xp": 76,
+      "xp_per_answer": 5,
+      "tier": "Ember",
+      "sessions": 19,
+      "shield": true
+    },
+    {
+      "name": "Marco B.",
+      "streak": 5,
+      "peak_streak": 5,
+      "total_xp": 61,
+      "xp_per_answer": 5,
+      "tier": "Ember",
+      "sessions": 15,
       "shield": true
     },
     {
@@ -353,68 +383,48 @@
       "total_xp": 244,
       "xp_per_answer": 4,
       "tier": "Ember",
-      "sessions": 20,
+      "sessions": 21,
       "shield": false
     },
     {
-      "name": "Xuanzhi Z.",
-      "streak": 4,
-      "peak_streak": 9,
-      "total_xp": 143,
-      "xp_per_answer": 4,
-      "tier": "Ember",
-      "sessions": 15,
-      "shield": true
-    },
-    {
-      "name": "Kemora B.",
-      "streak": 4,
-      "peak_streak": 6,
-      "total_xp": 72,
-      "xp_per_answer": 4,
-      "tier": "Ember",
-      "sessions": 18,
-      "shield": true
-    },
-    {
-      "name": "Marco B.",
-      "streak": 4,
-      "peak_streak": 4,
-      "total_xp": 49,
-      "xp_per_answer": 4,
-      "tier": "Ember",
-      "sessions": 14,
-      "shield": true
-    },
-    {
       "name": "Caroline F.",
-      "streak": 3,
+      "streak": 4,
       "peak_streak": 10,
-      "total_xp": 234,
-      "xp_per_answer": 3,
-      "tier": "Spark",
-      "sessions": 19,
+      "total_xp": 240,
+      "xp_per_answer": 4,
+      "tier": "Ember",
+      "sessions": 20,
       "shield": true
     },
     {
       "name": "Elika D.",
-      "streak": 3,
+      "streak": 4,
       "peak_streak": 13,
-      "total_xp": 222,
-      "xp_per_answer": 3,
-      "tier": "Spark",
-      "sessions": 19,
+      "total_xp": 228,
+      "xp_per_answer": 4,
+      "tier": "Ember",
+      "sessions": 20,
       "shield": true
     },
     {
       "name": "Morgan H.",
-      "streak": 3,
+      "streak": 4,
       "peak_streak": 11,
-      "total_xp": 162,
-      "xp_per_answer": 3,
-      "tier": "Spark",
-      "sessions": 19,
+      "total_xp": 168,
+      "xp_per_answer": 4,
+      "tier": "Ember",
+      "sessions": 20,
       "shield": true
+    },
+    {
+      "name": "Gina P.",
+      "streak": 4,
+      "peak_streak": 10,
+      "total_xp": 121,
+      "xp_per_answer": 4,
+      "tier": "Ember",
+      "sessions": 21,
+      "shield": false
     },
     {
       "name": "Hayden L.",
@@ -423,27 +433,17 @@
       "total_xp": 133,
       "xp_per_answer": 3,
       "tier": "Spark",
-      "sessions": 18,
+      "sessions": 19,
       "shield": true
     },
     {
-      "name": "Gina P.",
+      "name": "Janet G.",
       "streak": 3,
       "peak_streak": 10,
-      "total_xp": 115,
+      "total_xp": 116,
       "xp_per_answer": 3,
       "tier": "Spark",
       "sessions": 20,
-      "shield": false
-    },
-    {
-      "name": "Janet G.",
-      "streak": 2,
-      "peak_streak": 10,
-      "total_xp": 110,
-      "xp_per_answer": 2,
-      "tier": "Spark",
-      "sessions": 19,
       "shield": false
     },
     {
@@ -453,7 +453,7 @@
       "total_xp": 71,
       "xp_per_answer": 1,
       "tier": "Spark",
-      "sessions": 15,
+      "sessions": 16,
       "shield": false
     },
     {
@@ -463,7 +463,7 @@
       "total_xp": 51,
       "xp_per_answer": 1,
       "tier": "Spark",
-      "sessions": 15,
+      "sessions": 16,
       "shield": false
     },
     {
@@ -473,7 +473,7 @@
       "total_xp": 34,
       "xp_per_answer": 1,
       "tier": "Spark",
-      "sessions": 16,
+      "sessions": 17,
       "shield": false
     }
   ],
@@ -482,13 +482,13 @@
       "name": "Lucy Tull",
       "uid": 93982,
       "email": "07700030528",
-      "jb_xp": 458,
-      "other_xp": 413,
-      "total_xp": 871,
+      "jb_xp": 473,
+      "other_xp": 428,
+      "total_xp": 901,
       "sources": {
         "game_events": 180,
         "ai_error_log": 3,
-        "retrieval_duels": 220,
+        "retrieval_duels": 235,
         "boss_battle": 10
       }
     },
@@ -496,13 +496,13 @@
       "name": "Katie Chung",
       "uid": 85685,
       "email": "07700017282",
-      "jb_xp": 454,
-      "other_xp": 397,
-      "total_xp": 851,
+      "jb_xp": 469,
+      "other_xp": 412,
+      "total_xp": 881,
       "sources": {
         "game_events": 177,
         "ai_error_log": 5,
-        "retrieval_duels": 205,
+        "retrieval_duels": 220,
         "boss_battle": 10
       }
     },
@@ -510,13 +510,13 @@
       "name": "Justin Sze",
       "uid": 86661,
       "email": "07700019117",
-      "jb_xp": 458,
-      "other_xp": 387,
-      "total_xp": 845,
+      "jb_xp": 473,
+      "other_xp": 402,
+      "total_xp": 875,
       "sources": {
         "game_events": 171,
         "ai_error_log": 3,
-        "retrieval_duels": 203,
+        "retrieval_duels": 218,
         "boss_battle": 10
       }
     },
@@ -524,13 +524,13 @@
       "name": "Katherine Barker",
       "uid": 84916,
       "email": "07700013652",
-      "jb_xp": 449,
-      "other_xp": 394,
-      "total_xp": 843,
+      "jb_xp": 464,
+      "other_xp": 409,
+      "total_xp": 873,
       "sources": {
         "game_events": 184,
         "ai_error_log": 0,
-        "retrieval_duels": 200,
+        "retrieval_duels": 215,
         "boss_battle": 10
       }
     },
@@ -538,13 +538,13 @@
       "name": "Tiffany Nguyen",
       "uid": 85897,
       "email": "07700021600",
-      "jb_xp": 444,
-      "other_xp": 399,
-      "total_xp": 843,
+      "jb_xp": 459,
+      "other_xp": 414,
+      "total_xp": 873,
       "sources": {
         "game_events": 184,
         "ai_error_log": 5,
-        "retrieval_duels": 200,
+        "retrieval_duels": 215,
         "boss_battle": 10
       }
     },
@@ -552,13 +552,13 @@
       "name": "Omar Martinez",
       "uid": 70217,
       "email": "00001640392",
-      "jb_xp": 445,
-      "other_xp": 396,
-      "total_xp": 841,
+      "jb_xp": 460,
+      "other_xp": 411,
+      "total_xp": 871,
       "sources": {
         "game_events": 177,
         "ai_error_log": 4,
-        "retrieval_duels": 205,
+        "retrieval_duels": 220,
         "boss_battle": 10
       }
     },
@@ -566,12 +566,40 @@
       "name": "Kashvika Chauhan",
       "uid": 86288,
       "email": "07700016525",
-      "jb_xp": 436,
-      "other_xp": 403,
-      "total_xp": 839,
+      "jb_xp": 451,
+      "other_xp": 418,
+      "total_xp": 869,
       "sources": {
         "game_events": 173,
         "ai_error_log": 5,
+        "retrieval_duels": 230,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Valeria Arauz",
+      "uid": 93562,
+      "email": "07700035487",
+      "jb_xp": 414,
+      "other_xp": 437,
+      "total_xp": 851,
+      "sources": {
+        "game_events": 192,
+        "ai_error_log": 5,
+        "retrieval_duels": 230,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Jason Meyers",
+      "uid": 69725,
+      "email": "00001648647",
+      "jb_xp": 460,
+      "other_xp": 385,
+      "total_xp": 845,
+      "sources": {
+        "game_events": 157,
+        "ai_error_log": 3,
         "retrieval_duels": 215,
         "boss_battle": 10
       }
@@ -580,9 +608,9 @@
       "name": "Ashlyn Wang",
       "uid": 70343,
       "email": "00001637518",
-      "jb_xp": 417,
+      "jb_xp": 432,
       "other_xp": 404,
-      "total_xp": 821,
+      "total_xp": 836,
       "sources": {
         "game_events": 186,
         "ai_error_log": 3,
@@ -591,44 +619,86 @@
       }
     },
     {
-      "name": "Valeria Arauz",
-      "uid": 93562,
-      "email": "07700035487",
-      "jb_xp": 399,
-      "other_xp": 422,
-      "total_xp": 821,
-      "sources": {
-        "game_events": 192,
-        "ai_error_log": 5,
-        "retrieval_duels": 215,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Jason Meyers",
-      "uid": 69725,
-      "email": "00001648647",
-      "jb_xp": 445,
-      "other_xp": 370,
-      "total_xp": 815,
-      "sources": {
-        "game_events": 157,
-        "ai_error_log": 3,
-        "retrieval_duels": 200,
-        "boss_battle": 10
-      }
-    },
-    {
       "name": "Sonya Apsey",
       "uid": 84026,
       "email": "07700013655",
-      "jb_xp": 416,
-      "other_xp": 389,
-      "total_xp": 805,
+      "jb_xp": 431,
+      "other_xp": 404,
+      "total_xp": 835,
       "sources": {
         "game_events": 171,
         "ai_error_log": 5,
-        "retrieval_duels": 203,
+        "retrieval_duels": 218,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Tanisha Shah",
+      "uid": 68896,
+      "email": "00001633118",
+      "jb_xp": 387,
+      "other_xp": 438,
+      "total_xp": 825,
+      "sources": {
+        "game_events": 183,
+        "ai_error_log": 5,
+        "retrieval_duels": 240,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Reinhardt Muljono",
+      "uid": 94852,
+      "email": "07700038687",
+      "jb_xp": 404,
+      "other_xp": 416,
+      "total_xp": 820,
+      "sources": {
+        "game_events": 173,
+        "ai_error_log": 3,
+        "retrieval_duels": 230,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Tobias Osterloh",
+      "uid": 85994,
+      "email": "07700013001",
+      "jb_xp": 425,
+      "other_xp": 388,
+      "total_xp": 813,
+      "sources": {
+        "game_events": 168,
+        "ai_error_log": 5,
+        "retrieval_duels": 205,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Zaizhu Pan",
+      "uid": 90529,
+      "email": "07700027429",
+      "jb_xp": 444,
+      "other_xp": 369,
+      "total_xp": 813,
+      "sources": {
+        "game_events": 169,
+        "ai_error_log": 5,
+        "retrieval_duels": 185,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Caroline Woodcock",
+      "uid": 85424,
+      "email": "07700014118",
+      "jb_xp": 455,
+      "other_xp": 356,
+      "total_xp": 811,
+      "sources": {
+        "game_events": 162,
+        "ai_error_log": 4,
+        "retrieval_duels": 180,
         "boss_battle": 10
       }
     },
@@ -647,82 +717,12 @@
       }
     },
     {
-      "name": "Zaizhu Pan",
-      "uid": 90529,
-      "email": "07700027429",
-      "jb_xp": 434,
-      "other_xp": 369,
-      "total_xp": 803,
-      "sources": {
-        "game_events": 169,
-        "ai_error_log": 5,
-        "retrieval_duels": 185,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Tanisha Shah",
-      "uid": 68896,
-      "email": "00001633118",
-      "jb_xp": 377,
-      "other_xp": 423,
-      "total_xp": 800,
-      "sources": {
-        "game_events": 183,
-        "ai_error_log": 5,
-        "retrieval_duels": 225,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Caroline Woodcock",
-      "uid": 85424,
-      "email": "07700014118",
-      "jb_xp": 440,
-      "other_xp": 356,
-      "total_xp": 796,
-      "sources": {
-        "game_events": 162,
-        "ai_error_log": 4,
-        "retrieval_duels": 180,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Reinhardt Muljono",
-      "uid": 94852,
-      "email": "07700038687",
-      "jb_xp": 394,
-      "other_xp": 401,
-      "total_xp": 795,
-      "sources": {
-        "game_events": 173,
-        "ai_error_log": 3,
-        "retrieval_duels": 215,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Tobias Osterloh",
-      "uid": 85994,
-      "email": "07700013001",
-      "jb_xp": 410,
-      "other_xp": 373,
-      "total_xp": 783,
-      "sources": {
-        "game_events": 168,
-        "ai_error_log": 5,
-        "retrieval_duels": 190,
-        "boss_battle": 10
-      }
-    },
-    {
       "name": "Yijia Lin",
       "uid": 92107,
       "email": "07700017239",
-      "jb_xp": 360,
+      "jb_xp": 375,
       "other_xp": 398,
-      "total_xp": 758,
+      "total_xp": 773,
       "sources": {
         "game_events": 184,
         "ai_error_log": 4,
@@ -735,12 +735,12 @@
       "uid": 85288,
       "email": "07700022470",
       "jb_xp": 349,
-      "other_xp": 404,
-      "total_xp": 753,
+      "other_xp": 419,
+      "total_xp": 768,
       "sources": {
         "game_events": 169,
         "ai_error_log": 5,
-        "retrieval_duels": 220,
+        "retrieval_duels": 235,
         "boss_battle": 10
       }
     },
@@ -748,13 +748,13 @@
       "name": "Izabella Ocampo",
       "uid": 86045,
       "email": "07700015497",
-      "jb_xp": 361,
-      "other_xp": 381,
-      "total_xp": 742,
+      "jb_xp": 371,
+      "other_xp": 396,
+      "total_xp": 767,
       "sources": {
         "game_events": 162,
         "ai_error_log": 4,
-        "retrieval_duels": 205,
+        "retrieval_duels": 220,
         "boss_battle": 10
       }
     },
@@ -762,13 +762,41 @@
       "name": "Anikha Paturi",
       "uid": 94769,
       "email": "07700038574",
-      "jb_xp": 305,
-      "other_xp": 420,
-      "total_xp": 725,
+      "jb_xp": 320,
+      "other_xp": 435,
+      "total_xp": 755,
       "sources": {
         "game_events": 192,
         "ai_error_log": 3,
-        "retrieval_duels": 215,
+        "retrieval_duels": 230,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Aaryaa Desai",
+      "uid": 77398,
+      "email": "07700010460",
+      "jb_xp": 309,
+      "other_xp": 437,
+      "total_xp": 746,
+      "sources": {
+        "game_events": 182,
+        "ai_error_log": 5,
+        "retrieval_duels": 240,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Charles Bracke",
+      "uid": 62450,
+      "email": "00001623526",
+      "jb_xp": 328,
+      "other_xp": 417,
+      "total_xp": 745,
+      "sources": {
+        "game_events": 172,
+        "ai_error_log": 5,
+        "retrieval_duels": 230,
         "boss_battle": 10
       }
     },
@@ -777,40 +805,12 @@
       "uid": 78026,
       "email": "07700011194",
       "jb_xp": 339,
-      "other_xp": 381,
-      "total_xp": 720,
+      "other_xp": 396,
+      "total_xp": 735,
       "sources": {
         "game_events": 173,
         "ai_error_log": 3,
-        "retrieval_duels": 195,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Aaryaa Desai",
-      "uid": 77398,
-      "email": "07700010460",
-      "jb_xp": 294,
-      "other_xp": 422,
-      "total_xp": 716,
-      "sources": {
-        "game_events": 182,
-        "ai_error_log": 5,
-        "retrieval_duels": 225,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Charles Bracke",
-      "uid": 62450,
-      "email": "00001623526",
-      "jb_xp": 313,
-      "other_xp": 402,
-      "total_xp": 715,
-      "sources": {
-        "game_events": 172,
-        "ai_error_log": 5,
-        "retrieval_duels": 215,
+        "retrieval_duels": 210,
         "boss_battle": 10
       }
     },
@@ -819,12 +819,12 @@
       "uid": 84055,
       "email": "07700019355",
       "jb_xp": 364,
-      "other_xp": 338,
-      "total_xp": 702,
+      "other_xp": 353,
+      "total_xp": 717,
       "sources": {
         "game_events": 165,
         "ai_error_log": 3,
-        "retrieval_duels": 170,
+        "retrieval_duels": 185,
         "boss_battle": 0
       }
     },
@@ -832,9 +832,9 @@
       "name": "Spyridon Siloglou",
       "uid": 77664,
       "email": "07700006207",
-      "jb_xp": 329,
+      "jb_xp": 334,
       "other_xp": 368,
-      "total_xp": 697,
+      "total_xp": 702,
       "sources": {
         "game_events": 170,
         "ai_error_log": 3,
@@ -846,13 +846,27 @@
       "name": "Elika Dariani",
       "uid": 77875,
       "email": "07700010561",
-      "jb_xp": 222,
-      "other_xp": 403,
-      "total_xp": 625,
+      "jb_xp": 228,
+      "other_xp": 418,
+      "total_xp": 646,
       "sources": {
         "game_events": 168,
         "ai_error_log": 5,
-        "retrieval_duels": 220,
+        "retrieval_duels": 235,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Omar Bawa",
+      "uid": 70148,
+      "email": "00001636496",
+      "jb_xp": 280,
+      "other_xp": 363,
+      "total_xp": 643,
+      "sources": {
+        "game_events": 165,
+        "ai_error_log": 3,
+        "retrieval_duels": 185,
         "boss_battle": 10
       }
     },
@@ -861,26 +875,12 @@
       "uid": 84546,
       "email": "07700017155",
       "jb_xp": 244,
-      "other_xp": 376,
-      "total_xp": 620,
+      "other_xp": 391,
+      "total_xp": 635,
       "sources": {
         "game_events": 171,
         "ai_error_log": 5,
-        "retrieval_duels": 190,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Omar Bawa",
-      "uid": 70148,
-      "email": "00001636496",
-      "jb_xp": 265,
-      "other_xp": 348,
-      "total_xp": 613,
-      "sources": {
-        "game_events": 165,
-        "ai_error_log": 3,
-        "retrieval_duels": 170,
+        "retrieval_duels": 205,
         "boss_battle": 10
       }
     },
@@ -888,13 +888,13 @@
       "name": "Caroline Fanning",
       "uid": 86875,
       "email": "07700019887",
-      "jb_xp": 234,
-      "other_xp": 377,
-      "total_xp": 611,
+      "jb_xp": 240,
+      "other_xp": 392,
+      "total_xp": 632,
       "sources": {
         "game_events": 173,
         "ai_error_log": 4,
-        "retrieval_duels": 190,
+        "retrieval_duels": 205,
         "boss_battle": 10
       }
     },
@@ -902,13 +902,27 @@
       "name": "Brian Tran",
       "uid": 84048,
       "email": "07700019370",
-      "jb_xp": 264,
-      "other_xp": 335,
-      "total_xp": 599,
+      "jb_xp": 279,
+      "other_xp": 350,
+      "total_xp": 629,
       "sources": {
         "game_events": 152,
         "ai_error_log": 3,
-        "retrieval_duels": 170,
+        "retrieval_duels": 185,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Rachana Channagiri",
+      "uid": 85493,
+      "email": "07700016941",
+      "jb_xp": 197,
+      "other_xp": 414,
+      "total_xp": 611,
+      "sources": {
+        "game_events": 176,
+        "ai_error_log": 3,
+        "retrieval_duels": 225,
         "boss_battle": 10
       }
     },
@@ -916,9 +930,9 @@
       "name": "Hanna Patricia Rocha Cital",
       "uid": 85610,
       "email": "07700014865",
-      "jb_xp": 290,
+      "jb_xp": 305,
       "other_xp": 297,
-      "total_xp": 587,
+      "total_xp": 602,
       "sources": {
         "game_events": 183,
         "ai_error_log": 1,
@@ -927,40 +941,12 @@
       }
     },
     {
-      "name": "Rachana Channagiri",
-      "uid": 85493,
-      "email": "07700016941",
-      "jb_xp": 182,
-      "other_xp": 399,
-      "total_xp": 581,
-      "sources": {
-        "game_events": 176,
-        "ai_error_log": 3,
-        "retrieval_duels": 210,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Alondra Rubio-Ramirez",
-      "uid": 86712,
-      "email": "07700016848",
-      "jb_xp": 242,
-      "other_xp": 335,
-      "total_xp": 577,
-      "sources": {
-        "game_events": 147,
-        "ai_error_log": 3,
-        "retrieval_duels": 175,
-        "boss_battle": 10
-      }
-    },
-    {
       "name": "Leslie Gutierrez Lara",
       "uid": 86702,
       "email": "07700018259",
-      "jb_xp": 269,
+      "jb_xp": 279,
       "other_xp": 307,
-      "total_xp": 576,
+      "total_xp": 586,
       "sources": {
         "game_events": 183,
         "ai_error_log": 1,
@@ -972,13 +958,27 @@
       "name": "Xuanzhi Zhang",
       "uid": 92084,
       "email": "07700033384",
-      "jb_xp": 143,
-      "other_xp": 413,
-      "total_xp": 556,
+      "jb_xp": 155,
+      "other_xp": 428,
+      "total_xp": 583,
       "sources": {
         "game_events": 178,
         "ai_error_log": 5,
-        "retrieval_duels": 220,
+        "retrieval_duels": 235,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Alondra Rubio-Ramirez",
+      "uid": 86712,
+      "email": "07700016848",
+      "jb_xp": 247,
+      "other_xp": 335,
+      "total_xp": 582,
+      "sources": {
+        "game_events": 147,
+        "ai_error_log": 3,
+        "retrieval_duels": 175,
         "boss_battle": 10
       }
     },
@@ -986,9 +986,9 @@
       "name": "Ashlyne Ocampo",
       "uid": 86143,
       "email": "07700017321",
-      "jb_xp": 224,
+      "jb_xp": 239,
       "other_xp": 324,
-      "total_xp": 548,
+      "total_xp": 563,
       "sources": {
         "game_events": 151,
         "ai_error_log": 3,
@@ -1000,13 +1000,13 @@
       "name": "Morgan Hayes",
       "uid": 83363,
       "email": "07700017088",
-      "jb_xp": 162,
-      "other_xp": 376,
-      "total_xp": 538,
+      "jb_xp": 168,
+      "other_xp": 391,
+      "total_xp": 559,
       "sources": {
         "game_events": 171,
         "ai_error_log": 5,
-        "retrieval_duels": 190,
+        "retrieval_duels": 205,
         "boss_battle": 10
       }
     },
@@ -1014,14 +1014,42 @@
       "name": "Selena Chen",
       "uid": 90567,
       "email": "07700030759",
-      "jb_xp": 162,
+      "jb_xp": 177,
       "other_xp": 353,
-      "total_xp": 515,
+      "total_xp": 530,
       "sources": {
         "game_events": 165,
         "ai_error_log": 3,
         "retrieval_duels": 185,
         "boss_battle": 0
+      }
+    },
+    {
+      "name": "Gina Pai",
+      "uid": 78509,
+      "email": "07700009525",
+      "jb_xp": 121,
+      "other_xp": 334,
+      "total_xp": 455,
+      "sources": {
+        "game_events": 135,
+        "ai_error_log": 4,
+        "retrieval_duels": 185,
+        "boss_battle": 10
+      }
+    },
+    {
+      "name": "Nhan Nguyen",
+      "uid": 84266,
+      "email": "07700019425",
+      "jb_xp": 71,
+      "other_xp": 377,
+      "total_xp": 448,
+      "sources": {
+        "game_events": 154,
+        "ai_error_log": 3,
+        "retrieval_duels": 210,
+        "boss_battle": 10
       }
     },
     {
@@ -1039,44 +1067,30 @@
       }
     },
     {
-      "name": "Gina Pai",
-      "uid": 78509,
-      "email": "07700009525",
-      "jb_xp": 115,
-      "other_xp": 319,
-      "total_xp": 434,
+      "name": "Marco Bravo",
+      "uid": 91502,
+      "email": "07700026651",
+      "jb_xp": 61,
+      "other_xp": 350,
+      "total_xp": 411,
       "sources": {
-        "game_events": 135,
-        "ai_error_log": 4,
-        "retrieval_duels": 170,
-        "boss_battle": 10
-      }
-    },
-    {
-      "name": "Nhan Nguyen",
-      "uid": 84266,
-      "email": "07700019425",
-      "jb_xp": 71,
-      "other_xp": 362,
-      "total_xp": 433,
-      "sources": {
-        "game_events": 154,
+        "game_events": 132,
         "ai_error_log": 3,
-        "retrieval_duels": 195,
-        "boss_battle": 10
+        "retrieval_duels": 215,
+        "boss_battle": 0
       }
     },
     {
-      "name": "Janet Gonzalez",
-      "uid": 94326,
-      "email": "07700034788",
-      "jb_xp": 110,
-      "other_xp": 282,
-      "total_xp": 392,
+      "name": "Kemora Bridgewater",
+      "uid": 69144,
+      "email": "00001635013",
+      "jb_xp": 76,
+      "other_xp": 332,
+      "total_xp": 408,
       "sources": {
-        "game_events": 112,
-        "ai_error_log": 5,
-        "retrieval_duels": 155,
+        "game_events": 142,
+        "ai_error_log": 0,
+        "retrieval_duels": 180,
         "boss_battle": 10
       }
     },
@@ -1085,41 +1099,27 @@
       "uid": 77650,
       "email": "07700005051",
       "jb_xp": 34,
-      "other_xp": 356,
-      "total_xp": 390,
+      "other_xp": 371,
+      "total_xp": 405,
       "sources": {
         "game_events": 155,
         "ai_error_log": 3,
-        "retrieval_duels": 188,
+        "retrieval_duels": 203,
         "boss_battle": 10
       }
     },
     {
-      "name": "Kemora Bridgewater",
-      "uid": 69144,
-      "email": "00001635013",
-      "jb_xp": 72,
-      "other_xp": 317,
-      "total_xp": 389,
+      "name": "Janet Gonzalez",
+      "uid": 94326,
+      "email": "07700034788",
+      "jb_xp": 116,
+      "other_xp": 282,
+      "total_xp": 398,
       "sources": {
-        "game_events": 142,
-        "ai_error_log": 0,
-        "retrieval_duels": 165,
+        "game_events": 112,
+        "ai_error_log": 5,
+        "retrieval_duels": 155,
         "boss_battle": 10
-      }
-    },
-    {
-      "name": "Marco Bravo",
-      "uid": 91502,
-      "email": "07700026651",
-      "jb_xp": 49,
-      "other_xp": 335,
-      "total_xp": 384,
-      "sources": {
-        "game_events": 132,
-        "ai_error_log": 3,
-        "retrieval_duels": 200,
-        "boss_battle": 0
       }
     },
     {
@@ -1137,5 +1137,5 @@
       }
     }
   ],
-  "last_engagement_rebuild": "2026-05-22T14:58:29.938538"
+  "last_engagement_rebuild": "2026-05-22T16:46:47.980528"
 }
