@@ -805,10 +805,10 @@
       "uid": 84055,
       "email": "07700019355",
       "jb_xp": 439,
-      "other_xp": 373,
-      "total_xp": 812,
+      "other_xp": 378,
+      "total_xp": 817,
       "sources": {
-        "game_events": 165,
+        "game_events": 170,
         "retrieval_duels": 200,
         "ai_error_log": 3,
         "boss_battle": 5
@@ -885,6 +885,20 @@
       }
     },
     {
+      "name": "Caroline Fanning",
+      "uid": 86875,
+      "email": "07700019887",
+      "jb_xp": 300,
+      "other_xp": 415,
+      "total_xp": 715,
+      "sources": {
+        "game_events": 176,
+        "retrieval_duels": 220,
+        "ai_error_log": 4,
+        "boss_battle": 15
+      }
+    },
+    {
       "name": "Grace Mansell",
       "uid": 84546,
       "email": "07700017155",
@@ -910,20 +924,6 @@
         "retrieval_duels": 133,
         "ai_error_log": 1,
         "boss_battle": 5
-      }
-    },
-    {
-      "name": "Caroline Fanning",
-      "uid": 86875,
-      "email": "07700019887",
-      "jb_xp": 300,
-      "other_xp": 412,
-      "total_xp": 712,
-      "sources": {
-        "game_events": 173,
-        "retrieval_duels": 220,
-        "ai_error_log": 4,
-        "boss_battle": 15
       }
     },
     {
@@ -1029,10 +1029,10 @@
       "uid": 78509,
       "email": "07700009525",
       "jb_xp": 161,
-      "other_xp": 369,
-      "total_xp": 530,
+      "other_xp": 372,
+      "total_xp": 533,
       "sources": {
-        "game_events": 150,
+        "game_events": 153,
         "retrieval_duels": 200,
         "ai_error_log": 4,
         "boss_battle": 15
@@ -1137,5 +1137,5 @@
       }
     }
   ],
-  "last_engagement_rebuild": "2026-06-03T16:59:30.715903"
+  "last_engagement_rebuild": "2026-06-03T20:15:23.034491"
 }
