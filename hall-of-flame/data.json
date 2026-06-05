@@ -483,10 +483,10 @@
       "uid": 93982,
       "email": "07700030528",
       "jb_xp": 548,
-      "other_xp": 451,
-      "total_xp": 999,
+      "other_xp": 476,
+      "total_xp": 1024,
       "sources": {
-        "game_events": 183,
+        "game_events": 208,
         "retrieval_duels": 250,
         "ai_error_log": 3,
         "boss_battle": 15
@@ -497,10 +497,10 @@
       "uid": 86288,
       "email": "07700016525",
       "jb_xp": 526,
-      "other_xp": 441,
-      "total_xp": 967,
+      "other_xp": 466,
+      "total_xp": 992,
       "sources": {
-        "game_events": 176,
+        "game_events": 201,
         "retrieval_duels": 245,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -511,10 +511,10 @@
       "uid": 85685,
       "email": "07700017282",
       "jb_xp": 544,
-      "other_xp": 422,
-      "total_xp": 966,
+      "other_xp": 447,
+      "total_xp": 991,
       "sources": {
-        "game_events": 177,
+        "game_events": 202,
         "retrieval_duels": 225,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -525,10 +525,10 @@
       "uid": 86661,
       "email": "07700019117",
       "jb_xp": 548,
-      "other_xp": 417,
-      "total_xp": 965,
+      "other_xp": 442,
+      "total_xp": 990,
       "sources": {
-        "game_events": 171,
+        "game_events": 196,
         "retrieval_duels": 228,
         "ai_error_log": 3,
         "boss_battle": 15
@@ -539,10 +539,10 @@
       "uid": 85897,
       "email": "07700021600",
       "jb_xp": 534,
-      "other_xp": 429,
-      "total_xp": 963,
+      "other_xp": 454,
+      "total_xp": 988,
       "sources": {
-        "game_events": 184,
+        "game_events": 209,
         "retrieval_duels": 225,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -553,10 +553,10 @@
       "uid": 70217,
       "email": "00001640392",
       "jb_xp": 535,
-      "other_xp": 421,
-      "total_xp": 956,
+      "other_xp": 446,
+      "total_xp": 981,
       "sources": {
-        "game_events": 177,
+        "game_events": 202,
         "retrieval_duels": 225,
         "ai_error_log": 4,
         "boss_battle": 15
@@ -567,10 +567,10 @@
       "uid": 93562,
       "email": "07700035487",
       "jb_xp": 489,
-      "other_xp": 457,
-      "total_xp": 946,
+      "other_xp": 482,
+      "total_xp": 971,
       "sources": {
-        "game_events": 192,
+        "game_events": 217,
         "retrieval_duels": 245,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -581,12 +581,54 @@
       "uid": 70343,
       "email": "00001637518",
       "jb_xp": 507,
-      "other_xp": 437,
-      "total_xp": 944,
+      "other_xp": 462,
+      "total_xp": 969,
       "sources": {
-        "game_events": 189,
+        "game_events": 214,
         "retrieval_duels": 230,
         "ai_error_log": 3,
+        "boss_battle": 15
+      }
+    },
+    {
+      "name": "Sonya Apsey",
+      "uid": 84026,
+      "email": "07700013655",
+      "jb_xp": 506,
+      "other_xp": 444,
+      "total_xp": 950,
+      "sources": {
+        "game_events": 196,
+        "retrieval_duels": 228,
+        "ai_error_log": 5,
+        "boss_battle": 15
+      }
+    },
+    {
+      "name": "Tanisha Shah",
+      "uid": 68896,
+      "email": "00001633118",
+      "jb_xp": 462,
+      "other_xp": 483,
+      "total_xp": 945,
+      "sources": {
+        "game_events": 208,
+        "retrieval_duels": 255,
+        "ai_error_log": 5,
+        "boss_battle": 15
+      }
+    },
+    {
+      "name": "Zaizhu Pan",
+      "uid": 90529,
+      "email": "07700027429",
+      "jb_xp": 519,
+      "other_xp": 424,
+      "total_xp": 943,
+      "sources": {
+        "game_events": 194,
+        "retrieval_duels": 210,
+        "ai_error_log": 5,
         "boss_battle": 15
       }
     },
@@ -605,56 +647,14 @@
       }
     },
     {
-      "name": "Sonya Apsey",
-      "uid": 84026,
-      "email": "07700013655",
-      "jb_xp": 506,
-      "other_xp": 419,
-      "total_xp": 925,
-      "sources": {
-        "game_events": 171,
-        "retrieval_duels": 228,
-        "ai_error_log": 5,
-        "boss_battle": 15
-      }
-    },
-    {
-      "name": "Tanisha Shah",
-      "uid": 68896,
-      "email": "00001633118",
-      "jb_xp": 462,
-      "other_xp": 458,
-      "total_xp": 920,
-      "sources": {
-        "game_events": 183,
-        "retrieval_duels": 255,
-        "ai_error_log": 5,
-        "boss_battle": 15
-      }
-    },
-    {
-      "name": "Zaizhu Pan",
-      "uid": 90529,
-      "email": "07700027429",
-      "jb_xp": 519,
-      "other_xp": 399,
-      "total_xp": 918,
-      "sources": {
-        "game_events": 169,
-        "retrieval_duels": 210,
-        "ai_error_log": 5,
-        "boss_battle": 15
-      }
-    },
-    {
       "name": "Caroline Woodcock",
       "uid": 85424,
       "email": "07700014118",
       "jb_xp": 530,
-      "other_xp": 374,
-      "total_xp": 904,
+      "other_xp": 399,
+      "total_xp": 929,
       "sources": {
-        "game_events": 165,
+        "game_events": 190,
         "retrieval_duels": 190,
         "ai_error_log": 4,
         "boss_battle": 15
@@ -665,10 +665,10 @@
       "uid": 85994,
       "email": "07700013001",
       "jb_xp": 500,
-      "other_xp": 403,
-      "total_xp": 903,
+      "other_xp": 428,
+      "total_xp": 928,
       "sources": {
-        "game_events": 168,
+        "game_events": 193,
         "retrieval_duels": 215,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -679,12 +679,40 @@
       "uid": 85303,
       "email": "07700013919",
       "jb_xp": 525,
-      "other_xp": 369,
-      "total_xp": 894,
+      "other_xp": 394,
+      "total_xp": 919,
       "sources": {
-        "game_events": 162,
+        "game_events": 187,
         "retrieval_duels": 190,
         "ai_error_log": 2,
+        "boss_battle": 15
+      }
+    },
+    {
+      "name": "Katherine Barker",
+      "uid": 84916,
+      "email": "07700013652",
+      "jb_xp": 464,
+      "other_xp": 442,
+      "total_xp": 906,
+      "sources": {
+        "game_events": 212,
+        "retrieval_duels": 215,
+        "ai_error_log": 0,
+        "boss_battle": 15
+      }
+    },
+    {
+      "name": "Yijia Lin",
+      "uid": 92107,
+      "email": "07700017239",
+      "jb_xp": 450,
+      "other_xp": 453,
+      "total_xp": 903,
+      "sources": {
+        "game_events": 209,
+        "retrieval_duels": 225,
+        "ai_error_log": 4,
         "boss_battle": 15
       }
     },
@@ -703,42 +731,14 @@
       }
     },
     {
-      "name": "Katherine Barker",
-      "uid": 84916,
-      "email": "07700013652",
-      "jb_xp": 464,
-      "other_xp": 417,
-      "total_xp": 881,
-      "sources": {
-        "game_events": 187,
-        "retrieval_duels": 215,
-        "ai_error_log": 0,
-        "boss_battle": 15
-      }
-    },
-    {
-      "name": "Yijia Lin",
-      "uid": 92107,
-      "email": "07700017239",
-      "jb_xp": 450,
-      "other_xp": 428,
-      "total_xp": 878,
-      "sources": {
-        "game_events": 184,
-        "retrieval_duels": 225,
-        "ai_error_log": 4,
-        "boss_battle": 15
-      }
-    },
-    {
       "name": "Anikha Paturi",
       "uid": 94769,
       "email": "07700038574",
       "jb_xp": 395,
-      "other_xp": 458,
-      "total_xp": 853,
+      "other_xp": 483,
+      "total_xp": 878,
       "sources": {
-        "game_events": 195,
+        "game_events": 220,
         "retrieval_duels": 245,
         "ai_error_log": 3,
         "boss_battle": 15
@@ -749,10 +749,10 @@
       "uid": 86045,
       "email": "07700015497",
       "jb_xp": 446,
-      "other_xp": 406,
-      "total_xp": 852,
+      "other_xp": 431,
+      "total_xp": 877,
       "sources": {
-        "game_events": 162,
+        "game_events": 187,
         "retrieval_duels": 225,
         "ai_error_log": 4,
         "boss_battle": 15
@@ -763,10 +763,10 @@
       "uid": 77398,
       "email": "07700010460",
       "jb_xp": 384,
-      "other_xp": 457,
-      "total_xp": 841,
+      "other_xp": 482,
+      "total_xp": 866,
       "sources": {
-        "game_events": 182,
+        "game_events": 207,
         "retrieval_duels": 255,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -777,10 +777,10 @@
       "uid": 62450,
       "email": "00001623526",
       "jb_xp": 403,
-      "other_xp": 437,
-      "total_xp": 840,
+      "other_xp": 462,
+      "total_xp": 865,
       "sources": {
-        "game_events": 172,
+        "game_events": 197,
         "retrieval_duels": 245,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -791,13 +791,41 @@
       "uid": 78026,
       "email": "07700011194",
       "jb_xp": 414,
-      "other_xp": 419,
-      "total_xp": 833,
+      "other_xp": 444,
+      "total_xp": 858,
       "sources": {
-        "game_events": 176,
+        "game_events": 201,
         "retrieval_duels": 225,
         "ai_error_log": 3,
         "boss_battle": 15
+      }
+    },
+    {
+      "name": "Spyridon Siloglou",
+      "uid": 77664,
+      "email": "07700006207",
+      "jb_xp": 409,
+      "other_xp": 426,
+      "total_xp": 835,
+      "sources": {
+        "game_events": 198,
+        "retrieval_duels": 210,
+        "ai_error_log": 3,
+        "boss_battle": 15
+      }
+    },
+    {
+      "name": "Theresa Hoang",
+      "uid": 85288,
+      "email": "07700022470",
+      "jb_xp": 374,
+      "other_xp": 459,
+      "total_xp": 833,
+      "sources": {
+        "game_events": 194,
+        "retrieval_duels": 250,
+        "ai_error_log": 5,
+        "boss_battle": 10
       }
     },
     {
@@ -815,42 +843,14 @@
       }
     },
     {
-      "name": "Spyridon Siloglou",
-      "uid": 77664,
-      "email": "07700006207",
-      "jb_xp": 409,
-      "other_xp": 401,
-      "total_xp": 810,
-      "sources": {
-        "game_events": 173,
-        "retrieval_duels": 210,
-        "ai_error_log": 3,
-        "boss_battle": 15
-      }
-    },
-    {
-      "name": "Theresa Hoang",
-      "uid": 85288,
-      "email": "07700022470",
-      "jb_xp": 374,
-      "other_xp": 434,
-      "total_xp": 808,
-      "sources": {
-        "game_events": 169,
-        "retrieval_duels": 250,
-        "ai_error_log": 5,
-        "boss_battle": 10
-      }
-    },
-    {
       "name": "Ashlyne Ocampo",
       "uid": 86143,
       "email": "07700017321",
       "jb_xp": 314,
-      "other_xp": 437,
-      "total_xp": 751,
+      "other_xp": 462,
+      "total_xp": 776,
       "sources": {
-        "game_events": 189,
+        "game_events": 214,
         "retrieval_duels": 230,
         "ai_error_log": 3,
         "boss_battle": 15
@@ -861,10 +861,10 @@
       "uid": 77875,
       "email": "07700010561",
       "jb_xp": 288,
-      "other_xp": 441,
-      "total_xp": 729,
+      "other_xp": 466,
+      "total_xp": 754,
       "sources": {
-        "game_events": 171,
+        "game_events": 196,
         "retrieval_duels": 250,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -875,10 +875,10 @@
       "uid": 85493,
       "email": "07700016941",
       "jb_xp": 272,
-      "other_xp": 444,
-      "total_xp": 716,
+      "other_xp": 469,
+      "total_xp": 741,
       "sources": {
-        "game_events": 186,
+        "game_events": 211,
         "retrieval_duels": 240,
         "ai_error_log": 3,
         "boss_battle": 15
@@ -889,10 +889,10 @@
       "uid": 86875,
       "email": "07700019887",
       "jb_xp": 300,
-      "other_xp": 415,
-      "total_xp": 715,
+      "other_xp": 440,
+      "total_xp": 740,
       "sources": {
-        "game_events": 176,
+        "game_events": 201,
         "retrieval_duels": 220,
         "ai_error_log": 4,
         "boss_battle": 15
@@ -903,12 +903,40 @@
       "uid": 84546,
       "email": "07700017155",
       "jb_xp": 304,
-      "other_xp": 409,
-      "total_xp": 713,
+      "other_xp": 434,
+      "total_xp": 738,
       "sources": {
-        "game_events": 174,
+        "game_events": 199,
         "retrieval_duels": 215,
         "ai_error_log": 5,
+        "boss_battle": 15
+      }
+    },
+    {
+      "name": "Leslie Gutierrez Lara",
+      "uid": 86702,
+      "email": "07700018259",
+      "jb_xp": 354,
+      "other_xp": 365,
+      "total_xp": 719,
+      "sources": {
+        "game_events": 216,
+        "retrieval_duels": 133,
+        "ai_error_log": 1,
+        "boss_battle": 15
+      }
+    },
+    {
+      "name": "Omar Bawa",
+      "uid": 70148,
+      "email": "00001636496",
+      "jb_xp": 305,
+      "other_xp": 408,
+      "total_xp": 713,
+      "sources": {
+        "game_events": 190,
+        "retrieval_duels": 200,
+        "ai_error_log": 3,
         "boss_battle": 15
       }
     },
@@ -927,31 +955,17 @@
       }
     },
     {
-      "name": "Leslie Gutierrez Lara",
-      "uid": 86702,
-      "email": "07700018259",
-      "jb_xp": 354,
-      "other_xp": 340,
-      "total_xp": 694,
+      "name": "Selena Chen",
+      "uid": 90567,
+      "email": "07700030759",
+      "jb_xp": 252,
+      "other_xp": 403,
+      "total_xp": 655,
       "sources": {
-        "game_events": 191,
-        "retrieval_duels": 133,
-        "ai_error_log": 1,
-        "boss_battle": 15
-      }
-    },
-    {
-      "name": "Omar Bawa",
-      "uid": 70148,
-      "email": "00001636496",
-      "jb_xp": 305,
-      "other_xp": 383,
-      "total_xp": 688,
-      "sources": {
-        "game_events": 165,
-        "retrieval_duels": 200,
+        "game_events": 190,
+        "retrieval_duels": 210,
         "ai_error_log": 3,
-        "boss_battle": 15
+        "boss_battle": 0
       }
     },
     {
@@ -969,28 +983,14 @@
       }
     },
     {
-      "name": "Selena Chen",
-      "uid": 90567,
-      "email": "07700030759",
-      "jb_xp": 252,
-      "other_xp": 378,
-      "total_xp": 630,
-      "sources": {
-        "game_events": 165,
-        "retrieval_duels": 210,
-        "ai_error_log": 3,
-        "boss_battle": 0
-      }
-    },
-    {
       "name": "Morgan Hayes",
       "uid": 83363,
       "email": "07700017088",
       "jb_xp": 208,
-      "other_xp": 406,
-      "total_xp": 614,
+      "other_xp": 431,
+      "total_xp": 639,
       "sources": {
-        "game_events": 171,
+        "game_events": 196,
         "retrieval_duels": 215,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -1001,10 +1001,10 @@
       "uid": 92084,
       "email": "07700033384",
       "jb_xp": 155,
-      "other_xp": 438,
-      "total_xp": 593,
+      "other_xp": 463,
+      "total_xp": 618,
       "sources": {
-        "game_events": 188,
+        "game_events": 213,
         "retrieval_duels": 235,
         "ai_error_log": 5,
         "boss_battle": 10
@@ -1029,10 +1029,10 @@
       "uid": 78509,
       "email": "07700009525",
       "jb_xp": 161,
-      "other_xp": 372,
-      "total_xp": 533,
+      "other_xp": 397,
+      "total_xp": 558,
       "sources": {
-        "game_events": 153,
+        "game_events": 178,
         "retrieval_duels": 200,
         "ai_error_log": 4,
         "boss_battle": 15
@@ -1057,10 +1057,10 @@
       "uid": 94326,
       "email": "07700034788",
       "jb_xp": 161,
-      "other_xp": 322,
-      "total_xp": 483,
+      "other_xp": 350,
+      "total_xp": 511,
       "sources": {
-        "game_events": 122,
+        "game_events": 150,
         "retrieval_duels": 180,
         "ai_error_log": 5,
         "boss_battle": 15
@@ -1071,10 +1071,10 @@
       "uid": 84266,
       "email": "07700019425",
       "jb_xp": 71,
-      "other_xp": 390,
-      "total_xp": 461,
+      "other_xp": 415,
+      "total_xp": 486,
       "sources": {
-        "game_events": 167,
+        "game_events": 192,
         "retrieval_duels": 210,
         "ai_error_log": 3,
         "boss_battle": 10
@@ -1085,10 +1085,10 @@
       "uid": 68701,
       "email": "00001634470",
       "jb_xp": 133,
-      "other_xp": 323,
-      "total_xp": 456,
+      "other_xp": 348,
+      "total_xp": 481,
       "sources": {
-        "game_events": 138,
+        "game_events": 163,
         "retrieval_duels": 180,
         "ai_error_log": 5,
         "boss_battle": 0
@@ -1099,10 +1099,10 @@
       "uid": 77650,
       "email": "07700005051",
       "jb_xp": 49,
-      "other_xp": 396,
-      "total_xp": 445,
+      "other_xp": 421,
+      "total_xp": 470,
       "sources": {
-        "game_events": 165,
+        "game_events": 190,
         "retrieval_duels": 213,
         "ai_error_log": 3,
         "boss_battle": 15
@@ -1137,5 +1137,5 @@
       }
     }
   ],
-  "last_engagement_rebuild": "2026-06-03T20:15:23.034491"
+  "last_engagement_rebuild": "2026-06-04T17:32:04.769416"
 }
